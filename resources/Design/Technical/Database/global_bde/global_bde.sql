@@ -2,6 +2,15 @@
 #        Script MySQL.
 #------------------------------------------------------------
 
+#------------------------------------------------------------
+# Database: global_bde
+#------------------------------------------------------------
+
+DROP DATABASE IF EXISTS global_bde;
+
+CREATE DATABASE IF NOT EXISTS global_bde;
+
+USE global_bde;
 
 #------------------------------------------------------------
 # Table: gender
@@ -57,4 +66,3 @@ CREATE TABLE users(
 	,CONSTRAINT users_gender0_FK FOREIGN KEY (ID_Gender_Est_du_genre) REFERENCES gender(ID_Gender)
 	,CONSTRAINT users_role1_FK FOREIGN KEY (ID_Role) REFERENCES role(ID_Role)
 )ENGINE=InnoDB;
-
