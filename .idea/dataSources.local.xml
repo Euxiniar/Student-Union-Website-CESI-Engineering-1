@@ -11,5 +11,15 @@
       <user-name>global_bde</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="orleans_bde" uuid="c2009da1-f859-4eb1-a29a-bb1e9d5b81e2">
+      <database-info product="MySQL" version="5.5.5-10.3.12-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MARIADB" exact-version="10.3.12">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>global_bde</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
   </component>
 </project>

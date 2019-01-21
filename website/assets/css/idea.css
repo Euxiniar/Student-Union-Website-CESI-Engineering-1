@@ -1,0 +1,48 @@
+.VoteBox {
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 1px solid #a9a8e3;
+    background: #dfe4ff;
+    width: 50px;
+    line-height: 90%;
+    margin-bottom: 5px;
+}
+
+.Number {
+    text-align: center;
+    font-weight : 700;
+}
+
+.SmallText {
+    text-align: center;
+    font-weight : 300;
+    letter-spacing: -1.6px;
+    line-height: 20%;
+}
+
+.MediumText {
+    text-align: center;
+    font-weight : 700;
+    line-height: 90%;
+    vertical-align: center;
+    display:inline-flex;
+    justify-content: center
+;
+}
+
+.WhiteText {
+    color : white;
+}
+
+.Bandeau {
+    border-radius: 5px 5px 5px 5px;
+    background: #000000;
+    opacity: 0.75;
+    color : white;
+    line-height: 90%;
+    margin-bottom: 5px;
+    justify-content: center;
+    min-height: 25px;
+    height: auto;
+}
