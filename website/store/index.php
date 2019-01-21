@@ -14,6 +14,10 @@
  
  <body>
     <?php include("../common/header.php") ?>
+    <link rel="stylesheet" href="../assets/css/store.css" type="text/css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    
 
 
     <div id="menu">Menu
