@@ -1,0 +1,325 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Catégorie`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Catégorie` (
+  `Id_categorie` INT NOT NULL AUTO_INCREMENT,
+  `Designation` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id_categorie`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Article`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Article` (
+  `Id_article` INT NOT NULL AUTO_INCREMENT,
+  `Cout` FLOAT NOT NULL,
+  `Titre` VARCHAR(50) NOT NULL,
+  `Description` TEXT NULL DEFAULT NULL,
+  `Image` VARCHAR(20) NOT NULL,
+  `Nbr_achats` INT NOT NULL,
+  `Catégorie` VARCHAR(45) NOT NULL,
+  `Stock` INT NOT NULL DEFAULT 0,
+  `Id_categorie` INT NOT NULL,
+  PRIMARY KEY (`Id_article`),
+  INDEX `fk_Article_Catégorie1_idx` (`Id_categorie` ASC),
+  CONSTRAINT `fk_Article_Catégorie1`
+    FOREIGN KEY (`Id_categorie`)
+    REFERENCES `mydb`.`Catégorie` (`Id_categorie`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Centre`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Centre` (
+  `idCentre` INT NOT NULL AUTO_INCREMENT,
+  `Designation` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCentre`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Genre`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Genre` (
+  `Id_genre` INT NOT NULL AUTO_INCREMENT,
+  `Désignation` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id_genre`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Utilisateur`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Utilisateur` (
+  `Id_utilisateur` INT NOT NULL AUTO_INCREMENT,
+  `Nom` VARCHAR(50) NOT NULL,
+  `Prenom` VARCHAR(30) NOT NULL,
+  `Email` VARCHAR(100) NOT NULL,
+  `Mdp` VARCHAR(50) NOT NULL,
+  `Centre` VARCHAR(50) NOT NULL,
+  `Status` INT NOT NULL,
+  `Genre` VARCHAR(300) NOT NULL,
+  `Id_centre` INT NOT NULL,
+  `Id_genre` INT NOT NULL,
+  PRIMARY KEY (`Id_utilisateur`),
+  INDEX `fk_Utilisateur_Centre1_idx` (`Id_centre` ASC),
+  INDEX `fk_Utilisateur_Genre1_idx` (`Id_genre` ASC),
+  CONSTRAINT `fk_Utilisateur_Centre1`
+    FOREIGN KEY (`Id_centre`)
+    REFERENCES `mydb`.`Centre` (`idCentre`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Utilisateur_Genre1`
+    FOREIGN KEY (`Id_genre`)
+    REFERENCES `mydb`.`Genre` (`Id_genre`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Reccurrences`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Reccurrences` (
+  `Id_recurrence` INT NOT NULL AUTO_INCREMENT,
+  `Reccurrence` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id_recurrence`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Status_date`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Status_date` (
+  `Id_status_date` INT NOT NULL AUTO_INCREMENT,
+  `Designation` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id_status_date`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`StatusAccessibilite`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`StatusAccessibilite` (
+  `Id_status_accessibilite` INT NOT NULL AUTO_INCREMENT,
+  `Designation` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id_status_accessibilite`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Evenement`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Evenement` (
+  `Id_evenement` INT NOT NULL AUTO_INCREMENT,
+  `Titre` VARCHAR(50) NOT NULL,
+  `Date_evenement` DATE NOT NULL,
+  `Date_de_creation` DATE NOT NULL,
+  `Date_de_fin` DATE NOT NULL,
+  `Heure` TIME NOT NULL,
+  `Description` TEXT NOT NULL,
+  `Cout` FLOAT NOT NULL,
+  `Nbr_participants` INT NOT NULL,
+  `URL_photo` VARCHAR(255) NOT NULL,
+  `Nbr_votes` INT NOT NULL,
+  `ID_createur` INT NOT NULL,
+  `Lieu` VARCHAR(50) NOT NULL,
+  `Id_utilisateur` INT NOT NULL,
+  `Id_reccurrence` INT NULL,
+  `Is_idea` TINYINT NOT NULL,
+  `Id_status_date` INT NOT NULL,
+  `Id_status_accessibilite` INT NOT NULL,
+  PRIMARY KEY (`Id_evenement`),
+  INDEX `Evenement_Utilisateur_FK` (`Id_utilisateur` ASC),
+  INDEX `fk_Evenement_Reccurrences1_idx` (`Id_reccurrence` ASC),
+  INDEX `fk_Evenement_Status_date1_idx` (`Id_status_date` ASC),
+  INDEX `fk_Evenement_StatusAccessibilite1_idx` (`Id_status_accessibilite` ASC),
+  CONSTRAINT `Evenement_Utilisateur_FK`
+    FOREIGN KEY (`Id_utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`),
+  CONSTRAINT `fk_Evenement_Reccurrences1`
+    FOREIGN KEY (`Id_reccurrence`)
+    REFERENCES `mydb`.`Reccurrences` (`Id_recurrence`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Evenement_Status_date1`
+    FOREIGN KEY (`Id_status_date`)
+    REFERENCES `mydb`.`Status_date` (`Id_status_date`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Evenement_StatusAccessibilite1`
+    FOREIGN KEY (`Id_status_accessibilite`)
+    REFERENCES `mydb`.`StatusAccessibilite` (`Id_status_accessibilite`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Photo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Photo` (
+  `Id_photo` INT NOT NULL AUTO_INCREMENT,
+  `Date` DATE NOT NULL,
+  `Heure` TIME NOT NULL,
+  `Status` INT NOT NULL,
+  `ID_auto_Utilisateur` INT NOT NULL,
+  `ID_auto_Evenement` INT NOT NULL,
+  `Nbr_like` INT NOT NULL DEFAULT 0,
+  `URL_photo` VARCHAR(45) NULL COMMENT '/uploads/img/events/nom.extension',
+  PRIMARY KEY (`Id_photo`),
+  INDEX `Photo_Utilisateur_FK` (`ID_auto_Utilisateur` ASC),
+  INDEX `Photo_Evenement0_FK` (`ID_auto_Evenement` ASC),
+  CONSTRAINT `Photo_Utilisateur_FK`
+    FOREIGN KEY (`ID_auto_Utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`),
+  CONSTRAINT `Photo_Evenement0_FK`
+    FOREIGN KEY (`ID_auto_Evenement`)
+    REFERENCES `mydb`.`Evenement` (`Id_evenement`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Commentaire`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Commentaire` (
+  `Id_commentaire` INT NOT NULL AUTO_INCREMENT,
+  `Texte` TEXT NOT NULL,
+  `Date` DATE NOT NULL,
+  `Heure` TIME NOT NULL,
+  `Photo` VARCHAR(50) NOT NULL,
+  `ID_Utilisateur` INT NOT NULL,
+  `Id_photo` INT NOT NULL,
+  PRIMARY KEY (`Id_commentaire`),
+  INDEX `Commentaire_Utilisateur0_FK` (`ID_Utilisateur` ASC),
+  INDEX `fk_Commentaire_Photo1_idx` (`Id_photo` ASC),
+  CONSTRAINT `Commentaire_Utilisateur0_FK`
+    FOREIGN KEY (`ID_Utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`),
+  CONSTRAINT `fk_Commentaire_Photo1`
+    FOREIGN KEY (`Id_photo`)
+    REFERENCES `mydb`.`Photo` (`Id_photo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Participant_evenement`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Participant_evenement` (
+  `Id_utilisateur` INT NOT NULL,
+  `Id_evenement` INT NOT NULL,
+  PRIMARY KEY (`Id_utilisateur`, `Id_evenement`),
+  INDEX `Participant_evenement_Evenement0_FK` (`Id_evenement` ASC),
+  CONSTRAINT `Participant_evenement_Utilisateur_FK`
+    FOREIGN KEY (`Id_utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`),
+  CONSTRAINT `Participant_evenement_Evenement0_FK`
+    FOREIGN KEY (`Id_evenement`)
+    REFERENCES `mydb`.`Evenement` (`Id_evenement`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Commande`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Commande` (
+  `Id_commande` INT NOT NULL AUTO_INCREMENT,
+  `Id_utilisateur` INT NOT NULL,
+  `Cout_total` INT NOT NULL,
+  `Nbr_article` INT NOT NULL,
+  `Date` DATE NULL,
+  `Heure` DATETIME NULL,
+  `Commande_payee` TINYINT NOT NULL,
+  PRIMARY KEY (`Id_commande`),
+  CONSTRAINT `Commande_Utilisateur_FK`
+    FOREIGN KEY (`Id_utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`LikePhoto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`LikePhoto` (
+  `Id_photo` INT NOT NULL,
+  `Id_utilisateur` INT NOT NULL,
+  INDEX `fk_LikePhoto_Photo1_idx` (`Id_photo` ASC),
+  INDEX `fk_LikePhoto_Utilisateur1_idx` (`Id_utilisateur` ASC),
+  PRIMARY KEY (`Id_photo`, `Id_utilisateur`),
+  CONSTRAINT `fk_LikePhoto_Photo1`
+    FOREIGN KEY (`Id_photo`)
+    REFERENCES `mydb`.`Photo` (`Id_photo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_LikePhoto_Utilisateur1`
+    FOREIGN KEY (`Id_utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`VoteIdea`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`VoteIdea` (
+  `Id_evenement` INT NOT NULL,
+  `Id_utilisateur` INT NOT NULL,
+  INDEX `fk_VoteIdea_Evenement1_idx` (`Id_evenement` ASC),
+  PRIMARY KEY (`Id_evenement`, `Id_utilisateur`),
+  INDEX `fk_VoteIdea_Utilisateur1_idx` (`Id_utilisateur` ASC),
+  CONSTRAINT `fk_VoteIdea_Evenement1`
+    FOREIGN KEY (`Id_evenement`)
+    REFERENCES `mydb`.`Evenement` (`Id_evenement`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_VoteIdea_Utilisateur1`
+    FOREIGN KEY (`Id_utilisateur`)
+    REFERENCES `mydb`.`Utilisateur` (`Id_utilisateur`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Article_par_commande`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Article_par_commande` (
+  `Id_commande` INT NOT NULL,
+  `Id_article` VARCHAR(45) NOT NULL,
+  `Quantite` VARCHAR(45) NULL,
+  INDEX `fk_Article_par_commande_Commande1_idx` (`Id_commande` ASC),
+  PRIMARY KEY (`Id_article`, `Id_commande`),
+  CONSTRAINT `fk_Article_par_commande_Commande1`
+    FOREIGN KEY (`Id_commande`)
+    REFERENCES `mydb`.`Commande` (`Id_commande`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
