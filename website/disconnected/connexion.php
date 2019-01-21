@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<?php $PAGE = "connexion_formx" ?>
+<?php $PAGE = "connexion_form" ?>
 
 <!-- Le corps -->
 <div id="corps">
@@ -31,10 +31,10 @@
                 <a class="hiddenanchor" id="tologin"></a>
                 <div id="wrapper">
                     <div id="login" class="">
-                        <form method="post" autocomplete="on" <!--action ="index.php"-->
+                        <form method="post"  <!--action ="index.php"-->
                         <h1>Connexion</h1>
                         <p>
-                            <label for="username" class="uname" data-icon="u" > Pseudo : </label>
+                            <label for="username" class="uname" data-icon="u" > Adresse E-mail : </label>
                             <input id="username" name="email" required="required" type="text" placeholder="Adresse E-mail"/>
                         </p>
 
@@ -46,10 +46,10 @@
 
                         <p class="login button">
                             <input id = "formLogin" type="submit" value="Connexion" />
-<!--                            --><?php /*if (isset($_POST['email'])) {
-                                include("scriptConnexion.php");
+                            <?php if (isset($_POST['email'])) {
+                                include("../scripts/scriptConnexion.php");
                             };
-                            */?>
+                            ?>
                         </p>
 
                         </form>
@@ -61,37 +61,27 @@
                             <div>
 
                                 <p>
-                                    <label for="lastnameignup" class="nom" data-icon="u" > Nom : </label>
-                                    <input id="lastnameignup" name="nom" required="required" type="text" placeholder="Nom"/>
+                                    <label data-icon="e"> Adresse E-Mail : </label>
+                                    <input name="email" required="required" type="text" placeholder="prenom@nom.fr" />
                                 </p>
 
                                 <p>
-                                    <label for="firstnameignup" class="prenom" data-icon="u" > Prénom : </label>
-                                    <input id="firstnameignup" name="prenom" required="required" type="text" placeholder="Prénom"/>
+                                    <label  data-icon="p"> Mot de passe : </label>
+                                    <input name="mdp" required="required" type="password" placeholder="Mot de passe" />
                                 </p>
 
                                 <p>
-                                    <label for="emailignup" class="email" data-icon="e"> Adresse E-Mail : </label>
-                                    <input id="emailignup" name="email" required="required" type="text" placeholder="prenom@nom.fr" />
-                                </p>
-
-                                <p>
-                                    <label for="passwordignup" class="youpasswd" data-icon="p"> Mot de passe : </label>
-                                    <input id="passwordignup" name="mdp" required="required" type="password" placeholder="Mot de passe" />
-                                </p>
-
-                                <p>
-                                    <label for="password2ignup" class="youpasswd2" data-icon="p">Confirmer le mot de passe : </label>
-                                    <input id="password2ignup" name="mdp2" required="required" type="password" placeholder="Confirmer le mot de passe" />
+                                    <label data-icon="p">Confirmer le mot de passe : </label>
+                                    <input name="mdp2" required="required" type="password" placeholder="Confirmer le mot de passe" />
                                 </p>
 
                                 <p class="signin button">
 
                                     <input type="submit" href="index.php"/>
-<!--                                    --><?php /*if (isset($_POST['email'])) {
-                                        include("scriptInscription.php");
+                                    <?php if (isset($_POST['email'])) {
+                                        include("../scripts/scriptInscription.php");
                                     };
-                                    */?>
+                                    ?>
                                 </p>
 
                         </form>
