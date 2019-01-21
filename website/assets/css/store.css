@@ -11,17 +11,17 @@ div#bandeau {
   background-color:#00CCFF;
   }
 div#menu {
+  color:white;
   float:left;
   width:25%;
   height: 1000px;
-  background-color: gray;
+  background-color: black;
   }
 div#contenu {
   margin-left: 25%;
   width:75%;
   height: 1000px;
   background-color:white;
-  display:flex;
   }
 div#pied_page {
   color:white;
@@ -32,30 +32,177 @@ div#pied_page {
   background-color: black;
   }
 #text_categorie{
-  margin-right:250px;
+margin-right:250px;
 }
 #contenu1{
-float:left;
-margin-left: 0%;
-margin-top: 15%;
-border:2px solid black;
-height: 20%;
+  margin-top: 0%;
+  height: 50%;
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+#contenu10{
+  width: 25%;
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 75%;
+}
+#contenu100{
+margin-top: 0%;
+border: 2px solid black;
+height:13%;
+background-color:gray;
+ }
+#contenu101{
+  margin-top: 0%;
+  border: 2px solid black;
+  height: 60%;
+}
+#contenu102{
+  margin-top: 0%;
+  height: 12%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu103{
+  margin-top: 0%;
+  height: 15%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu20{
+  width: 25%;
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 75%;
+}
+#contenu200{
+  margin-top: 0%;
+  border: 2px solid black;
+  height:13%;
+  background-color:gray;
+}
+#contenu201{
+  margin-top: 0%;
+  border: 2px solid black;
+  height: 60%;
+}
+#contenu202{
+  margin-top: 0%;
+  height: 12%;
+  border: 2px solid black;
+  background-color:gray;
+  }
+  #contenu203{
+    margin-top: 0%;
+    height: 15%;
+    border: 2px solid black;
+    background-color:gray;
+  }
+#contenu30{
+  width: 25%;
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 75%;
+}
+#contenu300{
+  margin-top: 0%;
+  border: 2px solid black;
+  height:13%;
+  background-color:gray;
+   }
+#contenu301{
+  margin-top: 0%;
+  border: 2px solid black;
+  height: 60%;
+}
+#contenu302{
+  margin-top: 0%;
+  height: 12%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu303{
+  margin-top: 0%;
+  height: 15%;
+  border: 2px solid black;
+  background-color:gray;
 }
 #contenu2{
-margin-left:25%;
-margin-top: 15%;
-border:2px solid black;
-height: 20%;
+  height: 50%;
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  margin-top: 0%;
+  justify-content: space-evenly;
 }
-#contenu3{
-float:right;
-margin-top: 15%;
-border:2px solid black;
-margin-left: 26%;
-height: 20%;
+#contenu40{
+  width: 25%;
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 75%;
 }
-
-
+#contenu400{
+  margin-top: 0%;
+  border: 2px solid black;
+  height:13%;
+  background-color:gray;
+}
+#contenu401{
+  margin-top: 0%;
+  border: 2px solid black;
+  height: 60%;
+}
+#contenu402{
+  margin-top: 0%;
+  height: 12%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu403{
+  margin-top: 0%;
+  height: 15%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu50{
+  width: 25%;
+  margin-top: 10%;
+  border: 2px solid black;
+  height: 75%;
+}
+#contenu500{
+  margin-top: 0%;
+  border: 2px solid black;
+  height:13%;
+  background-color:gray;
+}
+#contenu501{
+  margin-top: 0%;
+  border: 2px solid black;
+  height: 60%;
+}
+#contenu502{
+  margin-top: 0%;
+  height: 12%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#contenu503{
+  margin-top: 0%;
+  height: 15%;
+  border: 2px solid black;
+  background-color:gray;
+}
+#bouton_bde{
+  margin-top:4%;
+}
+.input-group{
+  margin-top:-2%;
+  margin-left:25%;
+  width: 50%;
+}
 
 
 
@@ -84,10 +231,7 @@ background:url(../img/boutonnoir2.png) no-repeat;
 
 * {box-sizing: border-box;}
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .topnav {
   overflow: hidden;
@@ -156,3 +300,4 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
