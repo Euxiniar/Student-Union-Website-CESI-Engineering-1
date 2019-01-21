@@ -1,1 +1,10 @@
-body {background-color: coral;}
+body {
+background-image: url(../img/home_background.jpg);
+min-height: 100%;
+}
+
+.front_body {
+    padding-bottom: 30%;
+    /* padding-top:5%;
+    margin-left:10px; */
+}
