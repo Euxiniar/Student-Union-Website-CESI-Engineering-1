@@ -1,35 +1,22 @@
 body{
-  background-color: black;
+  background-color: #211d1d;
 }
 
 div {
   text-align:center;
-  }
-div#bandeau {
-  width:600px;
-  height:50px;
-  background-color:#00CCFF;
   }
 div#menu {
   color:white;
   float:left;
   width:25%;
   height: 1000px;
-  background-color: black;
+  background-color: #211d1d;
   }
 div#contenu {
   margin-left: 25%;
   width:75%;
   height: 1000px;
   background-color:white;
-  }
-div#pied_page {
-  color:white;
-  clear:both;
-  width:100%;
-  padding:100px;
-  margin-bottom:0%;
-  background-color: black;
   }
 #text_categorie{
 margin-right:250px;
@@ -69,7 +56,7 @@ background-color:gray;
   margin-top: 0%;
   height: 15%;
   border: 2px solid black;
-  background-color:gray;
+  background-color: #211d1d;
 }
 #contenu20{
   width: 25%;
@@ -98,7 +85,7 @@ background-color:gray;
     margin-top: 0%;
     height: 15%;
     border: 2px solid black;
-    background-color:gray;
+    background-color: #211d1d;
   }
 #contenu30{
   width: 25%;
@@ -127,7 +114,7 @@ background-color:gray;
   margin-top: 0%;
   height: 15%;
   border: 2px solid black;
-  background-color:gray;
+  background-color: #211d1d;
 }
 #contenu2{
   height: 50%;
@@ -164,7 +151,7 @@ background-color:gray;
   margin-top: 0%;
   height: 15%;
   border: 2px solid black;
-  background-color:gray;
+  background-color: #211d1d;
 }
 #contenu50{
   width: 25%;
@@ -193,7 +180,7 @@ background-color:gray;
   margin-top: 0%;
   height: 15%;
   border: 2px solid black;
-  background-color:gray;
+  background-color: #211d1d;
 }
 #bouton_bde{
   margin-top:4%;
@@ -302,3 +289,56 @@ background:url(../img/boutonnoir2.png) no-repeat;
   }
 }
 
+.container-3{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+ 
+.container-3 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.container-3 input#search::-webkit-input-placeholder {
+  color: #65737e;
+}
+
+.container-3 input#search:-moz-placeholder { /* Firefox 18- */
+  color: #65737e;  
+}
+
+.container-3 input#search::-moz-placeholder {  /* Firefox 19+ */
+  color: #65737e;  
+}
+
+.container-3 input#search:-ms-input-placeholder {  
+  color: #65737e;  
+}
+
+
+.container-3 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+ 
+   -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}

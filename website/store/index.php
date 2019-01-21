@@ -9,11 +9,6 @@
  
  <body>
     <?php include("../common/header.php") ?>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="../assets/css/store.css" type="text/css">
-    <link rel="stylesheet" href="../assets/js/store.js">
 
 
     <div id="menu">Menu
@@ -316,10 +311,12 @@
 
 
     </div>
-
-
-    <div id="pied_page">Ceci est le pied de page</div>
-
+    <?php include("../common/footer.php") ?>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../assets/css/store.css" type="text/css">
+    <link rel="stylesheet" href="../assets/js/store.js">
 
 </body>
 
