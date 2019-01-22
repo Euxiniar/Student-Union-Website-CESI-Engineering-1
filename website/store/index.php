@@ -31,20 +31,37 @@
         </br>
 
          </br>
-
+        <div id="text_filtre">
         <p>Filtre</p>
+        </div>
 
         </br>
 
         </br>
 
         <p id="text_categorie">Catégorie</p>
-
-        <input type="checkbox" name="categorie" id="case" /> <label for="case" >Vetements</label>
-
-        <input type="checkbox" name="categorie" id="case" /> <label for="case" >goodies</label>
-
-        <input type="checkbox" name="categorie" id="case" /> <label for="case" >stickers</label>
+                 <div class="control-group">
+                    <label class="control control-radio">
+                            stickers
+                            <input type="radio" name="radio" checked="checked">
+                            <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                            goodies
+                            <input type="radio" name="radio">
+                            <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                            Vetement homme 
+                            <input type="radio" name="radio" >
+                            <div class="control_indicator"></div>
+                    </label>
+                    <label class="control control-radio">
+                            Vetement femme
+                            <input type="radio" name="radio">
+                            <div class="control_indicator"></div>
+                    </label>
+                </div>
 
 
 
@@ -55,7 +72,7 @@
 
         <div class="bouton">
             <p>
-                <a href="#">Ajouter un produit</a>
+                <a href="addproduit.php">Ajouter un produit</a>
             </p>
         </div>
 
@@ -95,7 +112,7 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="1" max="100">
+                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -140,7 +157,7 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="1" max="100">
+                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -185,7 +202,7 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="1" max="100">
+                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -235,7 +252,7 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="1" max="100">
+                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -277,7 +294,7 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="1" max="100">
+                            <input type="number" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
                                     <span class="glyphicon glyphicon-plus"></span>

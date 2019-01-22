@@ -20,6 +20,10 @@ div#contenu {
   }
 #text_categorie{
 margin-right:250px;
+font-size:x-large;
+}
+#text_filtre{
+font-size:xx-large;
 }
 #contenu1{
   margin-top: 0%;
@@ -289,56 +293,68 @@ background:url(../img/boutonnoir2.png) no-repeat;
   }
 }
 
-.container-3{
-  width: 300px;
-  vertical-align: middle;
-  white-space: nowrap;
+.control {
+  font-family: arial;
+  display: block;
   position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  padding-top: 5px;
+  cursor: pointer;
+  font-size: 17px;
 }
- 
-.container-3 input#search{
-  width: 300px;
-  height: 50px;
-  background: #2b303b;
-  border: none;
-  font-size: 10pt;
-  float: left;
-  color: #262626;
-  padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.container-3 input#search::-webkit-input-placeholder {
-  color: #65737e;
-}
-
-.container-3 input#search:-moz-placeholder { /* Firefox 18- */
-  color: #65737e;  
-}
-
-.container-3 input#search::-moz-placeholder {  /* Firefox 19+ */
-  color: #65737e;  
-}
-
-.container-3 input#search:-ms-input-placeholder {  
-  color: #65737e;  
-}
-
-
-.container-3 .icon{
+  .control input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+  }
+.control_indicator {
   position: absolute;
-  top: 50%;
-  margin-left: 17px;
-  margin-top: 17px;
-  z-index: 1;
-  color: #4f5b66;
- 
-   -webkit-transition: all .55s ease;
-  -moz-transition: all .55s ease;
-  -ms-transition: all .55s ease;
-  -o-transition: all .55s ease;
-  transition: all .55s ease;
+  top: 4px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border: 0px solid #000000;
+}
+.control-radio .control_indicator {
+  border-radius: 50%;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #3e87c7;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-radio .control_indicator:after {
+  left: 7px;
+  top: 8px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+  background: #7b7b7b;
 }
