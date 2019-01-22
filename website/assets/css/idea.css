@@ -25,10 +25,7 @@
     text-align: center;
     font-weight : 700;
     line-height: 90%;
-    vertical-align: center;
-    display:inline-flex;
-    justify-content: center
-;
+    vertical-align:middle;
 }
 
 .WhiteText {
@@ -36,13 +33,130 @@
 }
 
 .Bandeau {
-    border-radius: 5px 5px 5px 5px;
+
     background: #000000;
     opacity: 0.75;
     color : white;
     line-height: 90%;
     margin-bottom: 5px;
     justify-content: center;
-    min-height: 25px;
+    min-height: 30px;
     height: auto;
 }
+
+.ButtonIdea {
+    -moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+    -webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+    box-shadow:inset 0px -3px 7px 0px #29bbff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+    background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+    background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+    background-color:#2dabf9;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #0b0e07;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:15px;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+}
+.ButtonIdea:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+    background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+    background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+    background-color:#0688fa;
+}
+.ButtonIdea:active {
+    position:relative;
+    top:1px;
+}
+
+hr.separator {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    width: 70%;
+}
+hr.separator:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.IdeaBox {
+    margin: 0 auto;
+    width: 70%;
+    background: #e0edf0;
+}
+
+.body {
+    background: #cbcbcb;
+}
+
+t2 {
+    font-weight : 900;
+    font-size: 25px;
+}
+
+t3 {
+    font-weight : 700;
+    font-size: 18px;
+}
+
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container * {
+    /*border: 1px solid red;*/
+    position: relative;
+}
+
+.grid-container *:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 10% 10% 15% 20% 5%;
+    grid-template-areas: "Photo Titre Titre" "Photo date date" "Photo recurrence recurrence" "selectFolder cout lieu" "Description Description Description"  ". . submit";
+}
+
+.Titre { grid-area: Titre; }
+
+.date { grid-area: date; }
+
+.recurrence { grid-area: recurrence; }
+
+.cout { grid-area: cout; }
+
+.lieu { grid-area: lieu; }
+
+.Photo { grid-area: Photo; }
+
+.Description { grid-area: Description; }
+
+.selectFolder { grid-area: selectFolder; }
+
+.submit { grid-area: submit; }
