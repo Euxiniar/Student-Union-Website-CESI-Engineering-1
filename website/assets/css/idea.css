@@ -4,7 +4,7 @@
     -webkit-border-radius: 5px 5px 5px 5px;
     border: 1px solid #a9a8e3;
     background: #dfe4ff;
-    width: 50px;
+    width: 100%;
     line-height: 90%;
     margin-bottom: 5px;
 }
@@ -105,8 +105,11 @@ hr.separator:before {
 
 .IdeaBox {
     margin: 0 auto;
+    margin-bottom: 45px;
+    padding-top: 10px;
     width: 70%;
     background: #e0edf0;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .body {
@@ -160,3 +163,93 @@ html, body, .grid-container { height: 100%; margin: 0; }
 .selectFolder { grid-area: selectFolder; }
 
 .submit { grid-area: submit; }
+
+
+.buttonValid {
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(180deg,#ce8 0%,#592 100%);
+  border-radius: 100px;
+  border: 1px solid #8c4;
+  border-width: 1px 1px 1px 1px;
+  padding: 7px 40px 9px 15px;
+  box-shadow: inset 0px 1px 0px rgba(100%,100%,100%,0.6),0px 1px 2px rgba(0%,0%,0%,0.5);
+  color: #372;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.5)
+}
+.buttonValid > div {
+    color: #372;
+    font-size: 10px;
+    font-family: transcript, serif;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+    margin: -3px 0px 0px 0px
+}
+.buttonValid > i {
+    color: #372;
+    font-size: 1.1em;
+    background: #fff;
+    border-radius: 100px;
+    border: 3px solid #371;
+    padding: 7px 7px 7px 7px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px
+}
+
+
+.buttonValid:hover{
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(180deg,#ce8 97.00308448590972%,#592 100%);
+  border-radius: 100px;
+  border: 1px solid #8c4;
+  border-width: 1px 1px 1px 1px;
+  padding: 7px 40px 9px 15px;
+  box-shadow: inset 0px 1px 0px rgba(100%,100%,100%,0.6),0px 1px 2px rgba(0%,0%,0%,0.5);
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px 1px 0px rgba(100%,100%,100%,0.5)
+}
+
+.ButtonsGridIdea{
+    display: grid;
+    grid-template-columns: 0.25fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nbrVote" "VoteButton" "BDECESIButtons" "ValidButton";
+    text-align: center;
+    justify-content: center;
+}
+
+.nbrVote {grid-area: nbrVote;}
+
+.VoteButton { grid-area: VoteButton; }
+
+.ValidButton { grid-area: ValidButton; }
+
+.BDECESIButtons {
+    grid-area: BDECESIButtons;
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.BigButton {
+    width:100%;
+}
