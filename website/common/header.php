@@ -8,16 +8,16 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #211D1D;">
             <div class="mr-auto">
-                <a href="#"><img src="../assets/img/logo.png" alt="Logo" height="42" width="42"></a>
-                <a class="navbar-brand align-middle" href="#">Site du BDE<br/>Campus d'Orléans</a>
+                <a href="../disconnected/home.php"><img src="../assets/img/logo.png" alt="Logo" height="42" width="42"></a>
+                <a class="navbar-brand align-middle" href="../disconnected/home.php">Site du BDE<br/>Campus d'Orléans</a>
             </div>
             <div class="ml-auto align-middle">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Connexion</a>
+                        <a class="nav-link" href="../disconnected/connexion.php#tologin">Connexion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inscription</a>
+                        <a class="nav-link" href="../disconnected/connexion.php#toregister">Inscription</a>
                     </li>
                     <?php 
                         if($PAGE=="cart"){
