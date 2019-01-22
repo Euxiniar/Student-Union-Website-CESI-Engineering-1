@@ -18,3 +18,7 @@ border: 2px solid black;
   .Annuler_produit { grid-area: Annuler_produit; }
   
   .Ajouter_produit { grid-area: Ajouter_produit; }
+
+ #a{
+    color:#fff !important;
+  }

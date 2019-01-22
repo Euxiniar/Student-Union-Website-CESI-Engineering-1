@@ -14,7 +14,7 @@
 
 
   <div class="Photo_couverture">
-  <input id="filebutton" name="filebutton" class="input-file" type="file">
+  <input id="filebutton" name="filebutton" class="input-file" type="file" accept="image/png, image/jpeg">>
 
 
   </div>
@@ -59,7 +59,9 @@
 
   <div class="Annuler_produit" id="bouton_produit" >
 
-        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-danger">
+                <a id="a"href="index.php">Annuler</a>
+            </button>
 
   </div>
 
@@ -67,7 +69,7 @@
 
   <div class="Ajouter_produit" id="bouton_produit">
 
-        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-success">Ajouter</button>
 
   </div>
 </div>

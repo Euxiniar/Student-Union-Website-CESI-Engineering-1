@@ -43,22 +43,22 @@
                  <div class="control-group">
                     <label class="control control-radio">
                             stickers
-                            <input type="radio" name="radio" checked="checked">
+                            <input type="checkbox" name="radio1" checked="checked">
                             <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">
                             goodies
-                            <input type="radio" name="radio">
+                            <input type="checkbox" name="radio2">
                             <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">
                             Vetement homme 
-                            <input type="radio" name="radio" >
+                            <input type="checkbox" name="radio3" >
                             <div class="control_indicator"></div>
                     </label>
                     <label class="control control-radio">
                             Vetement femme
-                            <input type="radio" name="radio">
+                            <input type="checkbox" name="radio4">
                             <div class="control_indicator"></div>
                     </label>
                 </div>
@@ -88,12 +88,12 @@
 
             <div id="contenu10">
 
-                <div id="contenu100">
+                <div class="contenu100">
                     <p>je suis le titre de l'article</p>
                     </br>
                 </div>
 
-                <div id="contenu101">
+                <div class="contenu101">
                 <img
                     src="../assets/img/t-shirt.jpg" 
                     alt="t-shirt gris du bde"
@@ -103,7 +103,7 @@
                      </br>
                 </div>
 
-                <div id="contenu102">
+                <div class="contenu102">
                          <p>
                         </p>
                             <div class="input-group">
@@ -122,7 +122,7 @@
                         <p></p>
                     </br>
                 </div>
-                <div id="contenu103">
+                <div class="contenu103">
                     <div id="bouton_bde">
                          <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
                         <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
@@ -133,12 +133,12 @@
 
             <div id="contenu20">
 
-                <div id="contenu200">
+                <div class="contenu100">
                     <p>je suis le titre de l'article2</p>
                     </br>
                 </div> 
 
-                <div id="contenu201">
+                <div class="contenu101">
                     <img
                         src="../assets/img/t-shirt.jpg" 
                         alt="t-shirt gris du bde"
@@ -148,7 +148,7 @@
                      </br>
                 </div>
 
-                <div id="contenu202">
+                <div class="contenu102">
                         <p>
                         </p>
                             <div class="input-group">
@@ -167,7 +167,7 @@
                         <p></p>
                     </br>
                 </div>
-                <div id="contenu203">
+                <div class="contenu103">
                     <div id="bouton_bde">
                          <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
                         <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
@@ -178,12 +178,12 @@
 
             <div id="contenu30">
 
-                <div id="contenu300">
+                <div class="contenu100">
                     <p>je suis le titre de l'article3</p>
                     </br>
                 </div>
 
-                <div id="contenu301">
+                <div class="contenu101">
                     <img
                         src="../assets/img/t-shirt.jpg" 
                         alt="t-shirt gris du bde"
@@ -193,7 +193,7 @@
                     </br>
                 </div>
 
-                <div id="contenu302">
+                <div class="contenu102">
                          <p>
                         </p>
                             <div class="input-group">
@@ -212,7 +212,7 @@
                         <p></p>
                     </br>
                 </div>
-                <div id="contenu303">
+                <div class="contenu103">
                     <div id="bouton_bde">
                          <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
                         <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
@@ -227,12 +227,12 @@
 
             <div id="contenu40">
 
-                <div id="contenu400">
+                <div class="contenu100">
                     <p>je suis le titre de l'article4</p>
                     </br>
                 </div>
 
-                <div id="contenu401">
+                <div class="contenu101">
                     <img
                         src="../assets/img/t-shirt.jpg" 
                         alt="t-shirt gris du bde"
@@ -242,7 +242,7 @@
                     </br>   
                 </div>
 
-                <div id="contenu402">
+                <div class="contenu102">
                 <p>
                 <p>
                         </p>
@@ -262,7 +262,7 @@
                         <p></p>
                     </br>
                 </div>
-                <div id="contenu403">
+                <div class="contenu103">
                     <div id="bouton_bde">
                          <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
                         <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
@@ -272,11 +272,11 @@
             </div>
 
             <div id="contenu50">
-                <div id="contenu500">
+                <div class="contenu100">
                      <p>je suis le titre de l'article5</p>
                     </br>
                 </div>
-                <div id="contenu501">
+                <div class="contenu101">
                     <img
                         src="../assets/img/t-shirt.jpg" 
                         alt="t-shirt gris du bde"
@@ -285,7 +285,7 @@
                     />
                      </br>
                 </div>
-                <div id="contenu502">
+                <div class="contenu102">
                         <p>
                         </p>
                             <div class="input-group">
@@ -304,7 +304,7 @@
                         <p></p>
                      </br>
                 </div>
-                <div id="contenu503">
+                <div class="contenu103">
                     <div id="bouton_bde">
                          <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
                         <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
