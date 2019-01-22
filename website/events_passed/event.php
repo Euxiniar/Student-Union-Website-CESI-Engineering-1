@@ -9,7 +9,6 @@
       <?php $PAGE = "home" ?>
     </head>
     <body>
-      <?php include("../common/header.php") ?>
       <div class="py-5" style="">
       <div class="container">
         <div class="row">
@@ -20,7 +19,11 @@
                 <p class="text-justify mb-0">01/01/01 08h00 – Lundi 01 Janvier 2019</p>
                 
                 <p class="text-justify d-inline-block mb-0"><i class="fas fa-map-marker-alt pr-1" style="color:blue"></i></i>Campus CESI Orléans</p>
-                <p class="text-justify mb-0">666 Participants</p>
+                <p class="text-justify">666 Participants</p>
+                <div class="col-md-12 d-inline-flex">
+                  <p class="text-justify pr-1">Etat :</p>
+                  <p class="text-justify mr-2">Public / Privé</p>
+                </div>
               </div>
             </div>
           </div>
@@ -35,9 +38,9 @@
           </div>
         </div>
         <div class="container">
-          <div class="row vdivide">
-            <div class="col-md-12 d-inline-flex vdivide">
-              <p class="text-monospace pr-1" contenteditable="true">66</p>
+          <div class="row">
+            <div class="col-md-12 d-inline-flex">
+              <p class="text-monospace pr-1">66</p>
               <p class="text-monospace mr-2">Likes</p>
               <p class="text-monospace pr-1">62</p>
               <p class="text-monospace">Commentaires</p>
@@ -46,6 +49,5 @@
         </div>
       </div>
       </div>
-  <?php include("../common/footer.php") ?>
     </body>
 </html>
