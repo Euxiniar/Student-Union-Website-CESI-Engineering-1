@@ -30,7 +30,8 @@
           <div class="col-md-6"> 
             <a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
             <a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>
-            <a class="btn btn-primary" href="#">Télécharger la liste des inscrits</a></div>
+            <a class="btn btn-primary" href="#">Télécharger la liste des inscrits</a>
+          </div>
         </div>
         <div class="row">
           <div class="col-md-12 p-0" style="">
