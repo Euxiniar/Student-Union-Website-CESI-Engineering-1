@@ -58,8 +58,8 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-12">
-                <p class="font-weight-bold">Description :</p>
+              <div class="col-md-12 mt-2">
+                <p class="font-weight-bold mb-0">Description :</p>
                 <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?>
               </div>
               <div class="col-md-12 d-inline-flex">

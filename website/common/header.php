@@ -3,16 +3,28 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>		
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="../assets/css/header.css">
+        <?php if(!isset($PAGE)){
+            $PAGE="default";
+        }?>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #211D1D;">
             <div class="mr-auto">
-                <a href="../disconnected/home.php"><img src="../assets/img/logo.png" alt="Logo" height="42" width="42"></a>
-                <a class="navbar-brand align-middle" href="../disconnected/home.php">Site du BDE<br/>Campus d'Orléans</a>
+                <a href="
+                    <?php 
+                        if(isset($_SESSION['id'])){
+                            echo '../connected/home.php';
+                        }
+                        else{ 
+                            echo '../disconnected/home.php'; 
+                        }
+                        ?>">
+                    <img src="../assets/img/logo.png" alt="Logo" height="42" width="42">
+                    <div class="navbar-brand align-middle p-0">Site du BDE<br/>Campus d'Orléans</div>
+                </a>
             </div>
             <div class="ml-auto align-middle">
                 <ul class="navbar-nav ml-auto">
@@ -26,22 +38,31 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../disconnected/connexion.php#tologin">Connexion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../disconnected/connexion.php#toregister">Inscription</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']; ?>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../events_passed/">Déconnexion</a>
-                        </div>
+                        <a class="nav-link" href="../idea_box/">Boîte à Idées</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../store/"><i class="fas fa-tshirt pr-1"></i>Boutique</a>
                     </li>
+                    <?php 
+                        if(isset($_SESSION['id'])){
+                            echo '<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
+                                    .$_SESSION['f_name'].' '.$_SESSION['l_name'].
+                                '</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="../events_passed/">Déconnexion</a>
+                                </div>
+                            </li>';
+                        } else {
+                            echo '
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../disconnected/connexion.php#tologin">Connexion</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../disconnected/connexion.php#toregister">Inscription</a>
+                                </li>';
+                        }
+                    ?>
                     <?php 
                         if($PAGE=="cart"){
                             echo '

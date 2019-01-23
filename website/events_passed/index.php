@@ -12,7 +12,8 @@
 
 	<body>
 		<?php include("../common/header.php") ?>
-		
+        <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
+
 		<?php
         include("../scripts/setConnexionLocalBDD.php"); 
         $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
