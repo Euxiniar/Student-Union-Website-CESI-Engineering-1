@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <!--####################################
  Auteur : Anatole COUASNON
@@ -12,7 +11,6 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="../assets/css/styleConnexion.css" />
     <link rel="stylesheet" type="text/css" href="../assets/css/animate-custom.css" />
-    <link rel="stylesheet" href="../assets/vendors/Bootstrap/css/bootstrap.min.css">
 
     <title>Connexion - Site BDE - Campus Orleans</title>
 </head>

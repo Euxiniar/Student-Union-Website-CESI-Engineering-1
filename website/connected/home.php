@@ -3,13 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../assets/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../assets/vendors/Bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../assets/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/vendors/Bootstrap/css/bootstrap.min.css"> -->
 
     <title>BDE CESI Exia</title>
-    <?php $PAGE = "home";
-    session_start();
-    ?>
+    <?php $PAGE = "home"; ?>
 </head>
 
 <body>
