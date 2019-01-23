@@ -12,7 +12,12 @@
 
 </head>
 <body>
-
+<?php
+    include("../scripts/setConnexionLocalBDD.php");
+    $user = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
+$datasEvent = $user->fetch();
+    $user->closeCursor();
+?>
 
 <div class = "IdeaBox">
     <div class="container-fluid ">
@@ -21,15 +26,23 @@
                 <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
             </div>
             <div class="col-md-8">
-                <dl>
-                    <t2>
-                        Titre de la proposition
-                    </t2>
-                    <dd>
-                        Créateur de la proposition
-                    </dd>
 
-                </dl>
+                <t2>
+                   <?php echo $datasEvent['Titre'] ?>
+                </t2>
+                <p>
+                    Créateur de la proposition
+                </p>
+                <p>
+                    <?php echo 'Cout de participation : ' . $datasEvent['Cout'] . '€' ?>
+                </p>
+                <p>
+                </p>
+                <p>
+                    État : <span>Public / Privé</span>
+                </p>
+
+
             </div>
             <div class="col-md-2">
             </div>
@@ -40,24 +53,40 @@
                     <dt>
                         Description
                     </dt>
-                    <dd>
-                        Lorem ipsum dolor sit amet, pro id timeam posidonium conclusionemque. Partem viderer persecuti ne est. Alterum similique id eos, no qui melius vidisse albucius. Mnesarchum consetetur no qui, mea elit habeo bonorum te, mazim qualisque scriptorem cum ex. Ex fastidii incorrupte sed, per ea oratio iisque.
-
-                        Labitur luptatum antiopam in vix, salutatus philosophia est ea, no nec malorum reprehendunt. Usu ex putent numquam patrioque. Vim erat habemus adolescens ei, eu cum senserit principes, vis ad feugiat postulant. Sed erat vidisse dolorum ne, ea vero possim sed, agam omittam ius ne. Democritum theophrastus mei cu, homero impedit oporteat qui ad. Essent fastidii delicatissimi est id, sea wisi placerat democritum ex, vero adipiscing usu ex.
-
-                    </dd>
+                    <p>
+                        <?php echo $datasEvent['Description'] ?>
+                    </p>
 
                 </dl>
             </div>
+
             <div class="col-md-4">
-                <div class = "VoteBox">
-                    <p class = "Number">89</p>
-                    <p class = "SmallText">votes</p>
+                <div class="ButtonsGridIdea">
+                    <div class="nbrVote">
+                        <div class="VoteBox">
+                            <p class = "Number"><?php echo $datasEvent['Nbr_votes'] ?></p>
+                            <p class = "SmallText">votes</p>
+                        </div>
+                    </div>
+                    <div class="VoteButton">
+                        <button type="button" class="BigButton" href = "home.php">
+                            Vote
+                        </button>
+                    </div>
+                    <div class="BDECESIButtons">
+                        <a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
+                        <a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>
+                    </div>
+                    <div class="ValidButton">
+                        <button type="button" class="buttonValid" href = "home.php">
+                            Valider
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </div>
                 </div>
-                <button type="button" class="classicalButton" href = "home.php">
-                    Vote
-                </button>
             </div>
+
+
         </div>
     </div>
 </div>
