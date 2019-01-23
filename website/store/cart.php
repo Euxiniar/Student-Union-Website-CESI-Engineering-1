@@ -13,7 +13,6 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="../assets/css/reset.css" rel="stylesheet">
-
     <?php $PAGE="cart" ; ?>
 
 </head>
@@ -22,30 +21,29 @@
     <!-- Add the header -->
     <?php include( "../common/header.php") ?>
 
-    <div id="main-cart" class="container-fluid">
-        
-            
-            <?php
- include("../scripts/setConnexionLocalBDD.php");
- $itemsInOrder = $local_bdd->query("call orleans_bde.spl_order_by_user_and_order_status({$_SESSION['id']});");
- if (!empty($cart_list)) { 
-     echo "<h1>Rien !</h1>";
- } else {
-    while($datasEvent = $itemsInOrder->fetch()){
-        include_once("./cart-top.php");
-        include("./cart-item.php");
-        include_once("./cart-total.php");
+<?php
+
+if (isset($_SESSION['id']))
+{
+    include("../scripts/setConnexionLocalBDD.php");
+    $itemsInOrder = $local_bdd->query("call orleans_bde.spl_order_by_user_and_order_status({$_SESSION['id']});");
+    if (!empty($cart_list)) { 
+        echo "<h1>Rien !</h1>";
+    } else {
+       while($datasEvent = $itemsInOrder->fetch()){
+           include_once("./cart-top.php");
+           include("./cart-item.php");
+           include_once("./cart-total.php");
+       }
+   
+       $itemsInOrder->closeCursor();
     }
-
-    $itemsInOrder->closeCursor();
- }
-                   
+                       
+} else {
+    echo "<h1> Vous devez être connectés. </h1>";
+}
 ?>
-            </tbody>
 
-          
-        </table>
-    </div>
 
 
     <style>

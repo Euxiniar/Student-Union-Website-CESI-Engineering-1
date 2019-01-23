@@ -1,3 +1,5 @@
+<div id="main-cart" class="container-fluid">
+
 <h2 id="cart-title">Récapitulatif de commande</h2>
 
 <table id="cart" class="table table-hover">
