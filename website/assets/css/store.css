@@ -2,9 +2,14 @@ body{
   background-color: #211d1d;
 }
 
+
+
 div {
   text-align:center;
   }
+
+
+
 div#menu {
   color:white;
   float:left;
@@ -12,64 +17,90 @@ div#menu {
   height: 1000px;
   background-color: #211d1d;
   }
+  .bouton2 {
+    padding:6px 0 6px 0;
+    font:bold 13px Arial;
+    background:#428bca;
+    color:#fff;
+    border-radius:2px;
+    width:50%;
+    border:none;
+  }
+  #a {
+    color: #fff !important;
+}
+#p{
+  color:#428bca;
+}
+
+
 div#contenu {
   margin-left: 25%;
   width:75%;
-  height: 1000px;
+  height: 100%;
   background-color:white;
+
   }
+
+
+
+
 #text_categorie{
 margin-right:250px;
 font-size:x-large;
 }
+
+
+
+
+
 #text_filtre{
 font-size:xx-large;
 }
+
+
+
+
+
+
 #contenu1{
   margin-top: 0%;
-  height: 50%;
+  height: auto;
   width: 100%;
   border: 2px solid black;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
-#contenu10{
-  width: 25%;
-  margin-top: 10%;
-  border: 2px solid black;
-  height: 75%;
-}
-#contenu20{
-  width: 25%;
-  margin-top: 10%;
-  border: 2px solid black;
-  height: 75%;
-}
-#contenu30{
-  width: 25%;
-  margin-top: 10%;
-  border: 2px solid black;
-  height: 75%;
-}
 #contenu2{
-  height: 50%;
+  margin-top: 0%;
+  height:auto;
   width: 100%;
   border: 2px solid black;
   display: flex;
-  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-flow: row wrap;
   justify-content: space-evenly;
 }
-#contenu40{
-  width: 25%;
-  margin-top: 10%;
+.contenu10{
+  width: 284px;
+  margin-top: 8%;
   border: 2px solid black;
-  height: 75%;
+  flex-wrap: wrap;
+  height: 372px;
 }
-#contenu50{
-  width: 25%;
+.contenu20{
+   width: 284px;
   margin-top: 10%;
   border: 2px solid black;
-  height: 75%;
+  flex-wrap: wrap;
+  height: 372px;
+  flex-wrap: wrap;
 }
 .contenu100{
   margin-top: 0%;
@@ -95,16 +126,23 @@ font-size:xx-large;
     background-color: #211d1d;
   }
 
+
+
+
   
 #bouton_bde{
   margin-top:4%;
 }
-.input-group{
-  margin-top:-2%;
-  margin-left:25%;
-  width: 52%;
 
+
+
+
+.input-group{
+  margin-top: -2%;
+  margin-left: 24%;
+  width: 53%;
 }
+
 
 
 
