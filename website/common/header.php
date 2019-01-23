@@ -6,12 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="../assets/css/header.css">
+        <?php if(!isset($PAGE)){
+            $PAGE="default";
+        }?>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #211D1D;">
             <div class="mr-auto">
-                <a href="../disconnected/home.php"><img src="../assets/img/logo.png" alt="Logo" height="42" width="42"></a>
-                <a class="navbar-brand align-middle" href="../disconnected/home.php">Site du BDE<br/>Campus d'Orléans</a>
+                <a href="
+                    <?php 
+                        if(isset($_SESSION['id'])){
+                            echo '../connected/home.php';
+                        }
+                        else{ 
+                            echo '../disconnected/home.php'; 
+                        }
+                        ?>">
+                    <img src="../assets/img/logo.png" alt="Logo" height="42" width="42">
+                    <div class="navbar-brand align-middle p-0">Site du BDE<br/>Campus d'Orléans</div>
+                </a>
             </div>
             <div class="ml-auto align-middle">
                 <ul class="navbar-nav ml-auto">
