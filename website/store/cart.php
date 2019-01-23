@@ -27,8 +27,9 @@ if (isset($_SESSION['id']))
 {
     include("../scripts/setConnexionLocalBDD.php");
     $itemsInOrder = $local_bdd->query("call orleans_bde.spl_order_by_user_and_order_status({$_SESSION['id']});");
-    if (!empty($cart_list)) { 
-        echo "<h1>Rien !</h1>";
+    if (!empty($itemsInOrder)) { 
+        echo "<h1>Votre panier est vide.</h1>";
+        echo "<p>Ajoutez des produits !</p>";
     } else {
        while($datasEvent = $itemsInOrder->fetch()){
            include_once("./cart-top.php");
