@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="global_bde" uuid="0835ad2f-3e82-4835-86fd-d7a9eaad1961">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="MariaDB - global_bde@159.69.208.54" uuid="3efc5296-f499-44c7-aeda-c9b49b11287e">
+      <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://global.bde.studisys.net:3306/global_bde</jdbc-url>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://159.69.208.54:40001/global_bde</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
@@ -15,11 +15,16 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="orleans_bde" uuid="c2009da1-f859-4eb1-a29a-bb1e9d5b81e2">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="User Data Source -" uuid="9b0c6e4a-d0ab-4205-afa0-db0b5b6ea43b">
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://orleans.bde.studisys.net:3306/orleans_bde</jdbc-url>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>java.sql.Driver</jdbc-driver>
+    </data-source>
+    <data-source source="LOCAL" name="orleans_bde@159.69.208.54" uuid="795fe57d-c093-47b5-bbf8-704a9e42b4e3">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://159.69.208.54:40001/orleans_bde</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

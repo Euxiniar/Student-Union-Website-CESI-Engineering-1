@@ -20,7 +20,7 @@
 			<div class="col-md-12">
 			<h1 class="display-3 text-white text-center">Bienvenue sur le site du BDE</h1>
 			<div class="row">
-				<div class="col-md-12 text-center"><a class="btn btn-primary mr-3" href="#" >Connexion</a><a class="btn btn-primary" href="#">Inscription</a></div>
+				<div class="col-md-12 text-center"><a class="btn btn-primary mr-3" href="../disconnected/connexion.php#tologin" >Connexion</a><a class="btn btn-primary" href="../disconnected/connexion.php#toregister">Inscription</a></div>
 			</div>
 			</div>
 		</div>
