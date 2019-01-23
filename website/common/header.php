@@ -50,7 +50,7 @@
                                     .$_SESSION['f_name'].' '.$_SESSION['l_name'].
                                 '</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="../events_passed/">Déconnexion</a>
+                                    <a class="dropdown-item" href="../scripts/deconnexion.php">Déconnexion</a>
                                 </div>
                             </li>';
                         } else {
