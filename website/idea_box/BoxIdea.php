@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" width="160">
-                    </div> <!--Image-->
+                    </div><!--Image-->
                     <div class="col-md-9">
                         <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
                         <span class = "font-weight-bold">Créateur : </span><?php echo $datasEvent['Id_utilisateur'] ?> </br>
@@ -30,14 +30,13 @@
                     </div> <!--Titre et données-->
                 </div>
                 <div class="row">
-                    <div class="col-md-12"> <!--Description-->
+                    <div class="col-md-12">
                         <p class = "font-weight-bold">Description</p>
                         <?php echo $datasEvent['Description'] ?>
-
-                    </div>
+                    </div><!--Description-->
                 </div>
             </div>
-            <div class="col-md-3 center">
+            <div class="col-md-3 m-auto">
                 <div class="ButtonsGridIdea">
                     <div class="nbrVote">
                         <div class="VoteBox">

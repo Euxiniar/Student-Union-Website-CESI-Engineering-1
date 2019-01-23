@@ -8,7 +8,6 @@ try {
 catch(Exception $e)
 {
     // En cas d'erreur, on affiche un message et on arrête tout
-    echo '<li class="alert" >$e->getMessage()</li>';
     die('Erreur : '.$e->getMessage());
 }
 ?>
