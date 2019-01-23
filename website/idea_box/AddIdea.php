@@ -15,6 +15,7 @@
 $PAGE = 'AddIdea';
 include("../common/header.php"); ?>
 
+
 <div class = "IdeaBox p-2 pr-4 mt-4">
     <form class="container-fluid" method="post"  autocomplete="on" enctype="multipart/form-data">
         <div class="row">
