@@ -10,21 +10,38 @@
       <?php $PAGE = "home" ?>
     </head>
     <body>
+        <?php 
+            include("../scripts/setConnexionLocalBDD.php"); 
+            $query = 'call orleans_bde.sps_event_passed('.$id_event.');';
+            $events = $local_bdd->query($query);
+            $datasEvent = $events->fetch();
+            $events->closeCursor();
+            $query = 'call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');';
+            $user = $local_bdd->query($query);
+            $datasUser = $user->fetch();
+            $user->closeCursor();
+        ?>
       <div class="py-5" style="">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 p-0 col-12 order-1 order-md-0" style=""><img class="img-fluid d-block d-inline-flex pt-2 pr-2" src="https://static.pingendo.com/img-placeholder-1.svg" width="80">
-            <div class="row d-inline-flex">
-              <div class="col-md-12">
-                <h1 class="display-5 mb-0">Titre de l’évènement</h1>
-                <p class="text-justify mb-0">01/01/01 08h00 – Lundi 01 Janvier 2019</p>
-                
-                <p class="text-justify d-inline-block mb-0"><i class="fas fa-map-marker-alt pr-1" style="color:blue"></i></i>Campus CESI Orléans</p>
-                <p class="text-justify">666 Participants</p>
+          <div class="col-md-6 p-0 mb-0 col-12 order-1 order-md-0" style=""><img class="img-fluid d-block d-inline-flex pt-2 pr-2" src="https://static.pingendo.com/img-placeholder-1.svg" width="80">
+            <div class="row d-inline-flex mb-0">
+              <div class="col-md-12 mb-0">
+                <h1 class="display-5 mb-0"><?php echo $datasEvent['Titre'];?></h1>
+                <p class="text-justify d-inline-block mb-0">
+                  <p class="text-justify d-inline-block mb-0"><?php echo $datasEvent['Heure'];?></p>
+                  <p class="text-justify d-inline-block mb-0 ml-1 mr-1">-</p>
+                  <p class="text-justify d-inline-block mb-0"><?php echo $datasEvent['Date_evenement'];?></p>
+                </p>
+                <p class="text-justify d-inline-block mb-0">
+                  <i class="fas fa-map-marker-alt pr-1" style="color:blue"></i>
+                    <?php echo $datasEvent['Lieu'];?>
+                  </p>
+                <p class="text-justify"><?php echo $datasEvent['Nbr_participants'].' Participants'; ?></p>
                 <!-- TODO Afficher cette partie si membre du BDE -->
-                <div class="col-md-12 d-inline-flex">
+                <div class="col-md-12 d-inline-flex p-0 m-0">
                   <p class="text-justify pr-1">Etat :</p>
-                  <p class="text-justify mr-2">Public / Privé</p>
+                  <p class="text-justify mr-2 m-0 p-0">Public / Privé</p>
                 </div>
               </div>
             </div>
@@ -39,13 +56,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 p-0" style="">
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+          <div class="col-md-12 p-0 m-0" style="">
+            <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?>
           </div>
         </div>
         <div class="row">
@@ -59,7 +71,7 @@
               <a class="btn btn-primary align-items-center d-flex" href="#">Participer</a>
               <div class="col-md-12">
                 <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
-                <h5 class="text-justify d-inline-flex m-0">53</h5>
+                <h5 class="text-justify d-inline-flex m-0"><?php echo $datasEvent['Cout'];?></h5>
                 <h5 class="text-justify d-inline-flex m-0">€</h5>
                 <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
               </div>
