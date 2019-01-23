@@ -18,5 +18,3 @@
 
 </html>
 
-<a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
-<a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>

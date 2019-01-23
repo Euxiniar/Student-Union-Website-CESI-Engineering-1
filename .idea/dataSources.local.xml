@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="global_bde" uuid="0835ad2f-3e82-4835-86fd-d7a9eaad1961">
-      <database-info product="MySQL" version="5.5.5-10.3.12-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MARIADB" exact-version="10.3.12">
+    <data-source name="MariaDB - global_bde@159.69.208.54" uuid="3efc5296-f499-44c7-aeda-c9b49b11287e">
+      <database-info product="MySQL" version="10.3.12-MariaDB" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1" dbms="MARIADB" exact-version="10.3.12">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>global_bde</user-name>
-      <introspection-schemas>*:@</introspection-schemas>
+      <user-name>global_wadm</user-name>
+      <introspection-schemas>*:global_bde</introspection-schemas>
     </data-source>
-    <data-source name="orleans_bde" uuid="c2009da1-f859-4eb1-a29a-bb1e9d5b81e2">
-      <database-info product="MySQL" version="5.5.5-10.3.12-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e )" dbms="MARIADB" exact-version="10.3.12">
+    <data-source name="User Data Source -" uuid="9b0c6e4a-d0ab-4205-afa0-db0b5b6ea43b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="UNKNOWN" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+    <data-source name="orleans_bde@159.69.208.54" uuid="795fe57d-c093-47b5-bbf8-704a9e42b4e3">
+      <database-info product="MySQL" version="10.3.12-MariaDB" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1" dbms="MARIADB" exact-version="10.3.12">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <user-name>global_bde</user-name>
+      <user-name>orleans_wadm</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
