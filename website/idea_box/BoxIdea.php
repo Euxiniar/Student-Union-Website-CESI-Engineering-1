@@ -12,55 +12,32 @@
 
 </head>
 <body>
-<?php
-    include("../scripts/setConnexionLocalBDD.php");
-    $user = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
-$datasEvent = $user->fetch();
-    $user->closeCursor();
-?>
-
-<div class = "IdeaBox">
-    <div class="container-fluid ">
+<div class = "IdeaBox pb-4">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-                <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg">
-            </div>
-            <div class="col-md-8">
-
-                <t2>
-                   <?php echo $datasEvent['Titre'] ?>
-                </t2>
-                <p>
-                    Créateur de la proposition
-                </p>
-                <p>
-                    <?php echo 'Cout de participation : ' . $datasEvent['Cout'] . '€' ?>
-                </p>
-                <p>
-                </p>
-                <p>
-                    État : <span>Public / Privé</span>
-                </p>
-
-
-            </div>
-            <div class="col-md-2">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <dl>
-                    <dt>
-                        Description
-                    </dt>
-                    <p>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" width="160">
+                    </div> <!--Image-->
+                    <div class="col-md-9">
+                        <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
+                        <span class = "font-weight-bold">Créateur : </span><?php echo $datasEvent['Id_utilisateur'] ?> </br>
+                        <span class = "font-weight-bold">Cout de participation : </span><?php echo $datasEvent['Cout'] . '€' ?> </br>
+                        <span class = "font-weight-bold">Date de l'évènement : </span><?php echo $datasEvent['Date_evenement'] ?> </br>
+                        <span class = "font-weight-bold">Lieu de l'évènement : </span><?php echo $datasEvent['Lieu'] ?> </br>
+                        <span class = "font-weight-bold">État : </span><?php echo ' <span>Public / Privé</span>' ?> </br>
+                    </div> <!--Titre et données-->
+                </div>
+                <div class="row">
+                    <div class="col-md-12"> <!--Description-->
+                        <p class = "font-weight-bold">Description</p>
                         <?php echo $datasEvent['Description'] ?>
-                    </p>
 
-                </dl>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-md-4">
+            <div class="col-md-3 center">
                 <div class="ButtonsGridIdea">
                     <div class="nbrVote">
                         <div class="VoteBox">
@@ -84,12 +61,11 @@ $datasEvent = $user->fetch();
                         </button>
                     </div>
                 </div>
-            </div>
-
-
+            </div> <!--Boutons-->
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
