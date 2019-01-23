@@ -1,0 +1,14 @@
+.comment_box{
+    /* border:3px; 
+    border-style:solid; 
+    border-color:#211D1D; 
+    padding: 1em; 
+    border-radius: 25px; */
+    background-color: #c0c0c0;
+    color:white;
+}
+
+.header_comment{
+    font-size: 14px;
+    font-style: italic;
+}
