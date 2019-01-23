@@ -253,3 +253,24 @@ html, body, .grid-container { height: 100%; margin: 0; }
 .BigButton {
     width:100%;
 }
+
+.boxIdea-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1fr;
+    grid-template-rows: 0.5fr 1.2fr 1.5fr;
+    grid-template-areas: "Photo Title ." "Photo Datas Options" "Description Description Options";
+}
+
+.Photo { grid-area: Photo;  }
+
+.Datas { grid-area: Datas; }
+
+.Description { grid-area: Description; }
+
+.Options { grid-area: Options; }
+
+.Title { grid-area: Title; }
+
+.center {
+    margin: auto;
+}
