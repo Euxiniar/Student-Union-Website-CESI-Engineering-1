@@ -10,23 +10,25 @@
       <?php $PAGE = "home" ?>
     </head>
     <body>
-        <?php 
-            include("../scripts/setConnexionLocalBDD.php"); 
-            $query = 'call orleans_bde.sps_event_passed('.$id_event.');';
-            $events = $local_bdd->query($query);
-            $datasEvent = $events->fetch();
-            $events->closeCursor();
-            $query = 'call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');';
-            $user = $local_bdd->query($query);
-            $datasUser = $user->fetch();
-            $user->closeCursor();
-        ?>
-      <div class="py-5" style="">
+      <?php 
+          include("../scripts/setConnexionLocalBDD.php"); 
+          $query = 'call orleans_bde.sps_event_passed('.$id_event.');';
+          $events = $local_bdd->query($query);
+          $datasEvent = $events->fetch();
+          $events->closeCursor();
+          $query = 'call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');';
+          $user = $local_bdd->query($query);
+          $datasUser = $user->fetch();
+          $user->closeCursor();
+      ?>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 p-0 mb-0 col-12 order-1 order-md-0" style=""><img class="img-fluid d-block d-inline-flex pt-2 pr-2" src="https://static.pingendo.com/img-placeholder-1.svg" width="80">
-            <div class="row d-inline-flex mb-0">
-              <div class="col-md-12 mb-0">
+        <div class="row mt-2">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-2 order-md-0 order-1">
+                <img class="img-fluid d-block d-inline-flex pt-2 pr-2" src="<?php echo $datasEvent['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
+              </div>
+              <div class="col-md-6 order-md-1 order-2">
                 <h1 class="display-5 mb-0"><?php echo $datasEvent['Titre'];?></h1>
                 <p class="text-justify d-inline-block mb-0">
                   <p class="text-justify d-inline-block mb-0"><?php echo $datasEvent['Heure'];?></p>
@@ -35,8 +37,8 @@
                 </p>
                 <p class="text-justify d-inline-block mb-0">
                   <i class="fas fa-map-marker-alt pr-1" style="color:blue"></i>
-                    <?php echo $datasEvent['Lieu'];?>
-                  </p>
+                  <?php echo $datasEvent['Lieu'];?>
+                </p>
                 <p class="text-justify"><?php echo $datasEvent['Nbr_participants'].' Participants'; ?></p>
                 <!-- TODO Afficher cette partie si membre du BDE -->
                 <div class="col-md-12 d-inline-flex p-0 m-0">
@@ -44,41 +46,34 @@
                   <p class="text-justify mr-2 m-0 p-0">Public / Privé</p>
                 </div>
               </div>
+              <div class="col-md-4 order-md-2 order-0">
+                <!-- TODO Afficher cette partie si membre du BDE -->
+                <div class="col-md-6 col-12 order-0 order-md-1 text-center"> 
+                  <a class="btn btn-primary" href="#">Télécharger la liste des inscrits</a>
+                  <a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
+                  <a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>
+                <!-- TODO Afficher cette partie si membre du CESI -->
+                  <a class="btn btn-primary" href="#"><i class="fas fa-user-secret"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-          <!-- TODO Afficher cette partie si membre du BDE -->
-          <div class="col-md-6 col-12 order-0 order-md-1"> 
-            <a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
-            <a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>
-            <a class="btn btn-primary" href="#">Télécharger la liste des inscrits</a>
-          <!-- TODO Afficher cette partie si membre du CESI -->
-            <a class="btn btn-primary" href="#"><i class="fas fa-user-secret"></i></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 p-0 m-0" style="">
-            <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 d-inline-flex">
-            <p class="text-justify pr-1">62</p>
-            <p class="text-justify">Photos</p>
-          </div>
-          <!-- TODO activer quand l'évènement est à venir -->
-          <div class="row">
-            <div class="col-md-12 d-inline-flex">
-              <a class="btn btn-primary align-items-center d-flex" href="#">Participer</a>
+            <div class="row">
               <div class="col-md-12">
-                <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
-                <h5 class="text-justify d-inline-flex m-0"><?php echo $datasEvent['Cout'];?></h5>
-                <h5 class="text-justify d-inline-flex m-0">€</h5>
-                <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
+                <p class="font-weight-bold">Description :</p>
+                <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?>
+              </div>
+              <div class="col-md-12 d-inline-flex">
+              <a class="btn btn-primary align-items-center d-flex" href="#">Participer</a>
+                <div class="col-md-12">
+                  <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
+                  <h5 class="text-justify d-inline-flex m-0"><?php echo $datasEvent['Cout'];?></h5>
+                  <h5 class="text-justify d-inline-flex m-0">€</h5>
+                  <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </body>
 </html>
