@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <link rel="stylesheet" href="../assets/css/header.css">
+        <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
         <?php if(!isset($PAGE)){
             $PAGE="default";
         }?>
@@ -67,7 +67,7 @@
                         if($PAGE=="cart"){
                             echo '
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>
+                                <a class="nav-link" href=" ../store/cart.php"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>
                             </li>
                             ';
                         }
