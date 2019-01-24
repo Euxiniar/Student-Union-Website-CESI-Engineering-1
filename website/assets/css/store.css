@@ -133,7 +133,7 @@ display:block;
 width: 41%;
 line-height: 339%;
 text-align:center;
-vertical-align:middle;
+vertical-align: center;
 background:url(../img/boutonnoir.png) no-repeat;
 color:white;
 text-decoration:none;
@@ -256,7 +256,7 @@ background:url(../img/boutonnoir2.png) no-repeat;
 }
 .control:hover input:not([disabled]):checked ~ .control_indicator,
 .control input:checked:focus ~ .control_indicator {
-  background: #0e6647d;
+  background: #0e6647;
 }
 .control input:disabled ~ .control_indicator {
   background: #e6e6e6;
