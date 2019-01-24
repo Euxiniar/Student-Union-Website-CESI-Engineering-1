@@ -62,6 +62,7 @@ include("../common/header.php"); ?>
         <div class="row">
             <div class="col-md-12"> <!--Boutton submit-->
                 <div class="submit">
+                    <a href="../idea_box/AccueilBoxIdea.php" id="submit" name="submit" class="btn btn-danger m-3" >Annuler</a>
                     <button id="submit" name="submit" class="btn btn-success m-3">Créer l'idée</button>
                 </div>
             </div> <!--Boutton submit-->
