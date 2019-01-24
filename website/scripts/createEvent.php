@@ -9,29 +9,27 @@ $creationDate = date("Y-m-d");
 $erreur = 'pas derreur';
 if ($_FILES['filebutton']['error'] > 0)
     $erreur = "Erreur lors du transfert". '<br>';
-echo $erreur;
+/*echo $erreur;*/
 if ($_FILES['filebutton']['size'] > 1048576) /*1Mo*/
     $erreur = "Le fichier est trop gros". '<br>';
-echo $erreur;
+/*echo $erreur;*/
 
 $extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 $extension_upload = strtolower(  substr(  strrchr($_FILES['filebutton']['name'], '.')  ,1)  );
-if ( in_array($extension_upload,$extensions_valides) )
-    echo "Extension correcte". '<br>';
-else {
+if ( !in_array($extension_upload,$extensions_valides) )
     $erreur = "L'extension n'est pas valide". '<br>';
-}
-echo $erreur;
 
-$nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-'.$_FILES['filebutton']['name']);
-echo $nomNewFichier. '<br>';;
+/*echo $erreur;*/
+$hours = date("H-i-s");
+$nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
+/*echo $nomNewFichier. '<br>';;*/
 $url = '../assets/img/couvertures/'.$nomNewFichier;
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
-if ($resultat)
+/*if ($resultat)
     echo "Transfert réussi". '<br>';
 else {
     $erreur = "Erreur de transfert". '<br>';
-}
+}*/
 if ($erreur = 'pas derreur') {
     /*Fin de la vérification*/
     $replace = "\\\'";
@@ -59,7 +57,7 @@ if ($erreur = 'pas derreur') {
     $recurrence->closeCursor();*/
 
 
-    echo $titre . '<br>';
+/*    echo $titre . '<br>';
     echo $date . '<br>';
     echo $creationDate . "<br>";
     echo $endDate . '<br>';
@@ -73,7 +71,7 @@ if ($erreur = 'pas derreur') {
     echo $idRecurrence . '<br>';
     echo $isIdea . '<br>';
     echo $idDate . '<br>';
-    echo $idAccessibilite . '<br>';
+    echo $idAccessibilite . '<br>';*/
 
 
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
@@ -94,13 +92,13 @@ if ($erreur = 'pas derreur') {
     ' . $isIdea . ',
     ' . $idAccessibilite . ');';
 
-    echo $query;
+/*    echo $query;*/
 
     $local_bdd->query($query);
+    echo '<meta http-equiv="refresh" content="0; URL=./AccueilBoxIdea.php">';
 
 }
 else {
     echo '<p> Une erreur a été rencontrée lors de l\'upload du fichier </p>';
 }
-
 ?>
