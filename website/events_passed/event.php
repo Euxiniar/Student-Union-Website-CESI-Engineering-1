@@ -62,9 +62,11 @@
                     <?php
                       if($_SESSION['status']=="Membre BDE"){
                         echo '
-                        <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
-                        <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
-                        <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>';
+                        <button class="btn btn-primary d-inline-block" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
+                        <button class="btn btn-primary d-inline-block" type="submit" name="delete"><i class="fas fa-times"></i></button>';
+                        if($datasEvent['Id_status_date']==2){
+                          echo '<button class="btn btn-primary d-inline-block" type="submit" name="edit"><i class="fas fa-cog"></i></button>';
+                        }
                       }
                     ?>
                     <?php
@@ -85,7 +87,9 @@
                 if($datasEvent['Id_status_date']==1)
                 echo '
                   <div class="col-md-12 d-inline-flex">
-                  <a class="btn btn-primary align-items-center d-flex" href="#">Participer</a>
+                  <form method="post">
+                    <button class="btn btn-primary align-items-center d-flex" type="submit" name="participer">Participer</button>
+                  </form>
                     <div class="col-md-12">
                       <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
                       <h5 class="text-justify d-inline-flex m-0">'.$datasEvent['Cout'].'</h5>

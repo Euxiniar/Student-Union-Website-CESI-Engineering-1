@@ -13,8 +13,8 @@
 				<div class="col-xs-12 col-sm-4 col-md-4 ml-auto">
 					<h5>Liens rapides</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="../disconnected/home.php"><i class="fa fa-angle-double-right"></i>Accueil</a></li>
-						<li><a href="../store/store.php"><i class="fa fa-angle-double-right"></i>Boutique</a></li>
+						<li><a href="../connected/home.php"><i class="fa fa-angle-double-right"></i>Accueil</a></li>
+						<li><a href="../store/"><i class="fa fa-angle-double-right"></i>Boutique</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4 ml-auto ml-auto">
