@@ -4,7 +4,7 @@
 
 </head>
 
-<body>
+<body class="common-background-blue">
 <?php
 $PAGE = 'AddIdea';
 include("../common/header.php"); ?>
@@ -14,7 +14,7 @@ include("../common/header.php"); ?>
     <form class="container-fluid" method="post"  autocomplete="on" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12"> <!--Titre-->
-                <t2> Création d'une idée d'évènement</t2>
+                <span class="common-t2"> Création d'une idée d'évènement</span>
             </div>
         </div>
         <div class="row">
@@ -37,7 +37,7 @@ include("../common/header.php"); ?>
         </div>
         <div class="row">
             <div class="col-md-6"> <!--Choisir un fichier-->
-                <t3 class ="pl-3 ">Image | max 1 Mo </t3><br/>
+                <t3 class ="pl-3 ">Image | max 50 Mo </t3><br/>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!--Mac 1Mo-->
                 <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg, image/gif"  >
             </div> <!--Choisir un fichier-->

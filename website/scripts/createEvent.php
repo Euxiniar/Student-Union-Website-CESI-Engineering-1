@@ -10,7 +10,7 @@ $erreur = 'pas derreur';
 if ($_FILES['filebutton']['error'] > 0)
     $erreur = "Erreur lors du transfert". '<br>';
 /*echo $erreur;*/
-if ($_FILES['filebutton']['size'] > 1048576) /*1Mo*/
+if ($_FILES['filebutton']['size'] > 52428800) /*50Mo*/
     $erreur = "Le fichier est trop gros". '<br>';
 /*echo $erreur;*/
 

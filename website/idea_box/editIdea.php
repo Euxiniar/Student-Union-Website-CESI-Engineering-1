@@ -45,7 +45,7 @@ if (isset($_POST['id'])) {
             </div>
             <div class="row">
                 <div class="col-md-6"> <!--Choisir un fichier-->
-                    <t3 class ="pl-3 ">Image | max 1 Mo </t3><br/>
+                    <t3 class ="pl-3 ">Image | max 50 Mo </t3><br/>
                     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!--Mac 1Mo-->
                     <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" value ="<?php echo $datasEvenement['URL_photo']; ?>" accept="image/png, image/jpeg, image/jpg, image/gif"  >
                 </div> <!--Choisir un fichier-->
