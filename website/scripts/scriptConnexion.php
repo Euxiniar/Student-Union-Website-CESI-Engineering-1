@@ -47,6 +47,7 @@ if ($belongsToCesi){
             $_SESSION['Gender']  = $dataGender['Designation'];
             $_SESSION['id'] = $datasUser['Id_utilisateur'];
             echo '<p><a class="confirm" href ="../connected/home.php">Vous êtes connecté.</a></p>';
+            echo '<meta http-equiv="refresh" content="1; URL=../connected/home.php">';
 
         } else {
             echo '<li class="alert" >Le mot de passe ne correspond pas. Veuillez vérifier que vous n\'avez pas fait d\'erreur en le recopiant.</li>';
