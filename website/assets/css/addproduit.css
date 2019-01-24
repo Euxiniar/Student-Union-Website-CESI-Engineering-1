@@ -1,0 +1,24 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.1fr 0.7fr 3.1fr 1fr;
+    grid-template-areas: ". . . . . ." "Photo_couverture Photo_couverture Nom_produit Nom_produit Nom_produit Nom_produit" "Photo_couverture Photo_couverture Description_produit Description_produit Description_produit Description_produit" "Photo_couverture Photo_couverture Prix_produit . . ." ". . . . . ." ". . . . . ." ". . Annuler_produit . Ajouter_produit ." ". . . . . ." ". . . . . .";
+  }
+  
+  .Photo_couverture { grid-area: Photo_couverture; 
+border: 2px solid black;
+}
+  
+  .Nom_produit { grid-area: Nom_produit; }
+  
+  .Description_produit { grid-area: Description_produit; }
+  
+  .Prix_produit { grid-area: Prix_produit; }
+  
+  .Annuler_produit { grid-area: Annuler_produit; }
+  
+  .Ajouter_produit { grid-area: Ajouter_produit; }
+
+ #a{
+    color:#fff !important;
+  }
