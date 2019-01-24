@@ -29,9 +29,10 @@
             include_once("./cart-top.php");
             while($datasEvent = $itemsInOrder->fetch())
             { 
+                $idcom = $datasEvent['Id_commande'];
                 include("./cart-item.php"); 
             }
-            include("./cart-total.php"); 
+            include_once("./cart-total.php"); 
             $itemsInOrder->closeCursor(); } 
         } 
         else 
@@ -60,31 +61,27 @@
                 }
             });
         }
+</script>
 
-
+<script>
         function processEmptyCart(Id_Commande) {
             $.ajax({
                 type: "POST",
-                /* POST Request */
                 url: "emptyCart.php",
-                /* PHP containing desired function */
                 data: {
-                    Id_Commande: Id_Commande /* The parameter sent to the PHP file as header */
+                    Id_Commande: Id_Commande
                 },
-                /* If the query to the PHP file is successful */
                 success: function(result) {
                     $(document).ready(function() {
-                        /* We generate the new HTML for the div containing the items */
                         $.get('refreshItems.php', function(response) {
-                            /* We replace the content of the div with the newly generated HTML and we refresh this div ONLY once*/
                             $('#product-list').html(response);
-                            /* Updated div :-) */
                         });
                     });
                 }
             });
         }
-    </script>
+</script>
+
 
 </body>
 
