@@ -12,15 +12,17 @@
     <body>
       <?php 
           include("../scripts/setConnexionLocalBDD.php"); 
-          $query = 'call orleans_bde.sps_event_passed('.$id_event.');';
-          $events = $local_bdd->query($query);
+          $events = $local_bdd->query('call orleans_bde.sps_event_passed('.$id_event.');');
           $datasEvent = $events->fetch();
           $events->closeCursor();
-          $query = 'call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');';
-          $user = $local_bdd->query($query);
+          $user = $local_bdd->query('call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');');
           $datasUser = $user->fetch();
           $user->closeCursor();
+          $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
+          $datasStatus = $status->fetch();
+          $status->closeCursor();
       ?>
+
       <div class="container">
         <div class="row mt-2">
           <div class="col-md-12">
@@ -42,19 +44,36 @@
                 <p class="text-justify"><?php echo $datasEvent['Nbr_participants'].' Participants'; ?></p>
                 <!-- TODO Afficher cette partie si membre du BDE -->
                 <div class="col-md-12 d-inline-flex p-0 m-0">
-                  <p class="text-justify pr-1">Etat :</p>
-                  <p class="text-justify mr-2 m-0 p-0">Public / Privé</p>
+                <?php
+                    if($_SESSION['status']=="Membre BDE" || $_SESSION['status']=="Personnel CESI") {
+                        echo '<p class="text-justify pr-1">Etat :</p>
+                        <p class="text-justify mr-2 m-0 p-0">'.
+                          $datasStatus['Designation'].
+                        '</p>';
+                      }
+                    ?>
+                  
                 </div>
               </div>
               <div class="col-md-4 order-md-2 order-0">
-                <!-- TODO Afficher cette partie si membre du BDE -->
-                <div class="col-md-6 col-12 order-0 order-md-1 text-center"> 
-                  <a class="btn btn-primary" href="#">Télécharger la liste des inscrits</a>
-                  <a class="btn btn-primary" href="#"><i class="fas fa-times"></i></a>
-                  <a class="btn btn-primary" href="#"><i class="fas fa-cog"></i></a>
-                <!-- TODO Afficher cette partie si membre du CESI -->
-                  <a class="btn btn-primary" href="#"><i class="fas fa-user-secret"></i></a>
-                </div>
+                <form method="post">
+                  <div class="col-md-6 col-12 order-0 order-md-1 text-center"> 
+                    <input type="hidden" name="id" value="<?php echo $datasEvent['Id_evenement']?>"/>
+                    <?php
+                      if($_SESSION['status']=="Membre BDE"){
+                        echo '
+                        <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
+                        <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                        <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>';
+                      }
+                    ?>
+                    <?php
+                      if($_SESSION['status']=="Personnel CESI")
+                        echo '<button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>';
+                    ?>
+                  </div>
+                </form>
+                
               </div>
             </div>
             <div class="row">
