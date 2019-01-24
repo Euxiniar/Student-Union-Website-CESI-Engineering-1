@@ -27,13 +27,13 @@
                         </p>
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[5]">
+                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field='<?php echo $datasItemStore["Id_article"]; ?>'>
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                                <input type="text" name="quant[5]" class="form-control input-number" value="0" min="0" max="100">
+                                <input type="text" name='<?php echo $datasItemStore["Id_article"]; ?>' class="form-control input-number" value="0" min="0" max="100">
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[5]">
+                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field='<?php echo $datasItemStore["Id_article"]; ?>'>
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </span>
