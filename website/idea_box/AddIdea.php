@@ -39,7 +39,7 @@ include("../common/header.php"); ?>
             <div class="col-md-6"> <!--Choisir un fichier-->
                 <t3 class ="pl-3 ">Image | max 1 Mo </t3><br/>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!--Mac 1Mo-->
-                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" >
+                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg, image/gif"  >
             </div> <!--Choisir un fichier-->
             <div class="col-md-3"> <!--cout-->
                 <t3>Cout prévisionnel </t3>
