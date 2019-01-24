@@ -35,9 +35,13 @@ div#menu {
 
 
 div#contenu {
-  margin-left: 25%;
-  width:75%;
-  height: 100%;
+  margin-top: 0%;
+  height:auto;
+  width: 75%;
+  border: 2px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   background-color:white;
 
   }
@@ -58,50 +62,23 @@ font-size:x-large;
 font-size:xx-large;
 }
 
-
-
-
-
-
-#contenu1{
+.prix{
+  float: left;
   margin-top: 0%;
-  height: auto;
-  width: 100%;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  margin-left: 2%;
+  padding-left: 6%;
+  padding-right: 14%;
+  background-color: #428bca;
 }
-#contenu2{
-  margin-top: 0%;
-  height:auto;
-  width: 100%;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-}
+
+
 .contenu10{
-  width: 284px;
+  width: 300px;
   margin-top: 8%;
   border: 2px solid black;
-  flex-wrap: wrap;
   height: 372px;
 }
-.contenu20{
-   width: 284px;
-  margin-top: 10%;
-  border: 2px solid black;
-  flex-wrap: wrap;
-  height: 372px;
-  flex-wrap: wrap;
-}
+
 .contenu100{
   margin-top: 0%;
   border: 2px solid black;
