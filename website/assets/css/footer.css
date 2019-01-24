@@ -13,7 +13,7 @@ section .section-title {
 #footer {
     background: #211D1D !important;
     margin-bottom: 0;
-    position: fixed;
+    position: relative;
     width:100%;
     bottom:0;
 }
