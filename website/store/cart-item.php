@@ -2,7 +2,7 @@
 <td data-th="Product">
     <div class="row">
       <div class="col-sm-2 hidden-xs">
-        <img src="<?php echo $datasEvent['Image'] ?>"alt="..." class="img-responsive" />
+        <img src="<?php echo $datasEvent['Image'] ?>"alt="..." class="img-thumbnail img-responsive rounded float-left" />
       </div>
       <div class="col-sm-10">
         <h4 class="nomargin">
@@ -10,6 +10,9 @@
         </h4>
         <p>
           <?php echo $datasEvent['Description'] ?>
+        </p>
+        <p class="delivery-warning">
+          Livraison uniquement dans votre BDE !
         </p>
       </div>
     </div>
@@ -25,12 +28,10 @@
   </td>
   <td class="actions" data-th="">
     <button type="button" class="btn btn-info btn-sm">
-      <i class="glyphicon glyphicon-refresh">
-      </i>
+    <i class="fa fa-refresh" aria-hidden="true"></i>
     </button>
     <button type="button" class="btn btn-danger btn-sm" onclick="processRemoveItem(<?php echo $datasEvent['Id_article']?>)">
-      <i class="glyphicon glyphicon-remove">
-      </i>
+    <i class="fa fa-times" aria-hidden="true"></i>
     </button>
   </td>
 </tr>

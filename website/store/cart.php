@@ -5,10 +5,6 @@
 <head>
     <meta charset="utf-8">
     <title>Panier - Boutique - BDE CESI Orléans</title>
-    <!-- TODO : Unify the assets source for the whole BDE project. -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="../assets/css/reset.css" rel="stylesheet">
     <link href="../assets/css/cart.css" rel="stylesheet">
     <?php $PAGE="cart" ;?>
