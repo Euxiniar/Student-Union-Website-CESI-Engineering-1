@@ -1,60 +1,124 @@
 body{
-  background-color: black;
+  background-color: #211d1d;
 }
+
+
 
 div {
   text-align:center;
   }
-div#bandeau {
-  width:600px;
-  height:50px;
-  background-color:#00CCFF;
-  }
+
+
+
 div#menu {
+  color:white;
   float:left;
   width:25%;
   height: 1000px;
-  background-color: gray;
+  background-color: #211d1d;
   }
-div#contenu {
-  margin-left: 25%;
-  width:75%;
-  height: 1000px;
-  background-color:white;
-  display:flex;
+  .bouton2 {
+    padding:6px 0 6px 0;
+    font:bold 13px Arial;
+    background:#428bca;
+    color:#fff;
+    border-radius:2px;
+    width:50%;
+    border:none;
   }
-div#pied_page {
-  color:white;
-  clear:both;
-  width:100%;
-  padding:100px;
-  margin-bottom:0%;
-  background-color: black;
-  }
-#text_categorie{
-  margin-right:250px;
+  #a {
+    color: #fff !important;
 }
-#contenu1{
-float:left;
-margin-left: 0%;
-margin-top: 15%;
-border:2px solid black;
-height: 20%;
-}
-#contenu2{
-margin-left:25%;
-margin-top: 15%;
-border:2px solid black;
-height: 20%;
-}
-#contenu3{
-float:right;
-margin-top: 15%;
-border:2px solid black;
-margin-left: 26%;
-height: 20%;
+#p{
+  color:#428bca;
 }
 
+
+div#contenu {
+  margin-top: 0%;
+  height:auto;
+  width: 75%;
+  border: 2px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color:white;
+
+  }
+
+
+
+
+#text_categorie{
+margin-right:250px;
+font-size:x-large;
+}
+
+
+
+
+
+#text_filtre{
+font-size:xx-large;
+}
+
+.prix{
+  float: left;
+  margin-top: 0%;
+  margin-left: 2%;
+  padding-left: 6%;
+  padding-right: 14%;
+  background-color: #428bca;
+}
+
+
+.contenu10{
+  width: 300px;
+  margin-top: 8%;
+  border: 2px solid black;
+  height: 372px;
+}
+
+.contenu100{
+  margin-top: 0%;
+  border: 2px solid black;
+  height:13%;
+  background-color:gray;
+   }
+  .contenu101{
+    margin-top: 0%;
+    border: 2px solid black;
+    height: 60%;
+  }
+  .contenu102{
+    margin-top: 0%;
+    height: 12%;
+    border: 2px solid black;
+    background-color:gray;
+  }
+  .contenu103{
+    margin-top: 0%;
+    height: 15%;
+    border: 2px solid black;
+    background-color: #211d1d;
+  }
+
+
+
+
+  
+#bouton_bde{
+  margin-top:4%;
+}
+
+
+
+
+.input-group{
+  margin-top: -2%;
+  margin-left: 24%;
+  width: 53%;
+}
 
 
 
@@ -84,10 +148,7 @@ background:url(../img/boutonnoir2.png) no-repeat;
 
 * {box-sizing: border-box;}
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 .topnav {
   overflow: hidden;
@@ -155,4 +216,70 @@ body {
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
+}
+
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  padding-top: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+  .control input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+  }
+.control_indicator {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border: 0px solid #000000;
+}
+.control-radio .control_indicator {
+  border-radius: 50%;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #3e87c7;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #0e6647d;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-radio .control_indicator:after {
+  left: 7px;
+  top: 8px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+  background: #7b7b7b;
 }
