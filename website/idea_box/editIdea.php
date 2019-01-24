@@ -6,7 +6,7 @@
 
 <body>
 <?php
-$PAGE = 'AddIdea';
+$PAGE = 'editIdea';
 include("../common/header.php"); ?>
 
 
@@ -22,7 +22,7 @@ include("../common/header.php"); ?>
 
             </div> <!--Photo-->
             <div class="col-md-6"> <!--Titre date récurrence-->
-                <t3>Titre de l'idée</t3><br/>
+                <t3>Edition de l'idée</t3><br/>
                 <input type="text"  name="title" placeholder="Titre de l'idée" class ="mb-2" maxlength="50" required="required" autofocus ><br/>
                 <t3>Date de l'évènement</t3><br/>
                 <input type="date" name="date" class ="mb-2" required="required"><br/>

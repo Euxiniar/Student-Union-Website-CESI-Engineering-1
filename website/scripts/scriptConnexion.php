@@ -42,9 +42,9 @@ if ($belongsToCesi){
             $_SESSION['email'] = $datasUser['Email'];
             $_SESSION['l_name'] = $datasUser['Nom'];
             $_SESSION['f_name'] = $datasUser['Prenom'];
-            $_SESSION['campus'] = $datasCampus;
-            $_SESSION['status'] = $datasStatus;
-            $_SESSION['Gender']  = $dataGender;
+            $_SESSION['campus'] = $datasCampus['Designation'];
+            $_SESSION['status'] = $datasStatus['Designation'];
+            $_SESSION['Gender']  = $dataGender['Designation'];
             $_SESSION['id'] = $datasUser['Id_utilisateur'];
             echo '<p><a class="confirm" href ="../connected/home.php">Vous êtes connecté.</a></p>';
 
