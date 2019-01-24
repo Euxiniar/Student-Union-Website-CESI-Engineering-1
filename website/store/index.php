@@ -77,12 +77,12 @@
         <p id="p">------------------------------------</p>
         </br>
         </br>
-        <li><button class="bouton2" >
+        <button class="bouton2" >
 
         <a id="a" href="addproduit.php" >
             Ajouter un produit
         </a>
-        </button></li>
+        </button>
 
 
     </div>
@@ -112,18 +112,18 @@
                          <p>
                         </p>
                         <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[5]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[5]" class="form-control input-number" value="0" min="0" max="100">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[5]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[5]">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                                <input type="text" name="quant[5]" class="form-control input-number" value="0" min="0" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[5]">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                         </div>
                         <p></p>
                     </br>
                 </div>
@@ -157,18 +157,18 @@
                         <p>
                         </p>
                         <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[4]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[4]" class="form-control input-number" value="0" min="0" max="100">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[4]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[4]">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                            <input type="text" name="quant[4]" class="form-control input-number" value="0" min="0" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[4]">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                         </div>
                         <p></p>
                     </br>
                 </div>
@@ -202,18 +202,18 @@
                          <p>
                         </p>
                         <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[3]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[3]" class="form-control input-number" value="0" min="0" max="100">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[3]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[3]">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                            <input type="text" name="quant[3]" class="form-control input-number" value="0" min="0" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[3]">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
                         <p></p>
                     </br>
                 </div>
@@ -252,18 +252,18 @@
                 <p>
                         </p>
                         <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[1]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="100">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
+                             <span class="input-group-btn">
+                                 <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[1]">
+                                     <span class="glyphicon glyphicon-minus"></span>
+                                 </button>
+                             </span>
+                             <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="100">
+                             <span class="input-group-btn">
+                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+                                     <span class="glyphicon glyphicon-plus"></span>
+                                 </button>
+                             </span>
+                         </div>
                         <p></p>
                     </br>
                 </div>
@@ -294,18 +294,19 @@
                         <p>
                         </p>
                         <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[2]">
-                <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number"  data-type="minus" data-field="quant[2]">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                            <input type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[2]">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                         </div>
+                         
                         <p></p>
                      </br>
                 </div>
