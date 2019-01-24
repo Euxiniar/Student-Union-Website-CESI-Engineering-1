@@ -10,10 +10,15 @@
         <?php
         include("../scripts/setConnexionLocalBDD.php");
 
+
+        /*Actions selon le bouton enclenché*/
         if (isset($_POST['id'])) {
             if (isset($_POST['button-suppr'])) {
                 $local_bdd->query('call orleans_bde.spd_evenement_by_id(' . $_POST['id'] . ');');
 /*                echo '<meta http-equiv="refresh" content="0">';*/
+            }
+            if (isset($_POST['button-edit'])){
+
             }
             $_POST['id'] =null;
             $_POST['button-suppr'] =null;
