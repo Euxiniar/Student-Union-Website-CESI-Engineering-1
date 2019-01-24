@@ -2,9 +2,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
-      <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
-      <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>		 -->
+     
 
       <title>BDE CESI Exia</title>
       <?php $PAGE = "home" ?>
@@ -15,12 +13,12 @@
           $events = $local_bdd->query('call orleans_bde.sps_event('.$id_event.');');
           $datasEvent = $events->fetch();
           $events->closeCursor();
-          $user = $local_bdd->query('call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');');
-          $datasUser = $user->fetch();
-          $user->closeCursor();
           $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
           $datasStatus = $status->fetch();
           $status->closeCursor();
+          $participate_event = $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$id_event.');');
+          $participate = $participate_event->fetch();
+          $participate_event->closeCursor();
       ?>
 
       <div class="container">
@@ -84,19 +82,25 @@
                 <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?>
               </div>
               <?php
-                if($datasEvent['Id_status_date']==1)
-                echo '
-                  <div class="col-md-12 d-inline-flex">
-                  <form method="post">
-                    <button class="btn btn-primary align-items-center d-flex" type="submit" name="participer">Participer</button>
-                  </form>
-                    <div class="col-md-12">
-                      <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
-                      <h5 class="text-justify d-inline-flex m-0">'.$datasEvent['Cout'].'</h5>
-                      <h5 class="text-justify d-inline-flex m-0">€</h5>
-                      <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
-                    </div>
-                  </div>'
+                if($datasEvent['Id_status_date']==1){
+                  echo '
+                    <div class="col-md-12 d-inline-flex">
+                    <form method="post">
+                      <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>';
+                      if($participate['count']<1){
+                        echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="participate">Participer</button>';
+                      }else{
+                        echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="stop_participate">Se désinscrire</button>';
+                      }
+                    echo '</form>
+                      <div>
+                        <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
+                        <h5 class="text-justify d-inline-flex m-0">'.$datasEvent['Cout'].'</h5>
+                        <h5 class="text-justify d-inline-flex m-0">€</h5>
+                        <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
+                      </div>
+                    </div>';
+                }
               ?>
             </div>
           </div>

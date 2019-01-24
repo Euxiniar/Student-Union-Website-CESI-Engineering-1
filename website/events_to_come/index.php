@@ -12,8 +12,7 @@
         <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
 
 		<?php
-        $_SESSION['status']="Membre BDE";
-        
+        //$_SESSION['status']="Membre BDE";
         include("../scripts/setConnexionLocalBDD.php"); 
         if(isset($_POST['id'])){
             if(isset($_POST['l_inscrits'])){
@@ -28,6 +27,13 @@
                 $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
                 $_POST['private'] = NULL;
 
+            }else if(isset($_POST['participate'])){
+                $query= $local_bdd->query('call orleans_bde.spi_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+                $_POST['participate'] = NULL;
+            }
+            else if(isset($_POST['stop_participate'])){
+                $query= $local_bdd->query('call orleans_bde.spd_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+                $_POST['stop_participate'] = NULL;
             }
             $_POST['id'] = NULL;
 
