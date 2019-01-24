@@ -41,7 +41,7 @@ div#contenu {
   border: 2px solid black;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color:white;
 
   }
