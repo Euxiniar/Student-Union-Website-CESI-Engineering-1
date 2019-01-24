@@ -2,7 +2,7 @@
                 <tr>
                     <td>
                         <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> Continuer les achats</button>
-                        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Vider le panier</button>
+                        <button type="button" class="btn btn-danger" onclick="processEmptyCart(<?php echo $_SESSION['id']?>)> <span class="glyphicon glyphicon-trash"></span> Vider le panier</button>
                     </td>
 
                     <td colspan="2" class="hidden-xs"></td>
