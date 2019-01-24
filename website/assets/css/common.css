@@ -1,0 +1,53 @@
+.common-center {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.common-color-blue {
+    background: #3a7ecb;
+}
+
+.common-color-yellow {
+    background: #cbc411;
+}
+
+.common-color-red {
+    background: #cb251f;
+}
+
+.common-color-green {
+    background: #1bcb0b;
+}
+
+.common-background-gray {
+    background: #cbcbcb;
+}
+
+.common-background-blue {
+    background: #e0edf0;
+}
+
+.common-couverture {
+    width:150px;
+    max-width:100%;
+    max-height:320px;
+}
+
+.common-photo-event {
+    width:300px;
+    max-width:100%;
+    max-height:640px;
+}
+
+.common-t2 {
+    font-weight : 900;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.common-t3 {
+    font-weight : 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
