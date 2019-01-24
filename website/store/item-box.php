@@ -38,6 +38,9 @@
                                 </button>
                             </span>
                          </div>
+                         <div class="stock">
+                    <p><?php echo($datasItemStore["Stock"]);?></p>
+                    </div>
                         <p></p>
                     </br>
                 </div>
