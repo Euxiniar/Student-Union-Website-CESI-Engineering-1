@@ -8,9 +8,9 @@ if(isset($_POST['Id_Article']))
     $query = $local_bdd->query("call orleans_bde.spd_delete_item_from_cart_by_id_user_and_article({$_SESSION['id']}, $idArticle);");
     if($query) // will return true if successful else it will return false
     {
-    echo "Yes !";
+    /* If required if Yes */
     } else {
-        echo "No !";
+    /* If required if No */
     }
 
 } ?>

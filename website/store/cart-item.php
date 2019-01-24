@@ -1,4 +1,3 @@
-<div id="product-list">
 <tr>
 <td data-th="Product">
     <div class="row">
@@ -22,7 +21,7 @@
     <input type="number" class="form-control text-center" value="<?php echo $datasEvent['Quantite'] ?>" min="1" max="10">
   </td>
   <td data-th="Subtotal" class="text-center">
-  <?php echo $datasEvent['Cout'] ?>€
+  <?php echo $datasEvent['Quantite']*$datasEvent['Cout'] ?>€
   </td>
   <td class="actions" data-th="">
     <button type="button" class="btn btn-info btn-sm">
@@ -35,4 +34,3 @@
     </button>
   </td>
 </tr>
-</div>
