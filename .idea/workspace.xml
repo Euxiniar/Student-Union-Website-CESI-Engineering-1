@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69ffbbee-7f46-4186-821e-e977675f86a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/idea_box/editIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/editIdea.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/common/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/common/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,11 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/assets/css/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+            <state relative-caret-position="138">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/common/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -184,7 +192,6 @@
         <option value="$PROJECT_DIR$/website/assets/css/idea.css" />
         <option value="$PROJECT_DIR$/website/idea_box/js/test.js" />
         <option value="$PROJECT_DIR$/website/idea_box/BandeauSubmitIdea.php" />
-        <option value="$PROJECT_DIR$/website/common/header.php" />
         <option value="$PROJECT_DIR$/website/scripts/createEvent.php" />
         <option value="$PROJECT_DIR$/website/scripts/deconnexion.php" />
         <option value="$PROJECT_DIR$/website/scripts/scriptInscription.php" />
@@ -195,6 +202,7 @@
         <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
         <option value="$PROJECT_DIR$/website/idea_box/editIdea.php" />
         <option value="$PROJECT_DIR$/website/assets/css/common.css" />
+        <option value="$PROJECT_DIR$/website/common/header.php" />
       </list>
     </option>
   </component>
@@ -227,14 +235,7 @@
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
               <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
@@ -302,12 +303,12 @@
       <workItem from="1548146955782" duration="26323000" />
       <workItem from="1548231736774" duration="24511000" />
       <workItem from="1548262883666" duration="12873000" />
-      <workItem from="1548317836674" duration="19204000" />
+      <workItem from="1548317836674" duration="19315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119252000" />
+    <option name="totallyTimeSpent" value="119363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -518,24 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="51" column="100" lean-forward="true" selection-start-line="51" selection-start-column="100" selection-end-line="51" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/disconnected/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -609,18 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="127" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#form#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/idea_box/editIdea.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -653,8 +628,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/assets/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        <state relative-caret-position="138">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/disconnected/connexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="127" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#form#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
         </state>
       </provider>
     </entry>
