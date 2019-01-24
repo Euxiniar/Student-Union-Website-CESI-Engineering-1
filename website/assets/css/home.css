@@ -1,10 +1,16 @@
-body {
-background-image: url(../img/home_background.jpg);
-min-height: 100%;
-}
+body, html {
+    height: 100%;
+    background-image: url("../img/home_background.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 .front_body {
-    padding-bottom: 30%;
-    /* padding-top:5%;
-    margin-left:10px; */
+    padding: 20%;
 }

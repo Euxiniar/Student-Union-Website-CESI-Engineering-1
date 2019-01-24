@@ -15,12 +15,9 @@
             include("../idea_box/BoxIdea.php");
             echo '<hr class = "separator">';
         }
-
         $user->closeCursor();
 
         ?>
-
-
         <?php include("../common/footer.php"); ?>
 
     </body>

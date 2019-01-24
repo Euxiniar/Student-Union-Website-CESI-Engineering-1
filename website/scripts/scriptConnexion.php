@@ -38,7 +38,7 @@ if ($belongsToCesi){
             if (isset($_SESSION['id'])){
                 session_destroy();
             }
-            session_start();
+            // session_start();
             $_SESSION['email'] = $datasUser['Email'];
             $_SESSION['l_name'] = $datasUser['Nom'];
             $_SESSION['f_name'] = $datasUser['Prenom'];

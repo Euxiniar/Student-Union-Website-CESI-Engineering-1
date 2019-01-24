@@ -232,8 +232,8 @@ html, body, .grid-container { height: 100%; margin: 0; }
     grid-template-columns: 0.25fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: "nbrVote" "VoteButton" "BDECESIButtons" "ValidButton";
-    text-align: center;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .nbrVote {grid-area: nbrVote;}
@@ -271,6 +271,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
 
 .Title { grid-area: Title; }
 
-.center {
+.color {
+    background: #00CCFF;
     margin: auto;
 }
