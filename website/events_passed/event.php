@@ -12,7 +12,7 @@
     <body>
       <?php 
           include("../scripts/setConnexionLocalBDD.php"); 
-          $events = $local_bdd->query('call orleans_bde.sps_event_passed('.$id_event.');');
+          $events = $local_bdd->query('call orleans_bde.sps_event('.$id_event.');');
           $datasEvent = $events->fetch();
           $events->closeCursor();
           $user = $local_bdd->query('call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');');
@@ -64,7 +64,7 @@
                         echo '
                         <button class="btn btn-primary d-inline-block" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
                         <button class="btn btn-primary d-inline-block" type="submit" name="delete"><i class="fas fa-times"></i></button>';
-                        if($datasEvent['Id_status_date']==2){
+                        if($datasEvent['Id_status_date']==1){
                           echo '<button class="btn btn-primary d-inline-block" type="submit" name="edit"><i class="fas fa-cog"></i></button>';
                         }
                       }

@@ -120,32 +120,6 @@ font-size:xx-large;
   width: 53%;
 }
 
-
-
-
-
-
-
-
-.bouton a {
-margin-left: 29%;
-display:block;
-width: 41%;
-line-height: 339%;
-text-align:center;
-vertical-align:middle;
-background:url(../img/boutonnoir.png) no-repeat;
-color:white;
-text-decoration:none;
-}
-.bouton a:hover {
-background:url(../img/boutonnoir2.png) no-repeat;
-}
-
-
-
-
-
 * {box-sizing: border-box;}
 
 

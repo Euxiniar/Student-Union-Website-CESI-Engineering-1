@@ -12,7 +12,7 @@
         <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
 
 		<?php
-        //$_SESSION['status']="Eleve";
+        $_SESSION['status']="Membre BDE";
         
         include("../scripts/setConnexionLocalBDD.php"); 
         if(isset($_POST['id'])){
@@ -34,9 +34,9 @@
         }
         
         if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
+            $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
         } else {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed_public();');
+            $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come_public();');
         }
         $id_events = array();
         while($datasEvent = $events->fetch()){
