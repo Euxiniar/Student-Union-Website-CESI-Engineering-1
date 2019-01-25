@@ -46,8 +46,8 @@ if (isset($_POST['id'])) {
             <div class="row">
                 <div class="col-md-6"> <!--Choisir un fichier-->
                     <t3 class ="pl-3 ">Image | max 50 Mo </t3><br/>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!--Mac 1Mo-->
-                    <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" value ="<?php echo $datasEvenement['URL_photo']; ?>" accept="image/png, image/jpeg, image/jpg, image/gif"  >
+                    <input type="hidden" name="MAX_FILE_SIZE" value="52428800" /> <!--Max 50Mo-->
+                    <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" accept="image/png, image/jpeg, image/jpg, image/gif"  >
                 </div> <!--Choisir un fichier-->
                 <div class="col-md-3"> <!--cout-->
                     <t3>Cout prévisionnel </t3>
@@ -85,7 +85,7 @@ else {
     if(isset($_POST['submit'])) {
         include("../scripts/editEvent.php");
     }
-    echo '<meta http-equiv="refresh" content="0; URL=../idea_box/AccueilBoxIdea.php">';
+/*    echo '<meta http-equiv="refresh" content="0; URL=../idea_box/AccueilBoxIdea.php">';*/
 }
 include("../common/footer.php");
 ?>
