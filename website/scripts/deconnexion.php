@@ -13,6 +13,7 @@ if (isset($_SESSION)) {
 }
 else {
     echo '<h1>vous avez été déconnecté</h1>';
+    echo '<meta http-equiv="refresh" content="1; URL=../disconnected/home.php">';
 }
 
 echo '<p><a href ="../disconnected/home.php">retour à l\'acceuil</a></p>';

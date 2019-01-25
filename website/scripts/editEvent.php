@@ -1,7 +1,6 @@
 <?php
 include("../scripts/setConnexionLocalBDD.php");
 
-
 $creationDate = date("Y-m-d");
 
 /*Vérification du fichier upload*/
@@ -24,17 +23,17 @@ $hours = date("H-i-s");
 $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
 /*echo $nomNewFichier. '<br>';;*/
 $url = '../assets/img/couvertures/'.$nomNewFichier;
-echo $url;
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
-if ($resultat)
+/*if ($resultat)
     echo "Transfert réussi". '<br>';
 else {
     $erreur = "Erreur de transfert". '<br>';
-}
+}*/
 if ($erreur = 'pas derreur') {
     /*Fin de la vérification*/
     $replace = "\\\'";
 
+    $id = $_POST['id_utilisateur'];
     $titre = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['title']));
     $date = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['date']));
     /*$creationDate*/ /*defini plus haut*/
@@ -77,7 +76,8 @@ if ($erreur = 'pas derreur') {
 
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
     $query =
-        'call orleans_bde.spi_evenement(
+        'call orleans_bde.spe_evenement(
+    ' . $id . ',
     \'' . $titre . '\',  
     \'' . $date . '\',  
     \'' . $creationDate . '\',  
@@ -94,10 +94,9 @@ if ($erreur = 'pas derreur') {
     ' . $idAccessibilite . ');';
 
 /*    echo $query;*/
-
+/*    echo 'effectué';*/
+/*    echo $erreur;*/
     $local_bdd->query($query);
-/*    echo '<meta http-equiv="refresh" content="0; URL=./AccueilBoxIdea.php">';*/
-
 }
 else {
     echo '<p> Une erreur a été rencontrée lors de l\'upload du fichier </p>';

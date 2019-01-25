@@ -71,6 +71,7 @@ if (isset($_POST['email'])) {
             $message = '<p> Votre compte est désormais créé ' . $genre . $user['L_Name'] . '</p>';
             echo $message;
             echo '<p><a class="confirm" href ="../disconnected/connexion.php#tologin">Se Connecter </a></p>';
+            echo '<meta http-equiv="refresh" content="1; URL=../disconnected/connexion.php#tologin">';
         }
         else {
             echo '<li class="alert" >Cette adresse mail n\'existe pas dans notre base de données, veuillez entrer l\'adresse email correspondant à votre compte étudiant CESI</li>';

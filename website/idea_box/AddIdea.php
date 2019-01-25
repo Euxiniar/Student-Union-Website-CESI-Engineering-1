@@ -4,7 +4,7 @@
 
 </head>
 
-<body>
+<body class="common-background-blue">
 <?php
 $PAGE = 'AddIdea';
 include("../common/header.php"); ?>
@@ -14,7 +14,7 @@ include("../common/header.php"); ?>
     <form class="container-fluid" method="post"  autocomplete="on" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12"> <!--Titre-->
-                <t2> Création d'une idée d'évènement</t2>
+                <span class="common-t2"> Création d'une idée d'évènement</span>
             </div>
         </div>
         <div class="row">
@@ -22,7 +22,7 @@ include("../common/header.php"); ?>
 
             </div> <!--Photo-->
             <div class="col-md-6"> <!--Titre date récurrence-->
-                <t3>Titre de l'idée</t3><br/>
+                <span class="common-t3">Titre de l'idée</span><br/>
                 <input type="text"  name="title" placeholder="Titre de l'idée" class ="mb-2" maxlength="50" required="required" autofocus ><br/>
                 <t3>Date de l'évènement</t3><br/>
                 <input type="date" name="date" class ="mb-2" required="required"><br/>
@@ -37,9 +37,9 @@ include("../common/header.php"); ?>
         </div>
         <div class="row">
             <div class="col-md-6"> <!--Choisir un fichier-->
-                <t3 class ="pl-3 ">Image | max 1 Mo </t3><br/>
-                <input type="hidden" name="MAX_FILE_SIZE" value="1048576" /> <!--Mac 1Mo-->
-                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" >
+                <t3 class ="pl-3 ">Image | max 50 Mo </t3><br/>
+                <input type="hidden" name="" value="52428800" /> <!--Max 50Mo-->
+                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg, image/gif"  >
             </div> <!--Choisir un fichier-->
             <div class="col-md-3"> <!--cout-->
                 <t3>Cout prévisionnel </t3>
@@ -62,6 +62,7 @@ include("../common/header.php"); ?>
         <div class="row">
             <div class="col-md-12"> <!--Boutton submit-->
                 <div class="submit">
+                    <a href="../idea_box/AccueilBoxIdea.php" id="submit" name="submit" class="btn btn-danger m-3" >Annuler</a>
                     <button id="submit" name="submit" class="btn btn-success m-3">Créer l'idée</button>
                 </div>
             </div> <!--Boutton submit-->

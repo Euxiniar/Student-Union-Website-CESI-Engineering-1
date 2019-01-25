@@ -15,7 +15,7 @@ $user->closeCursor();
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-3"><!--Image-->
-                        <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" width="160">
+                        <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" class = "common-arrondi common-couverture">
                     </div><!--Image-->
                     <div class="col-md-9">
                         <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
@@ -49,7 +49,7 @@ $user->closeCursor();
                             <p class = "SmallText">votes</p>
                         </div>
                     </div>
-                    <div class="VoteButton">
+                    <div class="VoteButton ">
                         <button type="button" class="BigButton" href = "home.php">
                             Vote
                         </button>
@@ -57,29 +57,34 @@ $user->closeCursor();
                     <div class="BDECESIButtons d-inline-flex">
                         <?php if($_SESSION['status']=="Membre BDE")
                             echo '
-                            <form method="post" action="AccueilBoxIdea.php"> <!--Supprimer-->
+                            <form method="post" action="../idea_box/AccueilBoxIdea.php"> <!--Supprimer-->
                                 <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'] .'" />
                                 <button class="btn btn-primary" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
                             </form>
-                        <form method="post" action="editIdea.php"> <!--edition-->
+                        <form method="post" action="../common/editEvent.php"> <!--edition-->
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
                             <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
                         </form>';
                         else if ($_SESSION['status']=="Personnel CESI"){
                         echo '
-                        <form method="post"><!--privé-->
+                        <form method="post" action ="../idea_box/editIdea.php"><!--privé-->
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
-                            <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
-                        </form>';
+                            <button class="btn btn-primary" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
+                        </form>';/*privé*/
                         }
                         ?>
                     </div>
-                    <div class="ValidButton">
-                        <button type="button" class="buttonValid" href = "home.php">
+                    <?php if($_SESSION['status']=="Membre BDE") {
+                        echo
+                        '<form method = "post" action = "../idea_box/AccueilBoxIdea.php" >
+                        <input type = "hidden" name = "id" value = "'.$datasEvent['Id_evenement'].'" />
+                        <button type = "submit" class="buttonValid" name = "button-valid" >
                             Valider
-                            <i class="fa fa-check"></i>
-                        </button>
-                    </div>
+                            <i class="fa fa-check" ></i >
+                        </button >
+                    </form >';
+                    }
+                    ?>
                 </div>
             </div> <!--Boutons-->
         </div>
