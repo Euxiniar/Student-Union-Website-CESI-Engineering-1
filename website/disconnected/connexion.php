@@ -15,7 +15,7 @@
     <title>Connexion - Site BDE - Campus Orleans</title>
 </head>
 
-<body>
+<body class = "common-background-gray">
 <?php $PAGE = "connexion_form" ?>
 <?php include("../common/header.php"); ?>
 
