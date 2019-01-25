@@ -16,7 +16,7 @@
       <secret-storage>master_key</secret-storage>
     </data-source>
     <data-source name="orleans_bde@159.69.208.54" uuid="795fe57d-c093-47b5-bbf8-704a9e42b4e3">
-      <database-info product="MySQL" version="10.3.12-MariaDB" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1" dbms="MARIADB" exact-version="10.3.12">
+      <database-info product="MySQL" version="10.3.12-MariaDB-log" jdbc-version="4.2" driver-name="MariaDB connector/J" driver-version="2.2.1" dbms="MARIADB" exact-version="10.3.12">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
