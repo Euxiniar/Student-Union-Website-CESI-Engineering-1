@@ -54,9 +54,21 @@ if (isset($_SESSION['id'])) {
                             </div>
                         </div>
                         <div class="VoteButton "> <!--Boutton de vote-->
-                            <button type="button" class="BigButton" href = "home.php">
+                            <form method="post">
+
+                                <?php
+                                echo '<input type="hidden" name="id" value="'.$datasEvent['Id_evenement'] .'" />';
+                                if($vote['count']<1){
+                                    echo '<button class="BigButton" name = "button-vote" type="submit" >Voter</button>';
+                                }
+                                else{
+                                    echo '<button class="BigButton" type="submit" name="button-stop-vote">Retirer son vote</button>';
+                                }
+                                ?>
+                            </form>
+<!--                            <button type="button" class="BigButton" href = "home.php">
                                 Vote
-                            </button>
+                            </button>-->
                         </div>
                         <div class="BDECESIButtons d-inline-flex">
                             <?php if($_SESSION['status']=="Membre BDE")

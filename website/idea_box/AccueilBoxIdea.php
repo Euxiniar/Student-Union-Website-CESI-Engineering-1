@@ -21,6 +21,15 @@
                 $local_bdd->query('call orleans_bde.spe_evenement_idea_to_tocome(' . $_POST['id'] . ');');
                 /*                echo '<meta http-equiv="refresh" content="0">';*/
             }
+            if (isset($_POST['button-vote'])){
+                $local_bdd->query('call orleans_bde.spe_nbr_votes_increment(' . $_POST['id'] . ');');
+                echo 'call orleans_bde.spi_voteidea(' . $_POST['id'] . ', '. $_SESSION['id'].');';
+                $local_bdd->query('call orleans_bde.spi_voteidea(' . $_SESSION['id'] . ', '. $_POST['id'].');');
+            }
+            if (isset($_POST['button-stop-vote'])){
+                $local_bdd->query('call orleans_bde.spe_nbr_votes_decrement(' . $_POST['id'] . ');');
+                $local_bdd->query('call orleans_bde.spd_voteidea(' . $_SESSION['id'] . ', '. $_POST['id'].');');
+            }
             $_POST['id'] =null;
             $_POST['button-suppr'] =null;
         }
