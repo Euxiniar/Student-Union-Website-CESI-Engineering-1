@@ -49,9 +49,11 @@
                          <button type="button" class="btn btn-danger btn-circle" onclick="processRemoveArticle(<?php echo $datasItemStore['Id_article'];?>)">
                             <i class="glyphicon glyphicon-remove" ></i>
                         </button>
-                        <button type="button" class="btn btn-warning btn-circle">
-                            <i class="glyphicon glyphicon-cog"></i>
-                        </button>
+                        <form method="post" action="../store/editArticle.php">
+                            <input type="hidden" name="id" value="<?php echo $datasItemStore['Id_article'];?>"/>
+                            <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>
+                          </form>
+        
                     </div>
                 </div>
 
