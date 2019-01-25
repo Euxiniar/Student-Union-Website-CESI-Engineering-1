@@ -82,6 +82,20 @@
         }
 </script>
 
+<script>
+function processNewQty(ArticleID)
+{
+    if (ArticleID == "")
+    {
+        /* If there's nothing in the field, leave it as is. The empty value is not sent to the database. */
+        console.warn("Le champ Quantité est vide. Une valeur est attendue afin d'être traitée.")
+    } else {
+        /* There's a new value, so we update in database. */
+        alert(ArticleID);
+    }
+}
+
+</script>
 
 </body>
 

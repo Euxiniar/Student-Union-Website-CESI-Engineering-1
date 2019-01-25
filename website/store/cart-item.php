@@ -11,6 +11,9 @@
         <p>
           <?php echo $datasEvent['Description'] ?>
         </p>
+        <span class="stock-info">
+          En stock : <?php echo $datasEvent['Stock'] ?>
+        </span>
         <p class="delivery-warning">
           Livraison uniquement dans votre BDE !
         </p>
@@ -21,15 +24,16 @@
     <?php echo $datasEvent['Cout'] ?>€
   </td>
   <td data-th="Quantity">
-    <input type="number" class="form-control text-center" value="<?php echo $datasEvent['Quantite'] ?>" min="1" max="10">
+    <input type="number" oninput="processNewQty(<?php echo $datasEvent['Id_article']?>)" class="form-control text-center" value="<?php echo $datasEvent['Quantite'] ?>" min="1" max="10">
   </td>
   <td data-th="Subtotal" class="text-center">
   <?php echo $datasEvent['Quantite']*$datasEvent['Cout'] ?>€
   </td>
   <td class="actions" data-th="">
+  <!--
     <button type="button" class="btn btn-info btn-sm">
     <i class="fa fa-refresh" aria-hidden="true"></i>
-    </button>
+    </button>-->
     <button type="button" class="btn btn-danger btn-sm" onclick="processRemoveItem(<?php echo $datasEvent['Id_article']?>)">
     <i class="fa fa-times" aria-hidden="true"></i>
     </button>
