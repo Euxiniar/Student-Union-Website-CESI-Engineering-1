@@ -59,15 +59,16 @@
         $nbrIdeas->closeCursor();
 
         if ($nbrOfIdeas >= 1) {
-            $user = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
+            $event = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
             $id_events = array();
 
-            while($datasEvent = $user->fetch()){
+            while($datasEvent = $event->fetch()){
                 $id_events[] = $datasEvent['Id_evenement'];
             }
-            $user->closeCursor();
+            $event->closeCursor();
 
             foreach($id_events as $id_event) {
+
                 include("../idea_box/BoxIdea.php");
                 echo '<hr class = "separator">';
             }
