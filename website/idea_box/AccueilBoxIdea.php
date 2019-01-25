@@ -68,9 +68,8 @@
             $event->closeCursor();
 
             foreach($id_events as $id_event) {
-
                 include("../idea_box/BoxIdea.php");
-                echo '<hr class = "separator">';
+                echo '<hr class = "common-separator1">';
             }
         }
         else {
