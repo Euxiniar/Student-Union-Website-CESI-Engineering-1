@@ -40,7 +40,7 @@ if (isset($_POST['id'])) {
                         <option value="2" name="recurrence">1 mois</option>
                         <option value="3" name="recurrence">1 ans</option>
                     </select>
-                    <input type="hidden" name="id_utilisateur" value="<?php echo $datasEvenement['Id_evenement'] ?>"/>
+                    <input type="hidden" name="id_evenement" value="<?php echo $datasEvenement['Id_evenement'] ?>"/>
                 </div> <!--Titre date récurrence id-->
             </div>
             <div class="row">
@@ -85,7 +85,7 @@ else {
     if(isset($_POST['submit'])) {
         include("../scripts/editEvent.php");
     }
-/*    echo '<meta http-equiv="refresh" content="0; URL=../idea_box/AccueilBoxIdea.php">';*/
+    echo '<meta http-equiv="refresh" content="0; URL=../idea_box/AccueilBoxIdea.php">';
 }
 include("../common/footer.php");
 ?>
