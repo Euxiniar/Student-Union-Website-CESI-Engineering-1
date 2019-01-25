@@ -46,8 +46,12 @@
                 </div>
                 <div class="contenu103">
                     <div id="bouton_bde">
-                         <button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-remove"></i></button>
-                        <button type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-cog"></i></button>
+                         <button type="button" class="btn btn-danger btn-circle" onclick="processRemoveArticle(<?php echo $datasItemStore['Id_article'];?>)">
+                            <i class="glyphicon glyphicon-remove" ></i>
+                        </button>
+                        <button type="button" class="btn btn-warning btn-circle">
+                            <i class="glyphicon glyphicon-cog"></i>
+                        </button>
                     </div>
                 </div>
 
