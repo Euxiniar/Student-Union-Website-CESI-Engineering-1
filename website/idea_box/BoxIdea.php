@@ -71,34 +71,37 @@ if (isset($_SESSION['id'])) {
                             </button>-->
                         </div>
                         <div class="BDECESIButtons d-inline-flex">
-                            <?php if($_SESSION['status']=="Membre BDE")
+                            <?php
+                            if (isset($_SESSION['id'])){
+                                if($_SESSION['status']=="Membre BDE")
+                                    echo '
+                                    <form method="post" action="../idea_box/AccueilBoxIdea.php"> <!--Supprimer-->
+                                        <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'] .'" />
+                                        <button class="btn btn-primary" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
+                                    </form>
+                                <form method="post" action="../common/editEvent.php"> <!--edition-->
+                                    <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
+                                    <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
+                                </form>';
+                                else if ($_SESSION['status']=="Personnel CESI"){
                                 echo '
-                                <form method="post" action="../idea_box/AccueilBoxIdea.php"> <!--Supprimer-->
-                                    <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'] .'" />
-                                    <button class="btn btn-primary" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
-                                </form>
-                            <form method="post" action="../common/editEvent.php"> <!--edition-->
-                                <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
-                                <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
-                            </form>';
-                            else if ($_SESSION['status']=="Personnel CESI"){
-                            echo '
-                            <form method="post""><!--privé-->
-                                <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
-                                <button class="btn btn-primary" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
-                            </form>';/*privé*/
-                            }
-                            ?>
+                                <form method="post""><!--privé-->
+                                    <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
+                                    <button class="btn btn-primary" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
+                                </form>';/*privé*/
+                                }
+                                ?>
                         </div>
-                        <?php if($_SESSION['status']=="Membre BDE") { /*Valider*/
-                            echo
-                            '<form method = "post" action = "../idea_box/AccueilBoxIdea.php" >
-                            <input type = "hidden" name = "id" value = "'.$datasEvent['Id_evenement'].'" />
-                            <button type = "submit" class="buttonValid" name = "button-valid" >
-                                Valider
-                                <i class="fa fa-check" ></i >
-                            </button >
-                        </form >';
+                            <?php if($_SESSION['status']=="Membre BDE") { /*Valider*/
+                                echo
+                                    '<form method = "post" action = "../idea_box/AccueilBoxIdea.php" >
+                                <input type = "hidden" name = "id" value = "' . $datasEvent['Id_evenement'] . '" />
+                                <button type = "submit" class="buttonValid" name = "button-valid" >
+                                    Valider
+                                    <i class="fa fa-check" ></i >
+                                </button >
+                            </form >';
+                            }
                         }
                         ?>
                     </div>
