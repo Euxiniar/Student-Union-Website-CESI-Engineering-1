@@ -20,9 +20,21 @@ if ( !in_array($extension_upload,$extensions_valides) )
 
 /*echo $erreur;*/
 $hours = date("H-i-s");
-$nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
-/*echo $nomNewFichier. '<br>';;*/
-$url = '../assets/img/couvertures/'.$nomNewFichier;
+$id = $_POST['id_evenement'];
+if ($_FILES['filebutton']['name'] != 0){
+    $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
+    /*echo $nomNewFichier. '<br>';;*/
+    $url = '../assets/img/couvertures/'.$nomNewFichier;
+}
+else {
+    $event = $local_bdd->query('call orleans_bde.sps_evenement('.$id.');');
+    $dataEvent = $event->fetch();
+    $event->closeCursor();
+    $url = $dataEvent['URL_photo'];
+}
+
+
+
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
 /*if ($resultat)
     echo "Transfert réussi". '<br>';
@@ -33,7 +45,7 @@ if ($erreur = 'pas derreur') {
     /*Fin de la vérification*/
     $replace = "\\\'";
 
-    $id = $_POST['id_utilisateur'];
+    /*id_event*/
     $titre = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['title']));
     $date = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['date']));
     /*$creationDate*/ /*defini plus haut*/
