@@ -55,21 +55,21 @@
               </div>
               <div class="col-md-4 order-md-2 order-0">
                 
-                  <div class="col-md-6 col-12 order-0 order-md-1 text-center common-center-text"> 
+                  <div class="col-md-6 col-12 order-0 order-md-1 text-center d-inline-block"> 
                     <?php
                       if($_SESSION['status']=="Membre BDE"){
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                          <button class="btn btn-primary d-inline-block" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
-                          <button class="btn btn-primary d-inline-block" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                          <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
+                          <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
                         </form>';
                           
                         if($datasEvent['Id_status_date']==1){
                           echo '
-                          <form method="post" action="../common/edit_event.php">
+                          <form method="post" action="../common/editEvent.php">
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                            <button class="btn btn-primary d-inline-block" type="submit" name="edit"><i class="fas fa-cog"></i></button>
+                            <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>
                           </form>';
                         }
                       }
