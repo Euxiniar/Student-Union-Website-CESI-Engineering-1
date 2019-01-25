@@ -51,7 +51,7 @@
                         </button>
                         <form method="post" action="../store/editArticle.php">
                             <input type="hidden" name="id" value="<?php echo $datasItemStore['Id_article'];?>"/>
-                            <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>
+                            <button class="btn btn-warning" type="submit" name="edit"><i class="fas fa-cog"></i></button>
                           </form>
         
                     </div>
