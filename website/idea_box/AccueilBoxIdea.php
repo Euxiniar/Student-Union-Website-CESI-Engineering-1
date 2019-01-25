@@ -37,8 +37,6 @@
             $id_events = array();
 
             while($datasEvent = $user->fetch()){
-    /*            include("../idea_box/BoxIdea.php");
-                echo '<hr class = "separator">';*/
                 $id_events[] = $datasEvent['Id_evenement'];
             }
             $user->closeCursor();

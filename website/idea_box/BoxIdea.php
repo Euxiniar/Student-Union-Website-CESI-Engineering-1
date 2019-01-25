@@ -61,7 +61,7 @@ $user->closeCursor();
                                 <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'] .'" />
                                 <button class="btn btn-primary" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
                             </form>
-                        <form method="post" action="editIdea.php"> <!--edition-->
+                        <form method="post" action="../common/editEvent.php"> <!--edition-->
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
                             <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
                         </form>';
