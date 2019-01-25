@@ -1,8 +1,8 @@
 <tfoot>
                 <tr>
                     <td>
-                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> Continuer les achats</button>
-                        <button type="button" class="btn btn-danger" onclick="processEmptyCart(<?php echo $_SESSION['id']?>)> <span class="glyphicon glyphicon-trash"></span> Vider le panier</button>
+                    <a href="./" class="btn btn-info" role="button"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Continuer les achats</a>
+                        <button type="button" class="btn btn-danger" onclick="processEmptyCart(<?php echo $idcom?>)"> <i class="fa fa-trash" aria-hidden="true"></i> Vider le panier</button>
                     </td>
 
                     <td colspan="2" class="hidden-xs"></td>
@@ -11,7 +11,7 @@
                     </td>
                     <td>
                         <button type="button" class="btn btn-success">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Commander
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Commander
                         </button>
                     </td>
                 </tr>

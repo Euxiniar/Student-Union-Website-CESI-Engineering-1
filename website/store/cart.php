@@ -5,10 +5,6 @@
 <head>
     <meta charset="utf-8">
     <title>Panier - Boutique - BDE CESI Orléans</title>
-    <!-- TODO : Unify the assets source for the whole BDE project. -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="../assets/css/reset.css" rel="stylesheet">
     <link href="../assets/css/cart.css" rel="stylesheet">
     <?php $PAGE="cart" ;?>
@@ -33,9 +29,10 @@
             include_once("./cart-top.php");
             while($datasEvent = $itemsInOrder->fetch())
             { 
+                $idcom = $datasEvent['Id_commande'];
                 include("./cart-item.php"); 
             }
-            include("./cart-total.php"); 
+            include_once("./cart-total.php"); 
             $itemsInOrder->closeCursor(); } 
         } 
         else 
@@ -64,31 +61,41 @@
                 }
             });
         }
+</script>
 
-
+<script>
         function processEmptyCart(Id_Commande) {
             $.ajax({
                 type: "POST",
-                /* POST Request */
                 url: "emptyCart.php",
-                /* PHP containing desired function */
                 data: {
-                    Id_Commande: Id_Commande /* The parameter sent to the PHP file as header */
+                    Id_Commande: Id_Commande
                 },
-                /* If the query to the PHP file is successful */
                 success: function(result) {
                     $(document).ready(function() {
-                        /* We generate the new HTML for the div containing the items */
                         $.get('refreshItems.php', function(response) {
-                            /* We replace the content of the div with the newly generated HTML and we refresh this div ONLY once*/
                             $('#product-list').html(response);
-                            /* Updated div :-) */
                         });
                     });
                 }
             });
         }
-    </script>
+</script>
+
+<script>
+function processNewQty(ArticleID)
+{
+    if (ArticleID == "")
+    {
+        /* If there's nothing in the field, leave it as is. The empty value is not sent to the database. */
+        console.warn("Le champ Quantité est vide. Une valeur est attendue afin d'être traitée.")
+    } else {
+        /* There's a new value, so we update in database. */
+        alert(ArticleID);
+    }
+}
+
+</script>
 
 </body>
 
