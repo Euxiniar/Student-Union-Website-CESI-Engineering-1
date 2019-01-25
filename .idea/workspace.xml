@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69ffbbee-7f46-4186-821e-e977675f86a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,20 +61,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="345">
+              <caret line="33" column="98" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="59" column="114" selection-start-line="59" selection-start-column="114" selection-end-line="59" selection-end-column="114" />
+            <state relative-caret-position="235">
+              <caret line="87" column="96" selection-start-line="87" selection-start-column="91" selection-end-line="87" selection-end-column="96" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="89" selection-start-line="89" selection-end-line="93" selection-end-column="23" />
+            <state relative-caret-position="235">
+              <caret line="71" column="89" selection-start-line="71" selection-start-column="82" selection-end-line="71" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -119,6 +118,8 @@
       <find>ButtonsGridIdea</find>
       <find>id_utilisateur</find>
       <find>$participate</find>
+      <find>priv</find>
+      <find>priva</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,7 +151,6 @@
         <option value="$PROJECT_DIR$/website/scripts/deconnexion.php" />
         <option value="$PROJECT_DIR$/website/scripts/scriptInscription.php" />
         <option value="$PROJECT_DIR$/website/scripts/scriptConnexion.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/website/common/header.php" />
         <option value="$PROJECT_DIR$/website/idea_box/editIdea.php" />
         <option value="$PROJECT_DIR$/website/disconnected/connexion.php" />
@@ -161,8 +161,9 @@
         <option value="$PROJECT_DIR$/website/idea_box/AddIdea.php" />
         <option value="$PROJECT_DIR$/website/scripts/editEvent.php" />
         <option value="$PROJECT_DIR$/website/common/editEvent.php" />
-        <option value="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" />
         <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" />
       </list>
     </option>
   </component>
@@ -248,18 +249,18 @@
       <workItem from="1548317836674" duration="29032000" />
       <workItem from="1548364038085" duration="1053000" />
       <workItem from="1548366822771" duration="338000" />
-      <workItem from="1548404187375" duration="5242000" />
+      <workItem from="1548404187375" duration="6117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135713000" />
+    <option name="totallyTimeSpent" value="136588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1130064" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1130064" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -274,8 +275,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50373137" side_tool="true" visible="true" weight="0.08249721" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49626866" weight="0.109253064" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50479746" side_tool="true" visible="true" weight="0.109253064" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49520257" weight="0.109253064" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -495,13 +496,6 @@
     <entry file="file://$PROJECT_DIR$/website/assets/css/addproduit.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/evenement">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/disconnected/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -594,29 +588,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="89" selection-start-line="89" selection-end-line="93" selection-end-column="23" />
+    <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/evenement">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
+    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="235">
+          <caret line="71" column="89" selection-start-line="71" selection-start-column="82" selection-end-line="71" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="59" column="114" selection-start-line="59" selection-start-column="114" selection-end-line="59" selection-end-column="114" />
+        <state relative-caret-position="235">
+          <caret line="87" column="96" selection-start-line="87" selection-start-column="91" selection-end-line="87" selection-end-column="96" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="33" column="98" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
         </state>
       </provider>
     </entry>

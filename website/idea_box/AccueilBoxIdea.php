@@ -30,6 +30,9 @@
                 $local_bdd->query('call orleans_bde.spe_nbr_votes_decrement(' . $_POST['id'] . ');');
                 $local_bdd->query('call orleans_bde.spd_voteidea(' . $_SESSION['id'] . ', '. $_POST['id'].');');
             }
+            if (isset($_POST['button-private'])){
+                $local_bdd->query('call orleans_bde.spe_evenement_status(' . $_POST['id'] . ');');
+            }
             $_POST['id'] =null;
             $_POST['button-suppr'] =null;
         }

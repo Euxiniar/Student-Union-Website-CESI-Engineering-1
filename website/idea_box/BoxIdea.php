@@ -83,7 +83,7 @@ if (isset($_SESSION['id'])) {
                             </form>';
                             else if ($_SESSION['status']=="Personnel CESI"){
                             echo '
-                            <form method="post" action ="../idea_box/editIdea.php"><!--privé-->
+                            <form method="post""><!--privé-->
                                 <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'" />
                                 <button class="btn btn-primary" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
                             </form>';/*privé*/
