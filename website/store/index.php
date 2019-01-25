@@ -79,12 +79,12 @@
  
     <div id="contenu" >
     <?php include("../scripts/setConnexionLocalBDD.php");
-    $campus = $local_bdd->query('call orleans_bde.sps_article()');
-    while($datasItemStore = $campus->fetch()){
+    $article = $local_bdd->query('call orleans_bde.sps_article()');
+    while($datasItemStore = $article->fetch()){
         include("./item-box.php");
     }
 
-    $campus->closeCursor();
+    $article->closeCursor();
  
  ?>
         
@@ -113,7 +113,24 @@
     <link rel="stylesheet" href="../assets/css/store.css" type="text/css">
     <script type="text/javascript" src="../assets/js/store.js"> </script>
     <script src="js/jquery.js"></script>
-
+    <script>
+    function processRemoveArticle(Id_Article) {
+            $.ajax({
+                type: "POST",
+                url: "removeArticle.php",
+                data: {
+                    Id_Article: Id_Article
+                },
+                success: function(result) {
+                    $(document).ready(function() {
+                        $.get('refreshArticle.php', function(response) {
+                            $('#contenu').html(response);
+                        });
+                    });
+                }
+            });
+        }
+</script>
 </body>
 
 

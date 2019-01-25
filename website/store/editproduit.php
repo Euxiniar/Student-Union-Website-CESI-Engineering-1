@@ -24,6 +24,7 @@ $hours = date("H-i-s");
 $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
 /*echo $nomNewFichier. '<br>';;*/
 $url = '../assets/img/articles/'.$nomNewFichier;
+echo $url;
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
 /*if ($resultat)
     echo "Transfert réussi". '<br>';
@@ -71,10 +72,11 @@ if ($erreur = 'pas derreur') {
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
     $query =
         'call orleans_bde.spi_article(
-    \'' . $titre . '\',  
-    \'' . $description . '\',  
-    ' . $cout . ',
-    \'' . $url . '\',
+    ' . $id . ',
+     \'' . $titre . '\',  
+     \'' . $description . '\',  
+      ' . $cout . ',
+     \'' . $url . '\',
     ' . $stock . ',
     ' . $Nbr_achats . ' , 
     ' . $idCategory . ');';
