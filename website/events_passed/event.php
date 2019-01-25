@@ -54,25 +54,36 @@
                 </div>
               </div>
               <div class="col-md-4 order-md-2 order-0">
-                <form method="post">
-                  <div class="col-md-6 col-12 order-0 order-md-1 text-center"> 
-                    <input type="hidden" name="id" value="<?php echo $datasEvent['Id_evenement']?>"/>
+                
+                  <div class="col-md-6 col-12 order-0 order-md-1 text-center common-center-text"> 
                     <?php
                       if($_SESSION['status']=="Membre BDE"){
                         echo '
-                        <button class="btn btn-primary d-inline-block" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
-                        <button class="btn btn-primary d-inline-block" type="submit" name="delete"><i class="fas fa-times"></i></button>';
+                        <form method="post">
+                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
+                          <button class="btn btn-primary d-inline-block" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
+                          <button class="btn btn-primary d-inline-block" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                        </form>';
+                          
                         if($datasEvent['Id_status_date']==1){
-                          echo '<button class="btn btn-primary d-inline-block" type="submit" name="edit"><i class="fas fa-cog"></i></button>';
+                          echo '
+                          <form method="post" action="../common/edit_event.php">
+                            <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
+                            <button class="btn btn-primary d-inline-block" type="submit" name="edit"><i class="fas fa-cog"></i></button>
+                          </form>';
                         }
                       }
                     ?>
                     <?php
-                      if($_SESSION['status']=="Personnel CESI")
-                        echo '<button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>';
+                      if($_SESSION['status']=="Personnel CESI"){
+                        echo '
+                        <form method="post">
+                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
+                          <button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
+                        </form>';
+                      }
                     ?>
                   </div>
-                </form>
                 
               </div>
             </div>

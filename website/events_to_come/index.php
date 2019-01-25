@@ -12,11 +12,25 @@
         <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
 
 		<?php
-        //$_SESSION['status']="Membre BDE";
+        $_SESSION['status']="Membre BDE";
         include("../scripts/setConnexionLocalBDD.php"); 
         if(isset($_POST['id'])){
             if(isset($_POST['l_inscrits'])){
+                header("Content-Type: text/csv");
+                header("Content-Disposition: attachment; filename=file.csv");
 
+                function outputCSV($data) {
+                $output = fopen("php://output", "wb");
+                foreach ($data as $row)
+                    fputcsv($output, $row); // here you can change delimiter/enclosure
+                fclose($output);
+                }
+
+                outputCSV(array(
+                array("name 1", "age 1", "city 1"),
+                array("name 2", "age 2", "city 2"),
+                array("name 3", "age 3", "city 3")
+                ));
             } else if(isset($_POST['delete'])){
                 $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
                 $_POST['delete'] = NULL;
@@ -25,6 +39,17 @@
     
             }else if(isset($_POST['private'])){
                 $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
+                $query = $local_bdd->query('call orleans_bde.sps_event('.$_POST['id'].');');
+                $event = $query->fetch();
+                $query->closeCursor();
+
+                if($event['Id_status_accessibilite']==4) {
+                    $query = $local_bdd->query('call orleans_bde.sps_user('.$event['Id_utilisateur'].');');
+                    $user = $query->fetch();
+                    $query->closeCursor();
+                    // mail($user['Email'],"Evénement privé","Votre évenement à été mis en privé par un administrateur, 
+                    // car son contenu a été jugé offensant ou restrictif.");
+                }
                 $_POST['private'] = NULL;
 
             }else if(isset($_POST['participate'])){
