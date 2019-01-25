@@ -24,13 +24,11 @@ $hours = date("H-i-s");
 $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
 /*echo $nomNewFichier. '<br>';;*/
 $url = '../assets/img/couvertures/'.$nomNewFichier;
-echo $url;
+/*echo $url;*/
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
-if ($resultat)
-    echo "Transfert réussi". '<br>';
-else {
+if (!$resultat)
     $erreur = "Erreur de transfert". '<br>';
-}
+
 if ($erreur = 'pas derreur') {
     /*Fin de la vérification*/
     $replace = "\\\'";
@@ -96,7 +94,7 @@ if ($erreur = 'pas derreur') {
 /*    echo $query;*/
 
     $local_bdd->query($query);
-/*    echo '<meta http-equiv="refresh" content="0; URL=./AccueilBoxIdea.php">';*/
+    echo '<meta http-equiv="refresh" content="0; URL=./AccueilBoxIdea.php">';
 
 }
 else {
