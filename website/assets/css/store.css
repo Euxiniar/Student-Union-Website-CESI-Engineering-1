@@ -263,7 +263,7 @@ background:url(../img/boutonnoir2.png) no-repeat;
 }
 .control:hover input:not([disabled]):checked ~ .control_indicator,
 .control input:checked:focus ~ .control_indicator {
-  background: #0e6647;
+  
 }
 .control input:disabled ~ .control_indicator {
   background: #e6e6e6;
