@@ -1,27 +1,41 @@
 <!doctype html>
-<html lang="fr">
+<html >
 <head>
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="../assets/css/addproduit.css">
-  <?php $PAGE="cart"; ?>
 </head>
 <body>
-<?php include("../common/header.php") ?>
+
+<?php
+$PAGE = 'CART';
+include("../common/header.php");
+include("../scripts/setConnexionLocalBDD.php");
+
+if (isset($_POST['id'])) {
+    $article = $local_bdd->query('call orleans_bde.sps_edit_article('. $_POST['id'].');');
+    $datasItemStore = $article->fetch();
+    $article->closeCursor();
+}
+    ?>
+
+
+
+
 <div class = "IdeaBox p-2 pr-4 mt-4">
     <form class="container-fluid" method="post"  autocomplete="on" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12"> <!--Titre-->
-                <t2> Création d'un article</t2>
+                <t2> Modification d'un article</t2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6"> <!--Photo-->
-
+            <img alt="Photo de l'article" src="<?php echo $datasItemStore['Image'] ?>"  class="ml-3 common-couverture">
             </div> <!--Photo-->
             <div class="col-md-6"> <!--Nom Article-->
                 <t3>Nom de l'article</t3><br/>
-                <input type="text"  name="titre" placeholder="Nom de l'article" class ="mb-2" maxlength="50" required="required" autofocus ><br/>
+                <input type="text"  name="titre" placeholder="Nom de l'article" class ="mb-2" maxlength="50" required="required" value ="<?php echo  $datasItemStore['Titre']; ?>" ><br/>
                 <t3>Cout de l'article </t3>
                 <br/>
                 <input type="number" name="cout" placeholder ="0€" min="0" max="999">
@@ -36,11 +50,11 @@
             <div class="col-md-3"> <!--cout-->
             <t3>stock </t3>
                 <br/>
-                <input type="number" name="stock" placeholder ="0" min="0" max="999">
+                <input type="number" name="stock" placeholder ="0" value ="<?php echo $datasItemStore['Cout']; ?>" min="0" max="999">
             </div>
                 <div class="col-md-3 m"> <!--adresse-->
                 <t3>Categorie de l'article </t3><br/>
-                <select id="selectbasic" name="category" class="form-control mb-2" required="required"><br/>
+                <select id="selectbasic" name="category" class="form-control mb-2" required="required" value ="<?php echo $datasItemStore['Id_categorie']; ?>"><br/>
                     <option value="1" name="category">Vetement</option>
                     <option value="2" name="category">Bracelet</option>
                     <option value="3" name="category">Stylo</option>
@@ -58,20 +72,23 @@
         <div class="row">
             <div class="col-md-12 m-3 "> 
             <t3>Description de l'article</t3><br/>
-                <textarea class="form-control" id="description" name="description" required="required" maxlength="1000"></textarea>
+                <textarea class="form-control" id="description" name="description" required="required" maxlength="1000"<?php echo $datasItemStore['Description']; ?>></textarea>
             </div> 
             <div class="submit">
                     <a href="../store/index.php" id="submit" name="submit" class="btn btn-danger m-3" >Annuler</a>
-                    <button id="submit" name="submit" class="btn btn-success m-3">Ajouter</button>
+                    <button id="submit" name="submit" class="btn btn-success m-3">Modifier</button>
                 </div>
             </div> 
         </div>
     </form>
 </div>
+
 <?php if(isset($_POST['submit'])) {
-    include("../scripts/createArticle.php");
+    include("../scripts/editproduit.php");
 }?>
 
 <?php include("../common/footer.php"); ?>
+
 </body>
+
 </html>
