@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69ffbbee-7f46-4186-821e-e977675f86a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/website/assets/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/assets/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/TODO - Copie (3).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/commentaire.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/commentaires.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/events_passed/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/events_passed/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/events_passed/writeComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/writeComment.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,29 +97,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/OneDrive/CER/A2/Bloc Web/CER 3.02 JavaScript/www/js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="299">
+              <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/website/common/accessDenied.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/events_passed/writeComment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="361">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -138,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
+            <state relative-caret-position="-598">
+              <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -164,6 +153,7 @@
       <find>priva</find>
       <find>echo</find>
       <find>$datasStatus</find>
+      <find>hou</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,11 +201,11 @@
         <option value="$PROJECT_DIR$/website/events_passed/commentaires.php" />
         <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
         <option value="$PROJECT_DIR$/website/assets/css/common.css" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/website/common/accessDenied.php" />
         <option value="$PROJECT_DIR$/website/events_passed/comment.php" />
         <option value="$PROJECT_DIR$/website/events_passed/writeComment.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/website/events_passed/comments.php" />
-        <option value="$PROJECT_DIR$/website/common/accessDenied.php" />
       </list>
     </option>
   </component>
@@ -310,12 +300,12 @@
       <workItem from="1548366822771" duration="338000" />
       <workItem from="1548404187375" duration="12564000" />
       <workItem from="1548420359720" duration="6198000" />
-      <workItem from="1548444344300" duration="11074000" />
+      <workItem from="1548444344300" duration="14243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160307000" />
+    <option name="totallyTimeSpent" value="163476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -497,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/createEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -619,38 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/AddIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="58" column="119" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/commentaire">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/writeComment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" selection-start-line="36" selection-end-line="40" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -661,17 +616,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/common/accessDenied.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="36" selection-start-line="36" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-598">
+          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/createEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/AddIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="58" column="119" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/writeComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
         </state>
       </provider>
     </entry>

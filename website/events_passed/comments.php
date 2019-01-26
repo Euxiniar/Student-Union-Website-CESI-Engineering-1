@@ -4,7 +4,13 @@
 </head>
 
 <body class="body common-background-gray">
-<?php $PAGE = 'AccueilBoxIdea'; ?>
+<?php
+
+$_POST['id_photo'] = 2; /*To change !!!!*/
+$idPhoto = $_POST['id_photo'];
+
+
+$PAGE = 'AccueilBoxIdea'; ?>
 <?php include("../common/header.php"); ?>
 
 <?php
@@ -23,21 +29,34 @@ if (isset($_SESSION['id'])){
         $_POST['id'] =null;
         $_POST['button-suppr'] =null;
     }
+    if (isset($_POST['button-submit-comment']) && $_POST['id_photo']){
+
+        $query =
+            'call orleans_bde.spi_commentaire(
+    \'' . htmlspecialchars($_POST['commentToInsert']) . '\',  
+    \'' . date("Y-m-d") . '\',  
+    \'' . date("H:i:s") . '\',  
+    ' . 1 . ',
+    ' . $_SESSION['id'] . ',  
+    ' . $idPhoto . ');';
+
+/*        echo $query;*/
+
+        $local_bdd->query($query);
+    }
 }
 /*---------------------------------------*/
 
 include("../scripts/setConnexionLocalBDD.php");
 
-$_POST['id_photo'] = 2; /*To change !!!!*/
-
 /*Selection des idées à afficher*/
-$nbrcomments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_POST['id_photo'].' );');
+$nbrcomments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $idPhoto.' );');
 $allComments = $nbrcomments->fetch();
 $nbrcomments->closeCursor();
 
 
 $id_events = array();
-$comments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_POST['id_photo'].' );');
+$comments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $idPhoto.' );');
 while($datasComments = $comments->fetch()){
     $id_commentaires[] = $datasComments['Id_commentaire'];
 }
