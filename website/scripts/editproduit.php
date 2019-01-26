@@ -21,9 +21,19 @@ if ( !in_array($extension_upload,$extensions_valides) )
 
 /*echo $erreur;*/
 $hours = date("H-i-s");
-$nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
-/*echo $nomNewFichier. '<br>';;*/
-$url = '../assets/img/articles/'.$nomNewFichier;
+$id = $_POST['Id_article'];
+if ($_FILES['filebutton']['name'] != 0){
+    $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
+    /*echo $nomNewFichier. '<br>';;*/
+    $url = '../assets/img/articles/'.$nomNewFichier;
+}
+else{
+    $article = $local_bdd->query('call orleans_bde.sps_edit_article('.$id.');');
+    $datasItemStore = $article->fetch();
+    $article->closeCursor();
+    $url = $datasItemStore['Image'];
+}
+
 echo $url;
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
 /*if ($resultat)
@@ -71,7 +81,7 @@ if ($erreur = 'pas derreur') {
 
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
     $query =
-        'call orleans_bde.spi_article(
+        'call orleans_bde.spe_edit_article(
     ' . $id . ',
      \'' . $titre . '\',  
      \'' . $description . '\',  

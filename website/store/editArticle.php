@@ -16,7 +16,8 @@ if (isset($_POST['id'])) {
     $article = $local_bdd->query('call orleans_bde.sps_edit_article('. $_POST['id'].');');
     $datasItemStore = $article->fetch();
     $article->closeCursor();
-}
+
+
     ?>
 
 
@@ -38,19 +39,20 @@ if (isset($_POST['id'])) {
                 <input type="text"  name="titre" placeholder="Nom de l'article" class ="mb-2" maxlength="50" required="required" value ="<?php echo  $datasItemStore['Titre']; ?>" ><br/>
                 <t3>Cout de l'article </t3>
                 <br/>
-                <input type="number" name="cout" placeholder ="0€" min="0" max="999">
+                <input type="number" name="cout" value ="<?php echo $datasItemStore['Cout']; ?>" placeholder ="0€" min="0" max="999">
+                <input type="hidden" name="Id_article" value="<?php echo $datasItemStore['Id_article'] ?>"/>
             </div>
       </div>
         <div class="row">
             <div class="col-md-6"> <!--Choisir un fichier-->
                 <t3 class ="pl-3 ">Image | max 1 Mo </t3><br/>
                 <input type="hidden" name="MAX_FILE_SIZE" value="1048576" accept="image/png, image/jpeg, image/jpg" /> <!--Mac 1Mo-->
-                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg" >
+                <input id="filebutton" name="filebutton" class="input-file pl-3" type="file"  accept="image/png, image/jpeg, image/jpg" >
             </div> <!--Choisir un fichier-->
             <div class="col-md-3"> <!--cout-->
             <t3>stock </t3>
                 <br/>
-                <input type="number" name="stock" placeholder ="0" value ="<?php echo $datasItemStore['Cout']; ?>" min="0" max="999">
+                <input type="number" name="stock" placeholder ="0" value ="<?php echo $datasItemStore['Stock']; ?>" min="0" max="999">
             </div>
                 <div class="col-md-3 m"> <!--adresse-->
                 <t3>Categorie de l'article </t3><br/>
@@ -72,7 +74,7 @@ if (isset($_POST['id'])) {
         <div class="row">
             <div class="col-md-12 m-3 "> 
             <t3>Description de l'article</t3><br/>
-                <textarea class="form-control" id="description" name="description" required="required" maxlength="1000"<?php echo $datasItemStore['Description']; ?>></textarea>
+                <textarea class="form-control" id="description" name="description" required="required" maxlength="1000"><?php echo $datasItemStore['Description']; ?></textarea>
             </div> 
             <div class="submit">
                     <a href="../store/index.php" id="submit" name="submit" class="btn btn-danger m-3" >Annuler</a>
@@ -83,12 +85,14 @@ if (isset($_POST['id'])) {
     </form>
 </div>
 
-<?php if(isset($_POST['submit'])) {
-    include("../scripts/editproduit.php");
-}?>
-
-<?php include("../common/footer.php"); ?>
-
+<?php
+}else {
+        if(isset($_POST['submit'])) {
+            include("../scripts/editproduit.php");
+        }
+        echo '<meta http-equiv="refresh" content="0; URL=../store/index.php">';
+    }
+?>
 </body>
 
 </html>
