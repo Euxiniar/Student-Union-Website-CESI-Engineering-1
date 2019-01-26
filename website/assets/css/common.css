@@ -119,3 +119,11 @@ hr.common-separator3 {
 .common-max-width-60{
     max-width: 60%;
 }
+
+.common-red{
+    color: red;
+}
+
+.common-green{
+    color: green;
+}

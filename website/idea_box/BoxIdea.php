@@ -25,16 +25,20 @@ if (isset($_SESSION['id'])) {
                     <div class="col-md-9">
                         <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
                         <span class = "font-weight-bold">Créateur : </span><?php echo $datasUser['Prenom'] . ' ' . $datasUser['Nom'] ?> </br>
-                        <span class = "font-weight-bold">Cout de participation : </span><?php echo $datasEvent['Cout'] . '€' ?> </br>
-                        <span class = "font-weight-bold">Date de l'évènement : </span><?php echo $datasEvent['Date_evenement'] ?> </br>
-                        <span class = "font-weight-bold">Lieu de l'évènement : </span><?php echo $datasEvent['Lieu'] ?> </br>
+                        <i class="fas fa-euro-sign pr-2"></i><?php echo $datasEvent['Cout'] . '€' ?> </br>
+                        <i class="far fa-calendar-alt pr-2"></i><?php echo $datasEvent['Date_evenement'] ?> </br>
+                        <i class="fas fa-map-marker-alt pr-2" style="color:blue"></i><?php echo $datasEvent['Lieu'] ?> </br>
                         <?php
                         $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
                         $datasStatus = $status->fetch();
                         $status->closeCursor();
                         if (isset($_SESSION['id'])) {
                             if ($_SESSION['status'] == "Membre BDE" || $_SESSION['status'] == "Personnel CESI") {
-                                echo '<span class="font-weight-bold">Etat : </span><span>' . $datasStatus['Designation'] . '</span></br>';
+                                if ($datasStatus['Designation'] == 'Public')
+                                    echo '<span class="font-weight-bold common-green">' . $datasStatus['Designation'] . '</span></br>';
+                                else {
+                                    echo '<span class="font-weight-bold common-red">' . $datasStatus['Designation'] . '</span></br>';
+                                }
                             }
                         }
                         ?>
@@ -48,7 +52,7 @@ if (isset($_SESSION['id'])) {
                 </div>
             </div>
 
-            <div class="col-md-3 m-auto ">
+            <div class="col-md-3 m-auto "> <!--Boutons-->
 
                 <div class="container-fluid">
                     <div class="row">
@@ -78,7 +82,7 @@ if (isset($_SESSION['id'])) {
                                     ?>
                                 </form>
                             </div>
-                        </div>
+                        </div> <!--Bouton vote-->
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -105,7 +109,7 @@ if (isset($_SESSION['id'])) {
                                 }
                                 ?>
                             </div>
-                        </div>
+                        </div> <!--Boutons administration-->
                     </div>
                     <div class="row">
                         <div class="col-md-12 common-center-text">
@@ -123,10 +127,10 @@ if (isset($_SESSION['id'])) {
                                 }
                             }?>
 
-                        </div>
+                        </div> <!--Bouton valider-->
                     </div>
                 </div>
-                
+
             </div> <!--Boutons-->
         </div>
     </div>
