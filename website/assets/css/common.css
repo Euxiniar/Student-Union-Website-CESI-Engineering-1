@@ -99,3 +99,23 @@ hr.common-separator2 {
 hr.common-separator3 {
     width: 60%;
 }
+
+.common-min-width-20{
+    min-width: 20%;
+}
+
+.common-min-width-30{
+    min-width: 30%;
+}
+
+.common-min-width-40{
+    min-width: 40%;
+}
+
+.common-min-width-50{
+    min-width: 50%;
+}
+
+.common-max-width-60{
+    max-width: 60%;
+}
