@@ -111,6 +111,13 @@
                         <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
                       </div>
                     </div>';
+                }else if($datasEvent['Id_status_date']==2){
+                  echo '<div>
+                  <form method="post" action="../events_passed/index_photos.php">
+                    <input type="hidden" name="id_event" value="'.$datasEvent['Id_evenement'].'"/>
+                    <button class="btn btn-primary" type="submit" name="Photos">Voir les photos</button>
+                  </form>
+                  </div>';
                 }
               ?>
             </div>
