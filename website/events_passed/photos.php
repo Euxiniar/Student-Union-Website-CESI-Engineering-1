@@ -34,7 +34,14 @@
                           <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
                           <button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
                         </form>';
-                      }
+                    }
+                    if($_SESSION['status']=="Membre BDE"){
+                        echo '
+                        <form method="post">
+                          <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
+                          <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                        </form>';
+                    }
                     if($_SESSION['status']=="Membre BDE" || $_SESSION['status']=="Personnel CESI") {
                     echo '<p class="">Etat :</p>
                     <p class="">'.

@@ -4,11 +4,13 @@ if(!isset($_SESSION))
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
     if(isset($_POST['delete'])){
-        $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
+        $local_bdd->query('call orleans_bde.spd_commentaire_by_id_photo('.$_POST['id'].');');
+        $local_bdd->query('call orleans_bde.spd_likephoto_by_id_photo('.$_POST['id'].');');
+        $local_bdd->query('call orleans_bde.spd_photo_by_id('.$_POST['id'].');');
         $_POST['delete'] = NULL;
     } else if(isset($_POST['private'])){
         $query= $local_bdd->query('call orleans_bde.spe_photo_status('.$_POST['id'].');');
-        $query = $local_bdd->query('call orleans_bde.sps_event('.$_POST['id'].');');
+        $query = $local_bdd->query('call orleans_bde.sps_photo('.$_POST['id'].');');
         $photo = $query->fetch();
         $query->closeCursor();
 
@@ -47,7 +49,7 @@ if(isset($_POST['id'])){
         <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
 
         <?php        
-        $_SESSION['status']="Personnel CESI";
+        //$_SESSION['status']="Membre BDE";
 
         if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
             $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement(18);');
