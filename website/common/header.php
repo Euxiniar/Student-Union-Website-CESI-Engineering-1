@@ -65,7 +65,7 @@
                         }
                     ?>
                     <?php 
-                        if($PAGE=="cart"){
+                        if($PAGE=="store" || $PAGE=="cart") {
                             echo '
                             <li class="nav-item">
                                 <a class="nav-link" href=" ../store/cart.php"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>
