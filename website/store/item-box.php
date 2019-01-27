@@ -31,27 +31,33 @@
                                     <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                             </span>
-                                <input type="text" name='<?php echo $datasItemStore["Id_article"]; ?>' class="form-control input-number" value="0" min="0" max="100">
+                                <input type="text" name='<?php echo $datasItemStore["Id_article"]; ?>' class="form-control input-number" value="" min="0" max="100">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field='<?php echo $datasItemStore["Id_article"]; ?>'>
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </span>
                          </div>
-                         <div class="stock">
-                    <p><?php echo($datasItemStore["Stock"]);?></p>
+                         <div class="Panier">
+                        <button class="btn btn-primary" type="button" name="Panier" onclick="addtocart({Qty:document.getElementById('<?php echo $datasItemStore['Id_article']; ?>').value, ArticleID:'<?php echo $datasItemStore['Id_article']?>'})">
+                        <i class="fas fa-cart-plus"></i>
+                        </button>
+                
                     </div>
                         <p></p>
-                    </br>
+                    <br/>
                 </div>
                 <div class="contenu103">
                     <div id="bouton_bde">
+                        <form id="form2">
                          <button type="button" class="btn btn-danger btn-circle" onclick="processRemoveArticle(<?php echo $datasItemStore['Id_article'];?>)">
                             <i class="glyphicon glyphicon-remove" ></i>
                         </button>
-                        <button type="button" class="btn btn-warning btn-circle">
-                            <i class="glyphicon glyphicon-cog"></i>
-                        </button>
+                        </form>
+                        <form method="post" id="form" action="../store/editArticle.php">
+                            <input type="hidden" name="id" value="<?php echo $datasItemStore['Id_article'];?>"/>
+                            <button class="btn btn-warning" type="submit" name="edit"><i class="glyphicon glyphicon-cog"></i></button>
+                          </form>
                     </div>
                 </div>
 
