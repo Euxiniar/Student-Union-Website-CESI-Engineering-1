@@ -1,4 +1,6 @@
-<?php session_start() ?>
+<?php if(!isset($_SESSION))
+        session_start();
+?>
 <html>
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -65,7 +67,7 @@
                         }
                     ?>
                     <?php 
-                        if($PAGE=="cart"){
+                        if($PAGE=="store" || $PAGE=="cart") {
                             echo '
                             <li class="nav-item">
                                 <a class="nav-link" href=" ../store/cart.php"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>

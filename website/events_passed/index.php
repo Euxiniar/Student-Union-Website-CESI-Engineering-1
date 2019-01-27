@@ -1,4 +1,6 @@
 <?php
+if(!isset($_SESSION))
+    session_start();
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
     if(isset($_POST['l_inscrits'])){
@@ -64,11 +66,12 @@ if(isset($_POST['id'])){
 	</head>
 
 	<body>
-		<?php include("../common/header.php") ?>
-        <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
+        <?php 
+        include("../common/header.php");
+        include("../idea_box/BandeauSubmitIdea.php"); ?>
 
         <?php        
-        //$_SESSION['status']="Personnel CESI";
+        //$_SESSION['status']="Eleve";
 
         if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
             $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
