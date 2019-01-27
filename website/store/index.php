@@ -1,118 +1,116 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<!doctype html>
+<html lang="en">
 
-        <meta charset="utf-8" />
-        <title>store</title>
-        <?php $PAGE="cart"; ?>
-    </head>
- 
- <body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <?php $PAGE="store"; ?>
+    <title>Boutique - BDE CESI Orléans</title>
+  </head>
+
+  <body>
+
     <?php include("../common/header.php") ?>
 
 
-    <div id="menu">Menu
-        <div class="topnav">
+		<div class="grid-container">
+  <div class="left-side">
+		<div class="main-toolbar">
+			<div class="left-item">
+<h2> Recherche </h2>
+	<div class="container-4">
+              <form method="get" action="/search">
+                <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch(this.value)" />
+                <button class="icon">
+                  <i class="fa fa-search">
+                  </i>
+								</button>
+              </form>
+						</div>
 
-            <div class="search-container">
+</div>
 
-                <form action="/action_page.php">
-
-                    <input type="text" placeholder="Search.." name="search">
-
-                    <button type="submit">Submit</button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-        </br>
-        <p id="p">------------------------------------</p>
-         </br>
-        <div id="text_filtre">
-        <p>Filtre</p>
-        </div>
-
-        </br>
-
-        </br>
-      
+<div class="line"></div>
 
 
- 
-  <p id="text_categorie">Catégorie</p>
-            <form action="index.php" method="post">
-                    <div class="control-group">
-                    <?php include("../scripts/setConnexionLocalBDD.php");
-                            $category = $local_bdd->query('call orleans_bde.spl_list_category()');
-                            while($datasCategoryItem = $category->fetch()){
-                                include("./Categorie.php");
-                            }
-                            $category->closeCursor();
-                            ?>
-                    </div>
-                        </br>
-                        </br>
-                    <div>
-                            <button type="submit" class="bouton2">Filtrer</button>
-                    </div>
-            </form>
+<div class="left-item">
+	<h2> Catégorie </h2>
 
-
-                
-        </br>
-        </br>
-        <p id="p">------------------------------------</p>
-        </br>
-        </br>
-        <button class="bouton2" >
-
-        <a id="a" href="addproduit.php" >
-            Ajouter un produit
-        </a>
-        </button>
-
-
-    </div>
- 
-    <div id="contenu" >
+			<form action="index.php" method="post">
+      <select class="custom-select" id="sel1" data-live-search="true">
+			<option hidden class="input-placeholder-select">Catégorie...</option>
     <?php include("../scripts/setConnexionLocalBDD.php");
+            $category = $local_bdd->query('call orleans_bde.spl_list_category()');
+            while($datasCategoryItem = $category->fetch()){
+                include("./Categorie.php");
+            }
+            $category->closeCursor();
+            ?>
+			</select>
+</form>
+
+</div>
+
+
+
+</div>
+	</div>
+  <div class="right-side">
+	<div id="main-gallery">
+          <?php include("../scripts/setConnexionLocalBDD.php");
     $article = $local_bdd->query('call orleans_bde.sps_article()');
     while($datasItemStore = $article->fetch()){
         include("./item-box.php");
     }
-
-    $article->closeCursor();
- 
- ?>
-        
-
-    
-    </div>
+	$article->closeCursor(); ?>
+				</div>
+	</div>
+</div>
 
 
+    <?php include_once("../common/footer.php") ?>
 
 
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+      <script>
+        $(document).ready(function() {
+          $('#sidebarCollapse').on('keyup', function() {
+            $('#sidebar').toggleClass('active');
+          });
+        });
+
+      </script>
 
 
+      <script>
+        function querySearch(searchString) {
+          $.ajax({
+            type: "GET",
+            url: "searchJs.php",
+            data: {
+              searchBarInput: searchString
+            },
+            success: function(result) {
+              $('#main-gallery').html(result);
+            }
+          });
+        }
+
+      </script>
+<script type="text/javascript" src="../assets/js/store.js"> </script>
 
 
-
-
-
-
-
-
-    </div>
-    <?php include("../common/footer.php") ?>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="../assets/css/store.css" type="text/css">
-    <script type="text/javascript" src="../assets/js/store.js"> </script>
-    <script src="js/jquery.js"></script>
     <script>
     function processRemoveArticle(Id_Article) {
             $.ajax({
@@ -131,8 +129,7 @@
             });
         }
 </script>
-</body>
 
+  </body>
 
 </html>
-
