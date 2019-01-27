@@ -28,7 +28,7 @@
 <h2> Recherche </h2>
 	<div class="container-4">
               <form method="get" action="/search">
-                <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch(this.value)" />
+                <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch()" />
                 <button class="icon">
                   <i class="fa fa-search">
                   </i>
@@ -45,8 +45,8 @@
 	<h2> Catégorie </h2>
 
 			<form action="index.php" method="post">
-      <select class="custom-select" id="sel1" data-live-search="true">
-			<option hidden class="input-placeholder-select">Catégorie...</option>
+      <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch()">
+			<option class="input-placeholder-select" value="NULL">Catégorie...</option>
     <?php include("../scripts/setConnexionLocalBDD.php");
             $category = $local_bdd->query('call orleans_bde.spl_list_category()');
             while($datasCategoryItem = $category->fetch()){
@@ -94,12 +94,19 @@
 
 
       <script>
-        function querySearch(searchString) {
+        function querySearch() {
+          var search = document.getElementById('search').value;
+          var category = document.getElementById("sel1").value;
+          if(search) {
+          } else {
+            search = "NULL";
+          }
           $.ajax({
             type: "GET",
             url: "searchJs.php",
             data: {
-              searchBarInput: searchString
+              searchBarInput: search
+              category: category
             },
             success: function(result) {
               $('#main-gallery').html(result);
@@ -108,6 +115,7 @@
         }
 
       </script>
+
 <script type="text/javascript" src="../assets/js/store.js"> </script>
 
 
