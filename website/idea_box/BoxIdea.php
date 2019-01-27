@@ -1,20 +1,8 @@
 <?php
-$event = $local_bdd->query('call orleans_bde.sps_evenement('.$id_event.');');
-$datasEvent = $event->fetch();
-$event->closeCursor();
 
-$user = $local_bdd->query('call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');');
-$datasUser = $user->fetch();
-$user->closeCursor();
-
-if (isset($_SESSION['id'])) {
-    $has_vote = $local_bdd->query('call orleans_bde.spt_utilisateur_has_vote(' . $_SESSION['id'] . ',' . $id_event . ');');
-    $vote = $has_vote->fetch();
-    $has_vote->closeCursor();
-}
 ?>
 
-<div class = "IdeaBox pb-4">
+<div class = "IdeaBox pb-4 mt-3">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
@@ -23,15 +11,12 @@ if (isset($_SESSION['id'])) {
                         <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" class = "common-arrondi common-couverture">
                     </div><!--Image-->
                     <div class="col-md-9">
-                        <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
+                        <h2> <?php echo $datasEvent['Titre'] ?> </h2></br>
                         <span class = "font-weight-bold">Créateur : </span><?php echo $datasUser['Prenom'] . ' ' . $datasUser['Nom'] ?> </br>
                         <i class="fas fa-euro-sign pr-2"></i><?php echo $datasEvent['Cout'] . '€' ?> </br>
                         <i class="far fa-calendar-alt pr-2"></i><?php echo $datasEvent['Date_evenement'] ?> </br>
                         <i class="fas fa-map-marker-alt pr-2" style="color:blue"></i><?php echo $datasEvent['Lieu'] ?> </br>
                         <?php
-                        $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
-                        $datasStatus = $status->fetch();
-                        $status->closeCursor();
                         if (isset($_SESSION['id'])) {
                             if ($_SESSION['status'] == "Membre BDE" || $_SESSION['status'] == "Personnel CESI") {
                                 if ($datasStatus['Designation'] == 'Public')

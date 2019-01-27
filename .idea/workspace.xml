@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69ffbbee-7f46-4186-821e-e977675f86a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/website/assets/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/assets/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/TODO - Copie (3).txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/commentaire.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/commentaires.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_passed/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/events_passed/event.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/events_passed/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/idea_box/noIdeas.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/noIdeas.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +75,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            <state relative-caret-position="138">
+              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/events_passed/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/idea_box/testPdf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -84,8 +111,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/assets/css/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="-759">
               <caret line="6" column="18" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/idea_box/AddIdea.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="58" column="119" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="119" />
             </state>
           </provider>
         </entry>
@@ -93,53 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="36" selection-start-line="36" selection-end-line="40" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/OneDrive/CER/A2/Bloc Web/CER 3.02 JavaScript/www/js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/website/common/accessDenied.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/events_passed/noEvents.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="118" lean-forward="true" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
+            <state relative-caret-position="236">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -164,6 +155,10 @@
       <find>priva</find>
       <find>echo</find>
       <find>$datasStatus</find>
+      <find>hou</find>
+      <find>t2</find>
+      <find>l_inscrits</find>
+      <find>fore</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,13 +185,10 @@
         <option value="$PROJECT_DIR$/website/scripts/setConnexionGlobalBDD.php" />
         <option value="$PROJECT_DIR$/website/assets/css/idea.css" />
         <option value="$PROJECT_DIR$/website/idea_box/js/test.js" />
-        <option value="$PROJECT_DIR$/website/idea_box/BandeauSubmitIdea.php" />
-        <option value="$PROJECT_DIR$/website/scripts/scriptInscription.php" />
         <option value="$PROJECT_DIR$/website/scripts/scriptConnexion.php" />
         <option value="$PROJECT_DIR$/website/common/header.php" />
         <option value="$PROJECT_DIR$/website/idea_box/editIdea.php" />
         <option value="$USER_HOME$/Downloads/addEvent.php" />
-        <option value="$PROJECT_DIR$/website/idea_box/noIdeas.php" />
         <option value="$PROJECT_DIR$/website/idea_box/AddIdea.php" />
         <option value="$PROJECT_DIR$/website/scripts/editEvent.php" />
         <option value="$PROJECT_DIR$/website/common/editEvent.php" />
@@ -206,32 +198,37 @@
         <option value="$PROJECT_DIR$/website/connected/deconnect.php" />
         <option value="$PROJECT_DIR$/website/scripts/deconnexion.php" />
         <option value="$PROJECT_DIR$/website/events_passed/noEvents.php" />
-        <option value="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" />
         <option value="$PROJECT_DIR$/website/events_passed/commentaire.php" />
         <option value="$PROJECT_DIR$/website/events_passed/commentaires.php" />
-        <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
         <option value="$PROJECT_DIR$/website/assets/css/common.css" />
-        <option value="$PROJECT_DIR$/website/events_passed/comment.php" />
-        <option value="$PROJECT_DIR$/website/events_passed/writeComment.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/website/events_passed/comments.php" />
         <option value="$PROJECT_DIR$/website/common/accessDenied.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/writeComment.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/comment.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/comments.php" />
+        <option value="$PROJECT_DIR$/website/idea_box/BandeauSubmitIdea.php" />
+        <option value="$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php" />
+        <option value="$PROJECT_DIR$/website/scripts/scriptInscription.php" />
+        <option value="$PROJECT_DIR$/website/idea_box/noIdeas.php" />
+        <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/event.php" />
+        <option value="$PROJECT_DIR$/website/idea_box/testPdf.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/index.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,7 +245,19 @@
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
               <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
               <item name="events_passed" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="events_to_come" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
@@ -256,16 +265,11 @@
               <item name="website" type="462c0819:PsiDirectoryNode" />
               <item name="idea_box" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
-              <item name="website" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,18 +314,20 @@
       <workItem from="1548366822771" duration="338000" />
       <workItem from="1548404187375" duration="12564000" />
       <workItem from="1548420359720" duration="6198000" />
-      <workItem from="1548444344300" duration="11074000" />
+      <workItem from="1548444344300" duration="15184000" />
+      <workItem from="1548519365379" duration="646000" />
+      <workItem from="1548618811130" duration="7292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160307000" />
+    <option name="totallyTimeSpent" value="172355000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14295302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658849" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -335,74 +341,24 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5080537" side_tool="true" visible="true" weight="0.10882353" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.10813824" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.10813824" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4919463" weight="0.10882353" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.17919463" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.17910448" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/status_date">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/statusaccessibilite">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/connected/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/setConnexionGlobalBDD.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/asupr.php" />
-    <entry file="file://$PROJECT_DIR$/website/idea_box/js/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/OneDrive/CER/A2/Bloc Web/CER 3.02 JavaScript/www/html.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/adon-bootstrap/mdb.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/Desktop/adon-bootstrap/addons/datatables.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/BandeauSubmitIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/utilisateur">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -425,13 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/scriptInscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/scripts/scriptConnexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -443,13 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -494,13 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="855">
           <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/scripts/createEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -549,62 +484,8 @@
     <entry file="file://$PROJECT_DIR$/website/assets/css/comments.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/noIdeas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/assets/css/idea.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/commentaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="36" column="20" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/commentaires.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/assets/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/commentaire.php" />
+    <entry file="file://$PROJECT_DIR$/website/events_passed/commentaires.php" />
     <entry file="file://$USER_HOME$/OneDrive/CER/A2/Bloc Web/CER 3.02 JavaScript/www/js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -619,20 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/AddIdea.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="58" column="119" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://795fe57d-c093-47b5-bbf8-704a9e42b4e3/schema/orleans_bde/table/commentaire">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -640,38 +507,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/writeComment.php">
+    <entry file="file://$PROJECT_DIR$/website/common/accessDenied.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="253">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
+    <entry file="file://$PROJECT_DIR$/website/scripts/createEvent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="36" selection-start-line="36" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/assets/css/idea.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="93" column="1" lean-forward="true" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/scriptInscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/writeComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/events_passed/noEvents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="118" lean-forward="true" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
+          <caret line="6" column="118" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/comments.php">
+    <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+        <state relative-caret-position="693">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/common/accessDenied.php">
+    <entry file="file://$PROJECT_DIR$/website/idea_box/AddIdea.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="141">
+          <caret line="58" column="119" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/noIdeas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/BandeauSubmitIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/assets/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-759">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/index (3).php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../site prosit5/displayProducts.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../site prosit5/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../site prosit5/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_to_come/registered_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/AccueilBoxIdea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/idea_box/testPdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="52" column="33" lean-forward="true" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
         </state>
       </provider>
     </entry>

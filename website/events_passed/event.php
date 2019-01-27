@@ -61,8 +61,12 @@
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                          <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits</button>
+                          <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits (CSV)</button>
                           <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
+                            <button class="btn btn-primary" type="submit" name="l_inscrits_pdf">Télécharger la liste des inscrits (PDF)</button>
                         </form>';
                           
                         if($datasEvent['Id_status_date']==1){

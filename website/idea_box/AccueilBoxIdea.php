@@ -1,6 +1,7 @@
 <html>
-    <head>
-    </head>
+<head>
+    <link rel="stylesheet" type="text/css" href="../assets/css/idea.css" />
+</head>
 
     <body class="body">
         <?php $PAGE = 'AccueilBoxIdea'; ?>
@@ -54,27 +55,59 @@
 
 
         /*Selection des idées à afficher*/
-        $nbrIdeas = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
-        $nbrOfIdeas = $nbrIdeas->fetch();
-        $nbrIdeas->closeCursor();
 
-        if ($nbrOfIdeas >= 1) {
-            $event = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
-            $id_events = array();
+        $event = $local_bdd->query('call orleans_bde.spl_evenements_idea();');
+        $id_events = array();
 
-            while($datasEvent = $event->fetch()){
+        while($datasEvent = $event->fetch()){
+            if ($datasEvent['Id_status_accessibilite']  != 1) { /* != Public*/
+                if (isset ($_SESSION['id'])){
+                    if ($_SESSION['status'] == 'Membre BDE' || $_SESSION['status'] == 'Personnel CESI') {
+                        $id_events[] = $datasEvent['Id_evenement'];
+                    }
+                }
+            }
+            else {
                 $id_events[] = $datasEvent['Id_evenement'];
             }
-            $event->closeCursor();
-
-            foreach($id_events as $id_event) {
-                include("../idea_box/BoxIdea.php");
-                echo '<hr class = "common-separator1">';
-            }
         }
-        else {
+        $event->closeCursor();
+
+
+        //if no idea, then we include the page no idea
+        if (empty($id_events)) {
             include("../idea_box/noIdeas.php");
         }
+
+
+        /*Create ideas and get datas*/
+        foreach($id_events as $id_event) {
+            $event = $local_bdd->query('call orleans_bde.sps_evenement('.$id_event.');');
+            $datasEvent = $event->fetch();
+            $event->closeCursor();
+
+            $user = $local_bdd->query('call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');');
+            $datasUser = $user->fetch();
+            $user->closeCursor();
+
+            if (isset($_SESSION['id'])) {
+                $has_vote = $local_bdd->query('call orleans_bde.spt_utilisateur_has_vote(' . $_SESSION['id'] . ',' . $id_event . ');');
+                $vote = $has_vote->fetch();
+                $has_vote->closeCursor();
+            }
+
+            $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
+            $datasStatus = $status->fetch();
+            $status->closeCursor();
+
+
+            include("../idea_box/BoxIdea.php");
+            echo '<hr class = "common-separator1">';
+
+
+
+        }
+
         /*---------------------------------------*/
 
         ?>
