@@ -1,6 +1,8 @@
 <?php
 if(!isset($_SESSION))
     session_start();
+if(isset($_POST['id_event']))
+    $_SESSION['id_event']=$_POST['id_event'];
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
     if(isset($_POST['delete'])){
@@ -46,15 +48,15 @@ if(isset($_POST['id'])){
 
 	<body>
 		<?php include("../common/header.php") ?>
-        <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
+        <?php include("../events_passed/BandeauAddPhoto.php"); ?>
 
         <?php        
         //$_SESSION['status']="Membre BDE";
 
         if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
-            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement(18);');
+            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_SESSION['id_event'].');');
         } else {
-            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public(18);');
+            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public('.$_SESSION['id_event'].');');
         }
         $id_photos = array();
         while($datasPhoto = $photos->fetch()){

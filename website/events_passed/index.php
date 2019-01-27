@@ -71,7 +71,7 @@ if(isset($_POST['id'])){
         include("../idea_box/BandeauSubmitIdea.php"); ?>
 
         <?php        
-        //$_SESSION['status']="Personnel CESI";
+        //$_SESSION['status']="Eleve";
 
         if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
             $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');

@@ -23,10 +23,29 @@
           $like = $like_photo->fetch();
           $like_photo->closeCursor();
     ?>
-    <div class="container-fluid">
+    <div class="container text-center">
         <div class="row">
-            <div class="col-md-12 d-block">
+            <div class="col-md-8 d-block">
                 <img class="" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
+                <div>
+                    <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Prenom']; ?></p>
+                    <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Nom']; ?></p>
+                </div>
+                <div>
+                    <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasPhoto['Date']; ?></p>
+                    <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasPhoto['Heure']; ?></p>
+                </div>
+
+                
+                <?php
+                    echo '
+                    <form method="post" action="../events_passed/comments.php">
+                        <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
+                        <button class="btn btn-primary" type="submit" name="like">Commenter</button>
+                    </form>';
+                ?>
+            </div>
+            <div class="col-md-4 d-block">
                 <?php
                     if($_SESSION['status']=="Personnel CESI"){
                         echo '
@@ -43,16 +62,12 @@
                         </form>';
                     }
                     if($_SESSION['status']=="Membre BDE" || $_SESSION['status']=="Personnel CESI") {
-                    echo '<p class="">Etat :</p>
-                    <p class="">'.
+                    echo '<p class="d-inline-flex">Etat :</p>
+                    <p class="d-inline-flex">'.
                         $datasStatus['Designation'].
                     '</p>';
                     }
                 ?>
-                <p class="font-weight-bold mb-0"><?php echo $datasUser['Prenom']; ?></p>
-                <p class="font-weight-bold mb-0"><?php echo $datasUser['Nom']; ?></p>
-                <p class="font-weight-bold mb-0"><?php echo $datasPhoto['Date']; ?></p>
-                <p class="font-weight-bold mb-0"><?php echo $datasPhoto['Heure']; ?></p>
                 <p class="font-weight-bold mb-0"><?php echo $datasPhoto['Nbr_like']; ?></p>
                 <?php
                     echo '<form method="post">
@@ -63,14 +78,6 @@
                       echo '<button class="btn btn-primary" type="submit" name="stop_like">Ne plus aimer</button>';
                     }
                     echo '</form>';
-                ?>
-                
-                <?php
-                    echo '
-                    <form method="post" action="../events_passed/comments.php">
-                        <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
-                        <button class="btn btn-primary" type="submit" name="like">Commenter</button>
-                    </form>';
                 ?>
             </div>
         </div>
