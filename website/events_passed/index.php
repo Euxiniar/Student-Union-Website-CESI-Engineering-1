@@ -3,12 +3,16 @@ if(!isset($_SESSION))
     session_start();
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
+
     if(isset($_POST['l_inscrits'])){
+        echo 'coucou';
+    }
+    if(isset($_POST['l_inscrits'])) {
         include('../events_to_come/registered_list.php');
         $id_users_event = array();
-        $participants_evenements = $local_bdd->query('call orleans_bde.sps_participant_evenement('.$_POST['id'].');');
+        $participants_evenements = $local_bdd->query('call orleans_bde.sps_participant_evenement(' . $_POST['id'] . ');');
 
-        while($participant_evenement = $participants_evenements->fetch()){
+        while ($participant_evenement = $participants_evenements->fetch()) {
             $id_users_event[] = $participant_evenement['Id_utilisateur'];
         }
         $participants_evenements->closeCursor();
@@ -17,13 +21,13 @@ if(isset($_POST['id'])){
         $nom = array();
         $email = array();
 
-        foreach($id_users_event as $id_user_event){
-            $query = $local_bdd->query('call orleans_bde.sps_user('.$id_user_event.');');
+        foreach ($id_users_event as $id_user_event) {
+            $query = $local_bdd->query('call orleans_bde.sps_user(' . $id_user_event . ');');
             $utilisateur = $query->fetch();
             $prenom[] = $utilisateur['Prenom'];
             $nom[] = $utilisateur['Nom'];
             $email[] = $utilisateur['Email'];
-            
+
             $query->closeCursor();
         }
 
@@ -34,6 +38,8 @@ if(isset($_POST['id'])){
             "l_inscrits.csv"
         );
         exit();
+    } else if(isset($_POST['l_inscrits_pdf'])) {
+        include("../scripts/pdf_l_inscrit.php");
     } else if(isset($_POST['delete'])){
         $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
         $_POST['delete'] = NULL;

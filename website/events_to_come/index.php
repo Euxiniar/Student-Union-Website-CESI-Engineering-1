@@ -34,6 +34,8 @@ if(isset($_POST['id'])){
             "l_inscrits.csv"
         );
         exit();
+    } else if(isset($_POST['l_inscrits_pdf'])) {
+        include("../scripts/pdf_l_inscrit.php");
     } else if(isset($_POST['delete'])){
         $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
         $_POST['delete'] = NULL;

@@ -11,7 +11,7 @@
                         <img alt="Photo de couverture de l'évènement" src="<?php echo $datasEvent['URL_photo'] ?>" class = "common-arrondi common-couverture">
                     </div><!--Image-->
                     <div class="col-md-9">
-                        <t2> <?php echo $datasEvent['Titre'] ?> </t2></br>
+                        <h2> <?php echo $datasEvent['Titre'] ?> </h2></br>
                         <span class = "font-weight-bold">Créateur : </span><?php echo $datasUser['Prenom'] . ' ' . $datasUser['Nom'] ?> </br>
                         <i class="fas fa-euro-sign pr-2"></i><?php echo $datasEvent['Cout'] . '€' ?> </br>
                         <i class="far fa-calendar-alt pr-2"></i><?php echo $datasEvent['Date_evenement'] ?> </br>
