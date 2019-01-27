@@ -5,5 +5,5 @@
 </head>
 
     <div class = "Bandeau">
-        <p class = "MediumText">Vous souhaitez poster une photo ? <a href="../idea_box/AddIdea.php" class="ButtonIdea">Ajouter une photo</a></p>
+        <p class = "MediumText">Vous souhaitez poster une photo ? <a href="../events_passed/addPhoto.php" class="ButtonIdea">Ajouter une photo</a></p>
     </div>

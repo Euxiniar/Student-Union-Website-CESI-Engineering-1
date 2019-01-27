@@ -48,7 +48,15 @@ if(isset($_POST['id'])){
 
 	<body>
 		<?php include("../common/header.php") ?>
-        <?php include("../events_passed/BandeauAddPhoto.php"); ?>
+        <?php 
+            $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
+            $participate_event = $query->fetch();
+            $query->closeCursor();
+
+            if($participate_event['count']==1){
+                include("../events_passed/BandeauAddPhoto.php");
+            }      
+        ?>
 
         <?php        
         //$_SESSION['status']="Membre BDE";
