@@ -1,46 +1,115 @@
 
+<html>
+<head>
+</head>
 
-  <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>		      <link rel="stylesheet" href="../assets/css/comments.css">
-        <title>BDE CESI Exia</title>
-        <?php $PAGE = "home" ?>
-    </head>
-    <body>
-        <?php 
-            include("../scripts/setConnexionLocalBDD.php"); 
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
-            $datasEvent = $events->fetch();
-            $events->closeCursor();
-            $query = 'call orleans_bde.sps_user('.$datasEvent['Id_utilisateur'].');';
-            $user = $local_bdd->query($query);
-            $datasUser = $user->fetch();
-            $user->closeCursor();
-        ?>
-        <div class="py-5" >
-            <div class="container comment_box">
-                <div class="row">
-                    <div class="col-md-12 d-inline-flex p-0 m-0 pl-3 pt-2 header_comment">
-                    <p class="text-justify mr-1 mb-0"><?php echo $datasUser['Nom'];?></p>
-                    <p class="text-justify mr-1 mb-0"><?php echo $datasUser['Prenom'];?></p>
-                    <p class="text-justify mr-1 mb-0"><?php echo $datasUser['Email'];?></p>
-                    <p class="text-justify mb-0">à</p>
-                    <p class="text-justify mr-1 mb-0"><?php echo $datasEvent['Heure'];?></p>
-                    <p class="text-justify mr-1 mb-0">le</p>
-                    <p class="text-justify mb-0"><?php echo $datasEvent['Date_evenement'];?></p>
-                    </div>
-                </div>
-                <hr class="p-0 m-0">
-                <div class="row">
-                    <div class="col-md-12 p-0 mt-3">
-                        <p class="text-justify pr-3 pl-3"><?php echo $datasEvent['Description'];?></p>
-                    </div>
-                </div>
-            </div>
+<body class="body common-background-gray">
+<?php
+
+/*$_POST['id_photo'] = 2; /*To change !!!!*/
+
+$PAGE = 'AccueilBoxIdea'; ?>
+
+<?php include("../common/header.php");
+if(!isset($_SESSION)){
+    session_start();
+}
+if (isset($_POST['id_photo'])){
+    $_SESSION['id_photo'] = $_POST['id_photo'];
+}
+
+?>
+
+<?php
+include("../scripts/setConnexionLocalBDD.php");
+
+
+/*Actions selon le bouton enclenché*/
+if (isset($_SESSION['id'])){
+    if (isset($_POST['id'])) {
+        if (isset($_POST['button-suppr'])) {
+            $local_bdd->query('call orleans_bde.spd_commentaire_by_id(' . $_POST['id'] . ');');
+        }
+        if (isset($_POST['button-private'])) {
+            $local_bdd->query('call orleans_bde.spe_commentaire_status(' . $_POST['id'] . ');');
+        }
+        $_POST['id'] =null;
+        $_POST['button-suppr'] =null;
+    }
+    if (isset($_POST['button-submit-comment']) && $_SESSION['id_photo'] ){
+
+        $query =
+            'call orleans_bde.spi_commentaire(
+    \'' . htmlspecialchars($_POST['commentToInsert']) . '\',  
+    \'' . date("Y-m-d") . '\',  
+    \'' . date("H:i:s") . '\',  
+    ' . 1 . ',
+    ' . $_SESSION['id'] . ',  
+    ' . $_SESSION['id_photo'] . ');';
+
+/*        echo $query;*/
+
+        $local_bdd->query($query);
+    }
+}
+/*---------------------------------------*/
+
+include("../scripts/setConnexionLocalBDD.php");
+
+/*Selection des idées à afficher*/
+$nbrcomments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_SESSION['id_photo'].' );');
+$allComments = $nbrcomments->fetch();
+$nbrcomments->closeCursor();
+
+
+$id_events = array();
+$comments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_SESSION['id_photo'].' );');
+while($datasComments = $comments->fetch()){
+    $id_commentaires[] = $datasComments['Id_commentaire'];
+}
+$comments->closeCursor();
+
+$photo = $local_bdd->query('call orleans_bde.sps_photo('.$_SESSION['id_photo'].');');
+$datasPhoto = $photo->fetch();
+$photo->closeCursor();
+$user = $local_bdd->query('call orleans_bde.sps_user('.$datasPhoto['Id_utilisateur'].');');
+$datasUser = $user->fetch();
+$user->closeCursor();
+?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 common-center-text mt-5 mb-1">
+            <img class="common-arrondi common-photo-event" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
         </div>
-    </body>
+    </div>
+    <div class="row">
+        <div class="col-md-12 common-center-text">
+            <span >publiée par <?php echo $datasUser['Prenom'] . ' '. $datasUser['Nom'] . '<span class="font-italic"> le '. $datasPhoto['Date'] . ' à ' . $datasPhoto['Heure'] .'</span>'?> </span>
+        </div>
+    </div>
+</div>
+
+<?php
+echo '<hr class = "common-separator1">';
+
+include("../events_passed/writeComment.php");
+
+if ($allComments >= 1) {
+    foreach($id_commentaires as $id_commentaire) {
+        include("../events_passed/comment.php");
+        echo '<hr class = "common-separator3">';
+    }
+    echo '<hr class = "common-separator1">';
+}
+
+
+/*---------------------------------------*/
+
+?>
+<?php include("../common/footer.php"); ?>
+
+</body>
+
 </html>
+
+

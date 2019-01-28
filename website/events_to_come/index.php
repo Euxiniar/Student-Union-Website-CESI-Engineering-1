@@ -1,4 +1,6 @@
 <?php
+if(!isset($_SESSION))
+    session_start();
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
     if(isset($_POST['l_inscrits'])){
@@ -32,6 +34,8 @@ if(isset($_POST['id'])){
             "l_inscrits.csv"
         );
         exit();
+    } else if(isset($_POST['l_inscrits_pdf'])) {
+        include("../scripts/pdf_l_inscrit.php");
     } else if(isset($_POST['delete'])){
         $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
         $_POST['delete'] = NULL;
@@ -74,7 +78,7 @@ if(isset($_POST['id'])){
 	</head>
 
 	<body>
-		<?php include("../common/header.php") ?>
+		<?php include("../common/header.php"); ?>
         <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
 
         <?php
