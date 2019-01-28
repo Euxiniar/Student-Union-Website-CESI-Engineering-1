@@ -1,6 +1,6 @@
 
 <?php
-$idEvenement = 18;
+
 include("../scripts/setConnexionLocalBDD.php");
 $comments = $local_bdd->query('call orleans_bde.sps_commentaire('. $id_commentaire . ');');
 $datasCommentaire = $comments->fetch();
@@ -31,7 +31,6 @@ $statusUser->closeCursor();
                         echo '<span class="font-weight-bold common-red">' . $datasStatus['Designation'] . '</span>';
                     }
                 }
-                else
                     echo '<span class="common-left-text ml-5"> '.$datasStatusUser['Designation'] .'</span></p>';
                 ?>
             <hr class="common-separator2"/>

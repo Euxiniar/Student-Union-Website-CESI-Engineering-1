@@ -40,7 +40,7 @@
                 <?php
                     echo '
                     <form method="post" action="../events_passed/comments.php">
-                        <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
+                        <input type="hidden" name="id_photo" value="'.$datasPhoto['Id_photo'].'"/>
                         <button class="btn btn-primary" type="submit" name="like">Commenter</button>
                     </form>';
                 ?>
