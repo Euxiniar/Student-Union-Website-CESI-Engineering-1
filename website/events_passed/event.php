@@ -16,9 +16,11 @@
           $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasEvent['Id_status_accessibilite'].');');
           $datasStatus = $status->fetch();
           $status->closeCursor();
-          $participate_event = $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$id_event.');');
-          $participate = $participate_event->fetch();
-          $participate_event->closeCursor();
+          if(isset($_SESSION['status'])){
+            $participate_event = $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$id_event.');');
+            $participate = $participate_event->fetch();
+            $participate_event->closeCursor();
+          }
       ?>
 
       
@@ -45,7 +47,7 @@
                 <!-- TODO Afficher cette partie si membre du BDE -->
                 <div class="col-md-12 d-inline-flex p-0 m-0">
                 <?php
-                  if($_SESSION['status']=="Membre BDE" || $_SESSION['status']=="Personnel CESI") {
+                  if(isset($_SESSION['status']) AND ($_SESSION['status']=="Membre BDE" || $_SESSION['status']=="Personnel CESI")) {
                     echo '<p class="text-justify pr-1">Etat :</p>
                     <p class="text-justify mr-2 m-0 p-0">'.
                       $datasStatus['Designation'].
@@ -59,7 +61,7 @@
                 
                   <div class="col-md-6 col-12 order-0 order-md-1 text-center d-inline-block"> 
                     <?php
-                      if($_SESSION['status']=="Membre BDE"){
+                      if(isset($_SESSION['status']) AND $_SESSION['status']=="Membre BDE"){
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
@@ -81,7 +83,7 @@
                       }
                     ?>
                     <?php
-                      if($_SESSION['status']=="Personnel CESI"){
+                      if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI")){
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>

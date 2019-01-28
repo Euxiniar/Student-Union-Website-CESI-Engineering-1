@@ -15,7 +15,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #211D1D;">
-            <div class="mr-auto">
+            <div class="mr-auto row">
                 <a href="
                     <?php 
                         if(isset($_SESSION['id'])){
@@ -24,10 +24,27 @@
                         else{ 
                             echo '../disconnected/home.php'; 
                         }
-                        ?>">
+                        ?>" class="col-9">
                     <img src="../assets/img/logo.png" alt="Logo" height="42" width="42">
                     <div class="navbar-brand align-middle p-0">Site du BDE<br/>Campus d'Orléans</div>
+                    
                 </a>
+                <ul class="navbar-nav col-3 align-middle">
+                    <li class="nav-item">
+                        <a class="navbar-brand text-white p0 m0"> <h2>
+                            <?php
+                            if(isset($PAGE)){
+                                $url = 'http://localhost:3000/page?name='.$PAGE;
+                                $url = str_replace(" ", "%20", $url);
+                                $api_json = file_get_contents($url);
+                                $api_array= json_decode($api_json, true);
+                                echo $api_array['name'];
+                            }?></h2></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mr-auto align-middle">
+                
             </div>
             <div class="ml-auto align-middle">
                 <ul class="navbar-nav ml-auto">
