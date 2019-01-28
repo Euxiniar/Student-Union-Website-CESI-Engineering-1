@@ -3,7 +3,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/idea.css" />
 </head>
 
-    <body class="body">
+    <body class="body common-background-white">
         <?php $PAGE = 'AccueilBoxIdea'; ?>
         <?php include("../common/header.php"); ?>
         <?php if (isset($_SESSION['id'])){
