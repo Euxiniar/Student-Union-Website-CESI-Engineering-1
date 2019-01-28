@@ -71,6 +71,14 @@
                                 <input name="mdp2" required="required" type="password" placeholder="Confirmer le mot de passe" />
                             </p>
 
+
+                            <div class="form-check">
+
+                                <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." required> J'ai lu et j'accepte les <a href=""> Conditions générales d'Utilisation</a> et la <a href=""> Politique de protection des données personnelles.</a>
+                                </label>
+                            </div>
+
                             <p class="signin button">
 
                                 <input type="submit" href="index.php"/>
