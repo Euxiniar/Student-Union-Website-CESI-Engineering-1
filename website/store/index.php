@@ -148,9 +148,29 @@
                 success: function(result) {
                     $(document).ready(function() {
                         $.get('refreshArticle.php', function(response) {
-                            $('#contenu').html(response);
+                            $('#main-gallery').html(response);
+                            
                         });
                     });
+                }
+            });
+        }
+</script>
+<script>
+function addToCart(Id_Article) {
+
+var id = Id_Article;
+
+var quantity = document.getElementsByName(id)[0].value;
+            $.ajax({
+                type: "POST",
+                url: "addToCart.php",
+                data: {
+                    Id_Article: id,
+                    Quantity: quantity
+                },
+                success: function(result) {
+                   alert("ok");
                 }
             });
         }
