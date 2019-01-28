@@ -7,6 +7,21 @@
     </head>
     <body>
     <!-- Footer -->
+
+	<?php
+	if(isset($_COOKIE['accept_cookie'])) {
+		$showcookie = false;
+	 } else {
+		$showcookie = true;
+	 }
+	 
+	?>
+	<?php if($showcookie) { ?>
+		<div class="cookie-alert">
+		En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies pour vous proposer des contenus et services adaptés à vos centres d’intérêts.<br /><a href="../common/accept_cookie.php">OK</a>
+		</div>
+	<?php } ?>
+
 	<section id="footer">
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
