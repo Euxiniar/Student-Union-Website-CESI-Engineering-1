@@ -5,7 +5,7 @@
      
 
       <title>BDE CESI Exia</title>
-      <?php $PAGE = "home" ?>
+      <?php $PAGE = "Événement" ?>
     </head>
     <body class="common-background-gray">
       <?php 
@@ -109,15 +109,17 @@
               </div>
               <?php
                 if($datasEvent['Id_status_date']==1){
-                  echo '
-                    <div class="col-md-12 d-inline-flex">
-                    <form method="post">
-                      <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>';
-                      if($participate['count']<1){
-                        echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="participate">Participer</button>';
-                      }else{
-                        echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="stop_participate">Se désinscrire</button>';
-                      }
+                  if(isset($_SESSION['id'])){
+                    echo '
+                      <div class="col-md-12 d-inline-flex">
+                      <form method="post">
+                        <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>';
+                    if($participate['count']<1){
+                      echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="participate">Participer</button>';
+                    }else{
+                      echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="stop_participate">Se désinscrire</button>';
+                    }
+                    
                     echo '</form>
                       <div class="mb-3">
                         <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
@@ -126,6 +128,7 @@
                         <h6 class="text-justify m-0">(à régler avec votre BDE au maximum la veille)</h6>
                       </div>
                     </div>';
+                  }
                 }else if($datasEvent['Id_status_date']==2){
                   echo '<div>
                   <form method="post" action="../events_passed/index_photos.php">
