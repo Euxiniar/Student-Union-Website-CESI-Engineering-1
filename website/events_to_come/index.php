@@ -74,7 +74,7 @@ if(isset($_POST['id'])){
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>BDE CESI Exia</title>
-		<?php $PAGE = "home" ?>
+		<?php $PAGE = "Évènements à venir" ?>
 	</head>
 
 	<body class="common-background-white">
@@ -96,8 +96,16 @@ if(isset($_POST['id'])){
         $events->closeCursor();
         
         foreach ($id_events as $id_event){
-            include("../events_passed/event.php");
-            echo '<hr class="common-separator2">';
+            $local_bdd->query('call orleans_bde.spt_evenement_date('. $id_event .');');
+
+            $event = $local_bdd->query('call orleans_bde.sps_evenement('. $id_event .');');
+            $datasEvent = $event->fetch();
+            $event->closeCursor();
+
+            if ($datasEvent['Id_status_date'] = 2){
+                include("../events_passed/event.php");
+                echo '<hr class="common-separator2">';
+            }
         }
 
         ?>

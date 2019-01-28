@@ -1,4 +1,36 @@
-    <div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9">
+    <div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9"
+    
+    
+    <?php switch ($counter) {
+  case 1:
+  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(253,228,153);"';
+  break;
+
+  case 2:
+  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(224,234,241);"';
+  break;
+
+  case 3:
+  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(252,193,153);"';
+  break;
+}
+?>
+>
+
+<?php switch ($counter) {
+  case 1:
+  echo '<div class="item-stock-bar" style="background-color:rgb(253,228,153)"><span><img src="https://img.icons8.com/office/16/000000/medal2.png"> Best Seller <img src="https://img.icons8.com/office/16/000000/medal2.png"></span></div>';
+  break;
+
+  case 2:
+  echo '<div class="item-stock-bar" style="background-color:rgb(224,234,241)"><span><img src="https://img.icons8.com/office/16/000000/medal-second-place.png"> Deuxième Meilleure Vente <img src="https://img.icons8.com/office/16/000000/medal-second-place.png"></span></div>';
+  break;
+
+  case 3:
+  echo '<div class="item-stock-bar" style="background-color:rgb(252,193,153)"><span><img src="https://img.icons8.com/office/16/000000/medal2-third-place.png"> Troisième Meilleure Vente <img src="https://img.icons8.com/office/16/000000/medal2-third-place.png"></span></div>';
+  break;
+}
+?>
   <div class="item-box-title">
     <div class="Title">
       <span>
@@ -33,23 +65,16 @@
                   <i class="fas fa-plus"></i>
               </button>
           </span>
-          <button id="boutonPanier" class="btn btn-primary custom-size-cart" type="button" name="Panier"><i class="fas fa-cart-plus"></i></button>
+          <button id="<?php echo($datasItemStore["Id_article"]);?>" class="btn btn-primary custom-size-cart" type="button" name="Panier" onclick='addToCart(this.id)'><i class="fas fa-cart-plus"></i></button>
     </div> 
    
   </div>
 
-  <div class="item-admin-bar">
-
-    <form id="form">
-      <button type="button" class="btn btn-danger custom-size delete-item-button" onclick="processRemoveArticle(<?php echo $datasItemStore['Id_article'];?>)">
-                         <i class="fas fa-trash-alt"></i>
-                        </button>
-    </form>
-
-    <form method="post" id="form" action="./editArticle.php">
-      <input type="hidden" name="id" value="<?php echo $datasItemStore['Id_article'];?>"/>
-      <button class="btn btn-warning" type="button submit" name="edit"><i class="fas fa-cog"></i></button>
-    </form>
-  </div>
-
+  <?php
+                        if (isset($_SESSION['id'])) {
+                            if ($_SESSION['status'] == "Membre BDE") {
+                              include("./item-admin.php");
+                              }
+                            }
+                        ?>
 </div>

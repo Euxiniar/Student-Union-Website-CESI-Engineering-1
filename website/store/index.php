@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <?php $PAGE="store"; ?>
+    <?php $PAGE = "store"; ?>
     <title>Boutique - BDE CESI Orléans</title>
   </head>
 
   <body>
 
-    <?php include("../common/header.php") ?>
+    <?php include ("../common/header.php") ?>
 
 
 		<div class="grid-container">
@@ -47,13 +47,14 @@
 			<form action="index.php" method="post">
       <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch()">
 			<option class="input-placeholder-select" value="0">Catégorie...</option>
-    <?php include("../scripts/setConnexionLocalBDD.php");
-            $category = $local_bdd->query('call orleans_bde.spl_list_category()');
-            while($datasCategoryItem = $category->fetch()){
-                include("./Categorie.php");
-            }
-            $category->closeCursor();
-            ?>
+    <?php include ("../scripts/setConnexionLocalBDD.php");
+$category = $local_bdd->query('call orleans_bde.spl_list_category()');
+while ($datasCategoryItem = $category->fetch())
+{
+    include ("./Categorie.php");
+}
+$category->closeCursor();
+?>
 			</select>
 </form>
 
@@ -70,15 +71,31 @@
 
 <div class="line"></div>
 
+
+<?php
+if (isset($_SESSION['id']))
+{
+    if ($_SESSION['status'] == "Membre BDE")
+    { ?>
 <div class="left-item">
-
-
-<form action="addProduit.php" method="post">
+                              <form action="addProduit.php" method="post">
 <button class="bouton2">
 <span>Ajouter un produit</span>
 </button>
 </form>
 </div>
+<div class="line"></div>
+
+<div class="left-item">
+<form action="addCategory.php" method="post">
+<button class="bouton2">
+<span>Ajouter une catégorie</span>
+</button>
+</form>
+</div>
+                            <?php
+    }
+} ?>
 
 
 
@@ -86,18 +103,21 @@
 	</div>
   <div class="right-side">
 	<div id="main-gallery">
-          <?php include("../scripts/setConnexionLocalBDD.php");
-    $article = $local_bdd->query('call orleans_bde.sps_article()');
-    while($datasItemStore = $article->fetch()){
-        include("./item-box.php");
-    }
-	$article->closeCursor(); ?>
+          <?php include ("../scripts/setConnexionLocalBDD.php");
+$article = $local_bdd->query('call orleans_bde.sps_article()');
+$counter = 0;
+while ($datasItemStore = $article->fetch())
+{
+    $counter++;
+    include ("./item-box.php");
+}
+$article->closeCursor(); ?>
 				</div>
 	</div>
 </div>
 
 
-    <?php include_once("../common/footer.php") ?>
+    <?php include_once ("../common/footer.php") ?>
 
 
       <script>
@@ -148,9 +168,29 @@
                 success: function(result) {
                     $(document).ready(function() {
                         $.get('refreshArticle.php', function(response) {
-                            $('#contenu').html(response);
+                            $('#main-gallery').html(response);
+                            
                         });
                     });
+                }
+            });
+        }
+</script>
+<script>
+function addToCart(Id_Article) {
+
+var id = Id_Article;
+
+var quantity = document.getElementsByName(id)[0].value;
+            $.ajax({
+                type: "POST",
+                url: "addToCart.php",
+                data: {
+                    Id_Article: id,
+                    Quantity: quantity
+                },
+                success: function(result) {
+                   alert("ok");
                 }
             });
         }
