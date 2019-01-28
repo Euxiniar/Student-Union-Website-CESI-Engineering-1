@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/vendors/Bootstrap/css/bootstrap.min.css"> -->
 
     <title>BDE CESI Exia</title>
-    <?php $PAGE = "home"; ?>
+    <?php $PAGE = "Accueil"; ?>
 </head>
 
 <body>
