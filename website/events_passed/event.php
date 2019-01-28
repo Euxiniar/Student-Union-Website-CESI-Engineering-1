@@ -7,7 +7,7 @@
       <title>BDE CESI Exia</title>
       <?php $PAGE = "home" ?>
     </head>
-    <body>
+    <body class="common-background-gray">
       <?php 
           include("../scripts/setConnexionLocalBDD.php"); 
           $events = $local_bdd->query('call orleans_bde.sps_event('.$id_event.');');
@@ -21,7 +21,7 @@
           $participate_event->closeCursor();
       ?>
 
-      <div class="container">
+      <div class="container common-box">
         <div class="row mt-2">
           <div class="col-md-12">
             <div class="row">
@@ -33,7 +33,7 @@
                 <p class="text-justify d-inline-block mb-0">
                   <p class="text-justify d-inline-block mb-0"><?php echo $datasEvent['Heure'];?></p>
                   <p class="text-justify d-inline-block mb-0 ml-1 mr-1">-</p>
-                  <p class="text-justify d-inline-block mb-0"><?php echo $datasEvent['Date_evenement'];?></p>
+                  <p class="text-justify d-inline-block mb-0"> <?php echo $datasEvent['Date_evenement'];?></p>
                 </p>
                 <p class="text-justify d-inline-block mb-0">
                   <i class="fas fa-map-marker-alt pr-1" style="color:blue"></i>
@@ -108,7 +108,7 @@
                         echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="stop_participate">Se désinscrire</button>';
                       }
                     echo '</form>
-                      <div>
+                      <div class="mb-3">
                         <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>
                         <h5 class="text-justify d-inline-flex m-0">'.$datasEvent['Cout'].'</h5>
                         <h5 class="text-justify d-inline-flex m-0">€</h5>
@@ -119,7 +119,7 @@
                   echo '<div>
                   <form method="post" action="../events_passed/index_photos.php">
                     <input type="hidden" name="id_event" value="'.$datasEvent['Id_evenement'].'"/>
-                    <button class="btn btn-primary" type="submit" name="Photos">Voir les photos</button>
+                    <button class="btn btn-primary mb-3 ml-3" type="submit" name="Photos">Voir les photos</button>
                   </form>
                   </div>';
                 }
