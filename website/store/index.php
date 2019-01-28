@@ -59,6 +59,27 @@
 
 </div>
 
+<div class="line"></div>
+
+<div class="left-item">
+<h2> Prix </h2>
+
+<input type="range" min="1" max="100" value="50" class="slider" id="priceRange">
+
+</div>
+
+<div class="line"></div>
+
+<div class="left-item">
+
+
+<form action="addProduit.php" method="post">
+<button class="bouton2">
+<span>Ajouter un produit</span>
+</button>
+</form>
+</div>
+
 
 
 </div>

@@ -27,7 +27,7 @@
                <i class="fas fa-minus"></i>
               </button>
           </span>
-      <input type="number" name="<?php echo($datasItemStore["Id_article"]);?>" class="form-control input-number col-3 input-qty" value="" min="1" max="100">
+      <input type="number" name="<?php echo($datasItemStore["Id_article"]);?>" class="form-control input-number col-3 input-qty" value="1" min="1" max="100">
       <span class="input-group-btn">
               <button type="button" class="btn btn-primary btn-number custom-size" data-type="plus" data-field="<?php echo($datasItemStore["Id_article"]);?>">
                   <i class="fas fa-plus"></i>
