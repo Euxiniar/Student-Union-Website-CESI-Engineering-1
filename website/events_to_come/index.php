@@ -78,12 +78,20 @@ if(isset($_POST['id'])){
 	</head>
 
 	<body class="common-background-white">
-		<?php include("../common/header.php"); ?>
-        <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
+		<?php include("../common/header.php");
 
-        <?php
+
+
+
         //$_SESSION['status']="Membre BDE";
         if(isset($_SESSION['status'])){
+            if($_SESSION['status']=="Membre BDE") {
+                include("../events_to_come/BandeauCreateEvent.php");
+            }
+            else{
+                include("../idea_box/BandeauSubmitIdea.php");
+            }
+
             if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
                 $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
             } else {

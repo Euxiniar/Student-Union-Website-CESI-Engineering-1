@@ -28,7 +28,7 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-md-8 d-block">
-                <img class="" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
+                <img class="mt-4" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
                 <div>
                     <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Prenom']; ?></p>
                     <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Nom']; ?></p>
@@ -72,7 +72,7 @@
                     }
                 }
                 ?>
-                <p class="font-weight-bold mb-0">
+                <p class="font-weight-bold mb-0 mt-4">
                     <?php 
                     if(isset($_SESSION['id'])) {
                         echo $datasPhoto['Nbr_like']; ?>

@@ -25,7 +25,7 @@
 
       
 
-      <div class="container common-box">
+      <div class="container common-box mt-4">
         <div class="row mt-2">
           <div class="col-md-12">
             <div class="row">
@@ -66,7 +66,7 @@
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
                           <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits (CSV)</button>
-                          <button class="btn btn-primary" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                          <button class="btn btn-danger" type="submit" name="delete"><i class="fas fa-times"></i></button>
                         </form>
                         <form method="post">
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
@@ -75,9 +75,9 @@
                           
                         if($datasEvent['Id_status_date']==1){
                           echo '
-                          <form method="post" action="../common/editEvent.php">
+                          <form method="post" action="../common/editEvent.php"> <!--Bouton edit-->
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                            <button class="btn btn-primary" type="submit" name="edit"><i class="fas fa-cog"></i></button>
+                            <button class="btn btn-info" type="submit" name="edit"><i class="fas fa-cog"></i></button>
                           </form>';
                         }
                       }
@@ -86,13 +86,13 @@
                       if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI")){
                         echo '
                         <form method="post">
-                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                          <button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
+                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/> <!--Bouton privé-->
+                          <button class="btn btn-dark" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
                         </form>
                         
                         
                       
-                        <form name="zip" method="post" action="../common/downloadImg.php">
+                        <form name="zip" method="post" action="../common/downloadImg.php"> 
                           <input type="submit" id="download-button-request" name="zip-button" value="Télécharger" >
                           <button class="btn btn-primary" type="submit" name="download-img">Télécharger l"ensemble des images</button>
                         </form>';

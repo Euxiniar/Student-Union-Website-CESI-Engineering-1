@@ -59,9 +59,9 @@
                                     if (isset($_SESSION['id'])) {
                                         echo '<input type="hidden" name="id" value="' . $datasEvent['Id_evenement'] . '" />';
                                         if ($vote['count'] < 1 && isset($_SESSION['id'])) {
-                                            echo '<button class="BigButton" name = "button-vote" type="submit" >Voter</button>';
+                                            echo '<button class="BigButton mt-1" name = "button-vote" type="submit" >Voter</button>';
                                         } else {
-                                            echo '<button class="BigButton" type="submit" name="button-stop-vote">Retirer son vote</button>';
+                                            echo '<button class="BigButton mt-1" type="submit" name="button-stop-vote">Retirer son vote</button>';
                                         }
                                     }
                                     ?>
@@ -78,17 +78,17 @@
                                         echo '
                                             <form method="post" action="../idea_box/AccueilBoxIdea.php"> <!--Supprimer-->
                                                 <input type="hidden" name="id" value="' . $datasEvent['Id_evenement'] . '" />
-                                                <button class="btn btn-primary" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
+                                                <button class="btn btn-danger mx-1" type="submit" name="button-suppr" ><i class="fas fa-times"></i></button>
                                             </form>
                                             <form method="post" action="../common/editEvent.php"> <!--edition-->
                                                 <input type="hidden" name="id" value="' . $datasEvent['Id_evenement'] . '" />
-                                                <button class="btn btn-primary" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
+                                                <button class="btn btn-info mx-1" href="../idea_box/editIdea.php" type="submit" name="button-edit" ><i class="fas fa-cog"></i></button>
                                             </form>';
                                     } else if ($_SESSION['status'] == "Personnel CESI") {
                                         echo '
                                             <form method="post""><!--privé-->
                                                 <input type="hidden" name="id" value="' . $datasEvent['Id_evenement'] . '" />
-                                                <button class="btn btn-primary" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
+                                                <button class="btn btn-dark mx-1" type="submit" name="button-private" ><i class="fas fa-user-secret"></i></button>
                                             </form>';/*privé*/
                                     }
                                 }
