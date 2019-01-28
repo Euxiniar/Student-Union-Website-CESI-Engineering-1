@@ -5,7 +5,7 @@
      
 
       <title>BDE CESI Exia</title>
-      <?php $PAGE = "home" ?>
+      <?php $PAGE = "Événement" ?>
     </head>
     <body class="common-background-gray">
       <?php 

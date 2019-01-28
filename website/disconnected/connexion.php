@@ -16,7 +16,7 @@
 </head>
 
 <body class = "common-background-gray">
-<?php $PAGE = "connexion_form" ?>
+<?php $PAGE = "Connexion" ?>
 <?php include("../common/header.php"); ?>
 
 <!-- Le corps -->

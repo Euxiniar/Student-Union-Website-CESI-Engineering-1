@@ -6,7 +6,7 @@
 
 <body class="common-background-blue">
 <?php
-$PAGE = 'AddIdea';
+$PAGE = 'Ajouter une idée';
 include("../common/header.php"); ?>
 
 

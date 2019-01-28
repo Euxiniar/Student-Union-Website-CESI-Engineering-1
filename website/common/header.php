@@ -34,8 +34,7 @@
                         <a class="navbar-brand text-white p0 m0"> <h2>
                             <?php
                             if(isset($PAGE)){
-                                $url = 'http://localhost:3000/page?name='.$PAGE;
-                                $url = str_replace(" ", "%20", $url);
+                                $url = 'http://localhost:3000/page?name='.urlencode($PAGE);
                                 $api_json = file_get_contents($url);
                                 $api_array= json_decode($api_json, true);
                                 echo $api_array['name'];

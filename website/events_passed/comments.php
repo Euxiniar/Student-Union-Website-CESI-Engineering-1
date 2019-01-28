@@ -8,7 +8,7 @@
 
 /*$_POST['id_photo'] = 2; /*To change !!!!*/
 
-$PAGE = 'AccueilBoxIdea'; ?>
+$PAGE = 'Ajouter un commentaire'; ?>
 
 <?php include("../common/header.php");
 if(!isset($_SESSION)){
@@ -17,7 +17,6 @@ if(!isset($_SESSION)){
 if (isset($_POST['id_photo'])){
     $_SESSION['id_photo'] = $_POST['id_photo'];
 }
-
 ?>
 
 <?php

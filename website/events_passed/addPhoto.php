@@ -1,4 +1,5 @@
 <?php
+    $PAGE = "Ajouter une photo";
     include("../common/header.php");
 ?>
 
