@@ -1,10 +1,11 @@
 <?php
 session_start();
-if(isset($_GET["searchBarInput"]))
+if(isset($_GET["searchBarInput"]) && isset($_GET["category"]))
 {
     $search = $_GET['searchBarInput'];
+    $category = $_GET['category'];
     include("../scripts/setConnexionLocalBDD.php");
-    $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters('$search');");
+    $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters('$search', '$category');");
 
     /* Check if the response from database is empty */
     if ($article->rowCount() == 0) { 
@@ -19,4 +20,5 @@ if(isset($_GET["searchBarInput"]))
         $article->closeCursor();
     }    
 }
+
 ?>

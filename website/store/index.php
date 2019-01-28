@@ -46,7 +46,7 @@
 
 			<form action="index.php" method="post">
       <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch()">
-			<option class="input-placeholder-select" value="NULL">Catégorie...</option>
+			<option class="input-placeholder-select" value="0">Catégorie...</option>
     <?php include("../scripts/setConnexionLocalBDD.php");
             $category = $local_bdd->query('call orleans_bde.spl_list_category()');
             while($datasCategoryItem = $category->fetch()){
@@ -101,11 +101,17 @@
           } else {
             search = "NULL";
           }
+
+          if(category) {
+          } else {
+            category = "NULL";
+          }
+          
           $.ajax({
             type: "GET",
             url: "searchJs.php",
             data: {
-              searchBarInput: search
+              searchBarInput: search,
               category: category
             },
             success: function(result) {
