@@ -49,19 +49,21 @@ if(isset($_POST['id'])){
 	<body>
 		<?php include("../common/header.php") ?>
         <?php 
+        if(isset($_SESSION['id'])) {
             $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
             $participate_event = $query->fetch();
             $query->closeCursor();
-
+        
             if($participate_event['count']==1){
                 include("../events_passed/BandeauAddPhoto.php");
             }      
+        }
         ?>
 
         <?php        
         //$_SESSION['status']="Membre BDE";
 
-        if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
+        if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE")) {
             $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_SESSION['id_event'].');');
         } else {
             $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public('.$_SESSION['id_event'].');');

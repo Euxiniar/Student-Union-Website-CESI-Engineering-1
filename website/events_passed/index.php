@@ -78,11 +78,14 @@ if(isset($_POST['id'])){
 
         <?php        
         //$_SESSION['status']="Eleve";
-
-        if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
+        if(isset($_SESSION['status'])){
+            if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
+            }else {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_passed_public();'); 
+            }
         } else {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed_public();');
+            $events = $local_bdd->query('call orleans_bde.spl_evenement_passed_public();'); 
         }
         $id_events = array();
         while($datasEvent = $events->fetch()){
@@ -91,7 +94,12 @@ if(isset($_POST['id'])){
 
         $events->closeCursor();
         
+        $evenement_du_mois = 1;
         foreach ($id_events as $id_event){
+            if($evenement_du_mois <=3){
+                echo '<div class="text-center font-weight-bold"><i class="fas fa-medal"></i>Evénement du mois</div>';
+                $evenement_du_mois += 1;
+            }
             include("../events_passed/event.php");
             echo '<hr class="common-separator2">';
         }
