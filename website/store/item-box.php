@@ -65,7 +65,7 @@
                   <i class="fas fa-plus"></i>
               </button>
           </span>
-          <button class="btn btn-primary custom-size-cart" type="button" name="Panier"><i class="fas fa-cart-plus"></i></button>
+          <button id="<?php echo($datasItemStore["Id_article"]);?>" class="btn btn-primary custom-size-cart" type="button" name="Panier" onclick='addToCart(this.id)'><i class="fas fa-cart-plus"></i></button>
     </div> 
    
   </div>

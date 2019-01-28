@@ -71,7 +71,7 @@ if(isset($_POST['id'])){
 		<?php $PAGE = "home" ?>
 	</head>
 
-	<body>
+	<body class="common-background-white">
         <?php 
         include("../common/header.php");
         include("../idea_box/BandeauSubmitIdea.php"); ?>
@@ -93,7 +93,7 @@ if(isset($_POST['id'])){
         
         foreach ($id_events as $id_event){
             include("../events_passed/event.php");
-            echo '<hr>';
+            echo '<hr class="common-separator2">';
         }
 
         ?>
