@@ -83,9 +83,13 @@ if(isset($_POST['id'])){
 
         <?php
         //$_SESSION['status']="Membre BDE";
-        if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
-        } else {
+        if(isset($_SESSION['status'])){
+            if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
+            } else {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come_public();');
+            }
+        }else {
             $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come_public();');
         }
         $id_events = array();
@@ -102,7 +106,7 @@ if(isset($_POST['id'])){
             $datasEvent = $event->fetch();
             $event->closeCursor();
 
-            if ($datasEvent['Id_status_date'] = 2){
+            if ($datasEvent['Id_status_date'] == 1){
                 include("../events_passed/event.php");
                 echo '<hr class="common-separator2">';
             }
