@@ -44,6 +44,10 @@
     background: #e0edf0;
 }
 
+.common-background-white {
+    background: white;
+}
+
 .common-couverture {
     width:150px;
     max-width:100%;
@@ -141,7 +145,6 @@ hr.common-separator3 {
 }
 
 .common-bandeau {
-
     background: #000000;
     opacity: 0.75;
     color : white;
@@ -209,7 +212,12 @@ hr.common-separator3 {
     margin: 0 auto;
     margin-bottom: 45px;
     padding-top: 10px;
+    background: #cbcbcb;
     width: 70%;
-    background: #e0edf0;
     border-radius: 5px 5px 5px 5px;
+
+    border: 1px solid #222225;
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
