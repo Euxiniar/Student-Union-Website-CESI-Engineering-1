@@ -21,6 +21,8 @@
           $participate_event->closeCursor();
       ?>
 
+      
+
       <div class="container common-box">
         <div class="row mt-2">
           <div class="col-md-12">
@@ -84,6 +86,13 @@
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
                           <button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
+                        </form>
+                        
+                        
+                      
+                        <form name="zip" method="post" action="../common/downloadImg.php">
+                          <input type="submit" id="download-button-request" name="zip-button" value="Télécharger" >
+                          <button class="btn btn-primary" type="submit" name="download-img">Télécharger l"ensemble des images</button>
                         </form>';
                       }
                     ?>
