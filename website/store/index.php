@@ -88,8 +88,10 @@
 	<div id="main-gallery">
           <?php include("../scripts/setConnexionLocalBDD.php");
     $article = $local_bdd->query('call orleans_bde.sps_article()');
+    $counter = 0;
     while($datasItemStore = $article->fetch()){
-        include("./item-box.php");
+      $counter++;
+      include("./item-box.php");
     }
 	$article->closeCursor(); ?>
 				</div>
