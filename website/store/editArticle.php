@@ -92,7 +92,9 @@ if (isset($_POST['id'])) {
         }
         echo '<meta http-equiv="refresh" content="0; URL=../store/index.php">';
     }
+    
 ?>
+<?php include("../common/footer.php"); ?>
 </body>
 
 </html>
