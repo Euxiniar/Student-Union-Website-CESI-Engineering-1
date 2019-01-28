@@ -53,7 +53,7 @@ if(isset($_POST['id'])){
             $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
             $participate_event = $query->fetch();
             $query->closeCursor();
-            
+
             include("../events_passed/BandeauAddPhoto.php");
         }
         ?>
