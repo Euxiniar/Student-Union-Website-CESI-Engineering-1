@@ -1,3 +1,4 @@
+<?php include("../common/back.php");?>
 <div class="container-fluid ">
     <div class="row common-center-div ">
         <div class="col-md-12 common-center-text ">

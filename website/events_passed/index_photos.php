@@ -74,6 +74,10 @@ if(isset($_POST['id'])){
         }
 
         $photos->closeCursor();
+
+        if (empty($id_photo)){
+            include("../events_passed/noPhotos.php");
+        }
         
         foreach ($id_photos as $id_photo){
             include("../events_passed/photos.php");
@@ -81,7 +85,6 @@ if(isset($_POST['id'])){
         }
 
         ?>
-
 		<?php include("../common/footer.php") ?>
 		
 	</body>
