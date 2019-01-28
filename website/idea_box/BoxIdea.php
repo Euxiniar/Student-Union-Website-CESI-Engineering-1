@@ -2,7 +2,7 @@
 
 ?>
 
-<div class = "IdeaBox pb-4 mt-3">
+<div class = "common-box pb-4 mt-3">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9">
