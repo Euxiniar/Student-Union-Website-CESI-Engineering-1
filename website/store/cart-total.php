@@ -13,6 +13,8 @@
                         <button type="button" class="btn btn-success">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Commander
                         </button>
+                        <br/>
+                        <span>En validant votre commande, vous acceptez nos <a href="../cgv/" target="_blank">conditions générales de vente.</a></span>
                     </td>
                 </tr>
             </tfoot>

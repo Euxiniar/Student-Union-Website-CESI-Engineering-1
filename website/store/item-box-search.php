@@ -1,34 +1,5 @@
-<div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9"
-<?php switch ($counter) {
-  case 1:
-  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(253,228,153);"';
-  break;
+<div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9">
 
-  case 2:
-  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(224,234,241);"';
-  break;
-
-  case 3:
-  echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(252,193,153);"';
-  break;
-}
-?>
->
-
-<?php switch ($counter) {
-  case 1:
-  echo '<div class="item-stock-bar" style="background-color:rgb(253,228,153)"><span><img src="https://img.icons8.com/office/16/000000/medal2.png"> Meilleure Vente <img src="https://img.icons8.com/office/16/000000/medal2.png"></span></div>';
-  break;
-
-  case 2:
-  echo '<div class="item-stock-bar" style="background-color:rgb(224,234,241)"><span><img src="https://img.icons8.com/office/16/000000/medal-second-place.png"> Deuxième Meilleure Vente <img src="https://img.icons8.com/office/16/000000/medal-second-place.png"></span></div>';
-  break;
-
-  case 3:
-  echo '<div class="item-stock-bar" style="background-color:rgb(252,193,153)"><span><img src="https://img.icons8.com/office/16/000000/medal2-third-place.png"> Troisième Meilleure Vente <img src="https://img.icons8.com/office/16/000000/medal2-third-place.png"></span></div>';
-  break;
-}
-?>
   <div class="item-box-title">
     <div class="Title">
       <span>
