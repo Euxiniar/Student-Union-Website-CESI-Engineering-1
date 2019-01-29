@@ -19,7 +19,16 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 class="display-3 text-white text-center">Bienvenue sur le site du BDE </h1>
-                <h1 class="display-3 text-white text-center"><?php echo $_SESSION['f_name']?> <?php echo $_SESSION['l_name'] ?></h1>
+                <?php if(isset($_SESSION['id'])) {?>
+                    <h1 class="display-3 text-white text-center"><?php echo $_SESSION['f_name']?> <?php echo $_SESSION['l_name'] ?></h1>
+                <?php }else{ ?>
+                    <div class="row">
+                        <div class="col-md-12 text-center py-auto p-3">
+                            <a class="btn btn-primary " href="../disconnected/connexion.php#tologin" >Connexion</a>
+                            <a class="btn btn-primary" href="../disconnected/connexion.php#toregister">Inscription</a>
+                        </div>
+                    </div>
+                <?php }?>
             </div>
         </div>
     </div>
