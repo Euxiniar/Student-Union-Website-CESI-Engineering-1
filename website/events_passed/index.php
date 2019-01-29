@@ -46,15 +46,40 @@ if(isset($_POST['id'])){
     } else if(isset($_POST['private'])){
         $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
         $query = $local_bdd->query('call orleans_bde.sps_event('.$_POST['id'].');');
-        $event = $query->fetch();
+        $DatasEvent = $query->fetch();
         $query->closeCursor();
 
-        if($event['Id_status_accessibilite']==4) {
-            $query = $local_bdd->query('call orleans_bde.sps_user('.$event['Id_utilisateur'].');');
-            $user = $query->fetch();
-            $query->closeCursor();
-            // mail($user['Email'],"Evénement privé","Votre évenement à été mis en privé par un administrateur, 
-            // car son contenu a été jugé offensant ou restrictif.");
+        if($DatasEvent['Id_status_accessibilite']==4) {
+
+            $sujet = 'Sujet de l\'email';
+            $message = '
+                    <strong>l\'évènement \''.$DatasEvent['Titre'].' \' que vous avez publié à été mis en privé</strong><br />
+                    <p>Bonjour,<br /> Vous recevez ce mail car un élément que vous avez proposée sur le site du BDE du campus d\'orléans a été retiré du site par un administrateur car il ne respecte pas la charte d\'utilisation du site. <br /> Cordialement, <br /> Les membres du BDE CESI Orléans</p>
+                    ';
+
+            $user = $local_bdd->query('call orleans_bde.sps_user('. $DatasEvent['Id_utilisateur'] .')');
+            $DatasUser = $user->fetch();
+            $user->closeCursor();
+
+            $destinataire = $DatasUser['Email'];
+            $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
+            $headers .= "Reply-To: orleans@bde@cesi.fr\n";
+            $headers .= "Content-Type: text/html; charset=\"utf8\"";
+            mail($destinataire,$sujet,$message,$headers);
+
+            $message = '
+                    <strong>l\'évènement \''.$DatasEvent['Titre'].' \' publié par '.$DatasUser['Prenom'].' ' . $DatasUser['Nom'] . '  à été mis en privé par '.$_SESSION['f_name'].' '. $_SESSION['l_name'] . ' et l\'utilisateur a été averti</strong><br />';
+
+            $membresBDE = $local_bdd->query('call orleans_bde.spl_utilisateur_bde();');
+            $destinataire = '';
+            while($userBDE = $membresBDE->fetch()) {
+                $destinataire .= ', ' . $userBDE['Email'];
+            }
+            $membresBDE->closeCursor();
+            $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
+            $headers .= "Reply-To: orleans@bde@cesi.fr\n";
+            $headers .= "Content-Type: text/html; charset=\"utf8\"";
+            mail($destinataire,$sujet,$message,$headers);
         }
         $_POST['private'] = NULL;
 
