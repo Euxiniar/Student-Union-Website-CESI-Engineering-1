@@ -14,15 +14,15 @@
                         <h2> <?php echo $datasEvent['Titre'] ?> </h2></br>
                         <span class = "font-weight-bold">Créateur : </span><?php echo $datasUser['Prenom'] . ' ' . $datasUser['Nom'] ?> </br>
                         <i class="fas fa-euro-sign pr-2"></i><?php echo $datasEvent['Cout'] . '€' ?> </br>
-                        <i class="far fa-calendar-alt pr-2"></i><?php echo $datasEvent['Date_evenement'] ?> </br>
+                        <i class="far fa-calendar-alt pr-2"></i><?php echo $datasEvent['Date_evenement'] ?> <i class="fas fa-clock"></i><?php echo ' '. $datasEvent['Heure'] ?></br>
                         <i class="fas fa-map-marker-alt pr-2" style="color:blue"></i><?php echo $datasEvent['Lieu'] ?> </br>
                         <?php
                         if (isset($_SESSION['id'])) {
                             if ($_SESSION['status'] == "Membre BDE" || $_SESSION['status'] == "Personnel CESI") {
                                 if ($datasStatus['Designation'] == 'Public')
-                                    echo '<span class="font-weight-bold common-green">' . $datasStatus['Designation'] . '</span></br>';
+                                    echo '<i class="fas fa-user-secret"></i><span class="font-weight-bold common-green">' . ' '.$datasStatus['Designation'] . '</span></br>';
                                 else {
-                                    echo '<span class="font-weight-bold common-red">' . $datasStatus['Designation'] . '</span></br>';
+                                    echo '<i class="fas fa-user-secret"></i><span class="font-weight-bold common-red">' . ' '.$datasStatus['Designation'] . '</span></br>';
                                 }
                             }
                         }

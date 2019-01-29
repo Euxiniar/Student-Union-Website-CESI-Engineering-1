@@ -18,15 +18,13 @@ include("../common/header.php"); ?>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6"> <!--Photo-->
+            <div class="col-md-4"> <!--Photo-->
 
             </div> <!--Photo-->
-            <div class="col-md-6"> <!--Titre date récurrence-->
+            <div class="col-md-4"> <!--Titre date récurrence-->
                 <span class="common-t3">Titre de l'idée</span><br/>
-                <input type="text"  name="title" placeholder="Titre de l'idée" class ="mb-2" maxlength="50" required="required" autofocus ><br/>
-                <t3>Date de l'évènement</t3><br/>
-                <input type="date" name="date" class ="mb-2" required="required"><br/>
-                <t3>Récurrence de l'évènement</t3><br/>
+                <input class="form-control" type="text" name="title" placeholder="Titre de l'idée" required autofocus>
+                <span class="common-t3">Récurrence de l'évènement</span><br/>
                 <select id="selectbasic" name="recurrence" class="form-control mb-2" required="required"><br/>
                     <option value="4" name="recurrence">Aucune récurrence</option>
                     <option value="1" name="recurrence">1 semaine</option>
@@ -34,27 +32,33 @@ include("../common/header.php"); ?>
                     <option value="3" name="recurrence">1 ans</option>
                 </select>
             </div> <!--Titre date récurrence-->
+            <div class="col-md-4">
+                <span class="common-t3">Heure de l'évènement</span><br/>
+                <input class="form-control" type="time" value="12:00:00" name="time">
+                <span class="common-t3 mt-2">Date de l'évènement</span><br/>
+                <input class="form-control" type="date" name="date" value="2019-01-31" id="example-date-input" required><br/>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-6"> <!--Choisir un fichier-->
-                <t3 class ="pl-3 ">Image | max 50 Mo </t3><br/>
+            <div class="col-md-4"> <!--Choisir un fichier-->
+                <span class ="pl-3 common-t3">Image | max 50 Mo </span><br/>
                 <input type="hidden" name="" value="52428800" /> <!--Max 50Mo-->
                 <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg, image/gif"  >
             </div> <!--Choisir un fichier-->
-            <div class="col-md-3"> <!--cout-->
-                <t3>Cout prévisionnel </t3>
+            <div class="col-md-4"> <!--cout-->
+                <span class="common-t3">Cout prévisionnel </span>
                 <br/>
-                <input type="number" name="quantity" placeholder ="0€" min="0" max="999">
+                <input class="form-control" type="number" value="0" name="quantity" placeholder ="0€" min="0" max="999">
             </div> <!--cout-->
-            <div class="col-md-3 m"> <!--adresse-->
-                <t3>Adresse de l'évènement</t3>
+            <div class="col-md-4 m"> <!--adresse-->
+                <span class="common-t3">Adresse de l'évènement</span>
                 <br/>
-                <input type="text" id="adr" name="address" placeholder="1 allé du titane" maxlength="50">
+                <input type = "text" class="form-control" id="adr" name="address" value="1 allé du titane" maxlength="50">
             </div><!--adresse-->
         </div>
         <div class="row">
             <div class="col-md-12 m-3 "> <!--Description-->
-                <t3>Description</t3>
+                <span class="common-t3">Description</span>
                 <br/>
                 <textarea class="form-control" id="description" name="description" required="required" maxlength="2000"></textarea>
             </div> <!--Description-->
