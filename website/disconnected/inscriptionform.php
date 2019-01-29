@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<?php $PAGE = "connexion_form" ?>
+<?php $PAGE = "Inscription" ?>
 
 <!-- Le corps -->
 <div id="corps">

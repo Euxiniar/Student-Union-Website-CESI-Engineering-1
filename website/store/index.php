@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <?php $PAGE = "store"; ?>
     <title>Boutique - BDE CESI Orléans</title>
+
+
+    <link href="bootstrap-slider.css" rel="stylesheet">
+<script src="bootstrap-slider.js"></script>
   </head>
 
   <body>
@@ -27,7 +31,7 @@
 			<div class="left-item">
 <h2> Recherche </h2>
 	<div class="container-4">
-              <form method="get" action="/search">
+              <form method="get" action="">
                 <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch()" />
                 <button class="icon">
                   <i class="fa fa-search">
@@ -44,7 +48,7 @@
 <div class="left-item">
 	<h2> Catégorie </h2>
 
-			<form action="index.php" method="post">
+			<form action="" method="post">
       <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch()">
 			<option class="input-placeholder-select" value="0">Catégorie...</option>
     <?php include ("../scripts/setConnexionLocalBDD.php");
@@ -63,9 +67,8 @@ $category->closeCursor();
 <div class="line"></div>
 
 <div class="left-item">
-<h2> Prix </h2>
+<h2> Ordre Prix </h2>
 
-<input type="range" min="1" max="100" value="50" class="slider" id="priceRange">
 
 </div>
 
@@ -103,15 +106,7 @@ if (isset($_SESSION['id']))
 	</div>
   <div class="right-side">
 	<div id="main-gallery">
-          <?php include ("../scripts/setConnexionLocalBDD.php");
-$article = $local_bdd->query('call orleans_bde.sps_article()');
-$counter = 0;
-while ($datasItemStore = $article->fetch())
-{
-    $counter++;
-    include ("./item-box.php");
-}
-$article->closeCursor(); ?>
+ <?php include ("./inserter.php") ?>
 				</div>
 	</div>
 </div>
@@ -124,22 +119,26 @@ $article->closeCursor(); ?>
         function querySearch() {
           var search = document.getElementById('search').value;
           var category = document.getElementById("sel1").value;
-          if(search) {
+
+
+          if(search || search === "") {
           } else {
             search = "NULL";
           }
 
-          if(category) {
+          if(category || category === "") {
           } else {
-            category = "NULL";
+            category = "0";
           }
           
           $.ajax({
             type: "GET",
-            url: "searchJs.php",
+            url: "inserter.php",
             data: {
               searchBarInput: search,
-              category: category
+              category: category,
+              priceLow: priceLow,
+              priceHigh: priceHigh
             },
             success: function(result) {
               $('#main-gallery').html(result);
@@ -190,7 +189,8 @@ var quantity = document.getElementsByName(id)[0].value;
                     Quantity: quantity
                 },
                 success: function(result) {
-                   alert("ok");
+                   alert(result);
+                   
                 }
             });
         }

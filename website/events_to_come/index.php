@@ -74,18 +74,30 @@ if(isset($_POST['id'])){
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>BDE CESI Exia</title>
-		<?php $PAGE = "Évènements à venir" ?>
+		<?php $PAGE = "Événements à venir" ?>
 	</head>
 
 	<body class="common-background-white">
-		<?php include("../common/header.php"); ?>
-        <?php include("../idea_box/BandeauSubmitIdea.php"); ?>
+		<?php include("../common/header.php");
 
-        <?php
+
+
+
         //$_SESSION['status']="Membre BDE";
-        if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
-            $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
-        } else {
+        if(isset($_SESSION['status'])){
+            if($_SESSION['status']=="Membre BDE") {
+                include("../events_to_come/BandeauCreateEvent.php");
+            }
+            else{
+                include("../idea_box/BandeauSubmitIdea.php");
+            }
+
+            if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come();');
+            } else {
+                $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come_public();');
+            }
+        }else {
             $events = $local_bdd->query('call orleans_bde.spl_evenement_to_come_public();');
         }
         $id_events = array();
@@ -102,7 +114,7 @@ if(isset($_POST['id'])){
             $datasEvent = $event->fetch();
             $event->closeCursor();
 
-            if ($datasEvent['Id_status_date'] = 2){
+            if ($datasEvent['Id_status_date'] == 1){
                 include("../events_passed/event.php");
                 echo '<hr class="common-separator2">';
             }

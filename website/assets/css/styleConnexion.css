@@ -35,9 +35,10 @@ a.hiddenanchor{
 #wrapper{
 	width: 60%;
 	right: 0px;
-	min-height: 560px;	
-	margin: 0px auto;	
-	width: 500px;
+	min-height: 560px;
+	max-width: 600px;
+	min-width: 300px;
+	margin: 0px auto;
 	position: relative;	
 }
 
@@ -135,13 +136,13 @@ input {
 
 /* Boutons */
 #wrapper p.button input{
-	width: 30%;
+	max-width: 30%;
 	cursor: pointer;	
 	background: #333;
 	padding: 8px 5px;
 	font-family: 'BebasNeueRegular','Arial Narrow',Arial,sans-serif;
 	color: #fff;
-	font-size: 24px;	
+	font-size-adjust: initial;
 	border: 1px solid rgb(28, 108, 122);	
 	margin-bottom: 10px;	
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
@@ -318,7 +319,9 @@ p.change_link{
 
 .lt8 #wrapper input{
 	padding: 10px 5px 10px 32px;
-    width: 92%;
+	margin-right: 10px;
+    max-width: 92%;
+	min-width: 50px;
 }
 .lt8 #wrapper input[type=checkbox]{
 	width: 10px;

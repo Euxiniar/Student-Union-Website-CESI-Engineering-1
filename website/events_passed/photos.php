@@ -19,14 +19,16 @@
           $status = $local_bdd->query('call orleans_bde.sps_statusaccessibilite('.$datasPhoto['Status'].');');
           $datasStatus = $status->fetch();
           $status->closeCursor();
-          $like_photo = $local_bdd->query('call orleans_bde.spt_likephoto('.$_SESSION['id'].','.$id_photo.');');
-          $like = $like_photo->fetch();
-          $like_photo->closeCursor();
+          if(isset($_SESSION['id'])) {
+            $like_photo = $local_bdd->query('call orleans_bde.spt_likephoto('.$_SESSION['id'].','.$id_photo.');');
+            $like = $like_photo->fetch();
+            $like_photo->closeCursor();
+          }
     ?>
     <div class="container text-center">
         <div class="row">
             <div class="col-md-8 d-block">
-                <img class="" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
+                <img class="mt-4" src="<?php echo $datasPhoto['URL_photo'];?>" style="width:150px;max-width:100%;max-height:320px;">
                 <div>
                     <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Prenom']; ?></p>
                     <p class="font-weight-bold mb-0 d-inline-flex"><?php echo $datasUser['Nom']; ?></p>
@@ -47,6 +49,7 @@
             </div>
             <div class="col-md-4 d-block">
                 <?php
+                if(isset($_SESSION['status'])) {
                     if($_SESSION['status']=="Personnel CESI"){
                         echo '
                         <form method="post">
@@ -67,17 +70,24 @@
                         $datasStatus['Designation'].
                     '</p>';
                     }
+                }
                 ?>
-                <p class="font-weight-bold mb-0"><?php echo $datasPhoto['Nbr_like']; ?></p>
+                <p class="font-weight-bold mb-0 mt-4">
+                    <?php 
+                    if(isset($_SESSION['id'])) {
+                        echo $datasPhoto['Nbr_like']; ?>
+                </p>
                 <?php
                     echo '<form method="post">
                     <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>';
-                    if($like['count']<1){
-                      echo '<button class="btn btn-primary" type="submit" name="like">Aimer</button>';
-                    }else{
-                      echo '<button class="btn btn-primary" type="submit" name="stop_like">Ne plus aimer</button>';
-                    }
+                    
+                        if($like['count']<1){
+                        echo '<button class="btn btn-primary" type="submit" name="like">Aimer</button>';
+                        }else{
+                        echo '<button class="btn btn-primary" type="submit" name="stop_like">Ne plus aimer</button>';
+                        }
                     echo '</form>';
+                }
                 ?>
             </div>
         </div>

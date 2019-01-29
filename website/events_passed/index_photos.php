@@ -43,25 +43,25 @@ if(isset($_POST['id'])){
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>BDE CESI Exia</title>
-		<?php $PAGE = "home" ?>
+		<?php $PAGE = "Photos" ?>
 	</head>
 
 	<body>
 		<?php include("../common/header.php") ?>
         <?php 
+        if(isset($_SESSION['id'])) {
             $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
             $participate_event = $query->fetch();
             $query->closeCursor();
 
-            if($participate_event['count']==1){
-                include("../events_passed/BandeauAddPhoto.php");
-            }      
+            include("../events_passed/BandeauAddPhoto.php");
+        }
         ?>
 
         <?php        
         //$_SESSION['status']="Membre BDE";
 
-        if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
+        if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE")) {
             $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_SESSION['id_event'].');');
         } else {
             $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public('.$_SESSION['id_event'].');');
@@ -72,14 +72,17 @@ if(isset($_POST['id'])){
         }
 
         $photos->closeCursor();
+
+        if (count($id_photos) < 1){
+            include("../events_passed/noPhotos.php");
+        }
         
         foreach ($id_photos as $id_photo){
             include("../events_passed/photos.php");
-            echo '<hr>';
+            echo '<hr class="common-separator2">';
         }
 
         ?>
-
 		<?php include("../common/footer.php") ?>
 		
 	</body>

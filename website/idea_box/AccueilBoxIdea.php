@@ -4,7 +4,7 @@
 </head>
 
     <body class="body common-background-white">
-        <?php $PAGE = 'AccueilBoxIdea'; ?>
+        <?php $PAGE = 'Boîte à idées'; ?>
         <?php include("../common/header.php"); ?>
         <?php if (isset($_SESSION['id'])){
             include("../idea_box/BandeauSubmitIdea.php");

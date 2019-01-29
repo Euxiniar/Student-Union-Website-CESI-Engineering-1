@@ -37,6 +37,7 @@ if ($erreur = 'pas derreur') {
     $date = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['date']));
     /*$creationDate*/ /*defini plus haut*/
     $endDate = null;
+    $hour = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['time']));
     $description = preg_replace("#'|\"#", $replace, html_entity_decode(htmlspecialchars($_POST['description']),ENT_QUOTES));
 
 
@@ -48,8 +49,11 @@ if ($erreur = 'pas derreur') {
     $idUtilisateur = $_SESSION['id'];
     $idRecurrence = $_POST['recurrence'];
     $isIdea = 1;
-    $idDate = null;
-    $idAccessibilite = 1;
+    if (isset($_POST['id_status_date']))
+        $idDate = $_POST['id_status_date'];
+    else
+        $idDate = null;
+        $idAccessibilite = 1;
 
     /*$recurrence = $local_bdd->query('call orleans_bde.sps_recurrence(\'' . htmlspecialchars($_POST['recurrence']) . '\');');
     $dataRecurrence = $recurrence->fetch();
@@ -74,12 +78,14 @@ if ($erreur = 'pas derreur') {
 
 
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
-    $query =
-        'call orleans_bde.spi_evenement(
+    if (!isset($_POST['id_status_date'])) {
+        $query =
+            'call orleans_bde.spi_evenement(
     \'' . $titre . '\',  
     \'' . $date . '\',  
     \'' . $creationDate . '\',  
     \'' . $date . '\',   
+    \'' . $hour . '\',
     \'' . $description . '\',  
     ' . $cout . ',
     ' . $nbrParticipants . ',
@@ -91,10 +97,36 @@ if ($erreur = 'pas derreur') {
     ' . $isIdea . ',
     ' . $idAccessibilite . ');';
 
-/*    echo $query;*/
+        /*    echo $query;*/
 
-    $local_bdd->query($query);
-    echo '<meta http-equiv="refresh" content="0; URL=./AccueilBoxIdea.php">';
+        $local_bdd->query($query);
+        echo '<meta http-equiv="refresh" content="0; URL=../idea_box/AccueilBoxIdea.php">';
+    }
+    else {
+        $query =
+            'call orleans_bde.spi_evenement_tocome(
+    \'' . $titre . '\',  
+    \'' . $date . '\',  
+    \'' . $creationDate . '\',  
+    \'' . $date . '\',   
+    \'' . $hour . '\',
+    \'' . $description . '\',  
+    ' . $cout . ',
+    ' . $nbrParticipants . ',
+    \'' . $url . '\',  
+    ' . $nbrVotes . ',
+    \'' . $adresse . '\',  
+    ' . $idUtilisateur . ',
+    ' . $idRecurrence . ',
+    ' . $isIdea . ',
+    ' . $idDate . ',
+    ' . $idAccessibilite . ');';
+        /*    echo $query;*/
+
+        $local_bdd->query($query);
+        echo '<meta http-equiv="refresh" content="0; URL=../events_to_come/index.php">';
+    }
+
 
 }
 else {
