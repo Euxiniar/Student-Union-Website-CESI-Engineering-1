@@ -27,7 +27,7 @@
     <input type="number" oninput="processNewQty({Qty:this.value,ArticleID:'<?php echo $datasEvent['Id_article']?>'})" class="form-control text-center" value="<?php echo $datasEvent['Quantite'] ?>" min="1" max="10">
   </td>
   <td data-th="Subtotal" class="text-center">
-  <?php echo $datasEvent['Quantite']*$datasEvent['Cout'] ?>€
+  <span class="price-sub"><?php echo $datasEvent['Quantite']*$datasEvent['Cout'] ?></span>€
   </td>
   <td class="actions" data-th="">
   <!--
