@@ -21,10 +21,17 @@
             /* tous le contenu du panier, donc de article_par_commande sur la base de l'ID de session */
             if ($itemsInOrder->rowCount() == 0) /* Si aucune valeur n'est retournée (panier vide) */
             { /* It's empty, so we tell the user to add a product to his cart */
-                echo "
-        <h1>Votre panier est vide.</h1>"; 
-        echo "
-        <p>Ajoutez des produits !</p>";} 
+        echo '
+        <div class="jumbotron text-xs-center">
+  <h1 class="display-3">Votre panier est vide.</h1>
+  <p class="lead">Ajoutez un produit pour le voir s afficher ici !</p>
+  <hr>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="../" role="button">Accueil</a>
+    <a class="btn btn-primary btn-sm" href="./store" role="button">Boutique</a>
+  </p>
+</div>
+';} 
         else { 
             /* It's not empty, we display the formatted results */ 
             include_once("./cart-top.php"); /* On inclut une seule fois le haut du panier */
@@ -38,12 +45,22 @@
         } 
         else 
         { 
-            echo "<h1> Vous devez être connectés. </h1>";  /* Si _SESSION['id'] n'est pas défini, on affiche ce message uniquement. */
+            echo '<div class="jumbotron text-xs-center">
+            <h1 class="display-3">Vous devez être connectés.</h1>
+            <p class="lead">Connectez-vous afin de bénéficier des services de votre BDE !</p>
+            <hr>
+            <p class="lead">
+              <a class="btn btn-primary btn-sm" href="../disconnected/connexion.php#toregister" role="button">Inscription</a>
+              <a class="btn btn-primary btn-sm" href="../disconnected/connexion.php#tologin" role="button">Connexion</a>
+            </p>
+          </div>';  /* Si _SESSION['id'] n'est pas défini, on affiche ce message uniquement. */
         } ?>
     </div>
 
     <!-- Add the footer -->
     <?php include( "../common/footer.php") ?>
+
+   
 
     <script>
         function processRemoveItem(Id_Article) { /* On fait la fonction avec en paramètre une variable "Id_Article"  */
