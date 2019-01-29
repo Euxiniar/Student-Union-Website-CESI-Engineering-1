@@ -1,6 +1,6 @@
 <?php
-include("../events_passed/BandeauAddPhoto.php");
-include("../common/back.php");
+//include("../events_passed/BandeauAddPhoto.php");
+//include("../common/back.php");
 
 ?>
 

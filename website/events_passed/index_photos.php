@@ -57,6 +57,8 @@ if(isset($_POST['id'])){
             include("../events_passed/BandeauAddPhoto.php");
         }
         ?>
+        <a href="../events_passed/" class="btn btn-dark common-left-text m-2" name="back"><i class="fas fa-arrow-circle-left"></i></a>
+
 
         <?php        
         //$_SESSION['status']="Membre BDE";

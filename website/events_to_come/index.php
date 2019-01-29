@@ -37,7 +37,22 @@ if(isset($_POST['id'])){
     } else if(isset($_POST['l_inscrits_pdf'])) {
         include("../scripts/pdf_l_inscrit.php");
     } else if(isset($_POST['delete'])){
-        $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
+        if(isset($_SESSION['id'])){
+            $query = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_POST['id'].');');
+            $photos_id = array();
+            while($photo=$query->fetch()){
+                $photos_id[] = $photo;
+            }
+            $query->closeCursor();
+
+            foreach($photos_id as $photo_id){
+                $local_bdd->query('call orleans_bde.spd_commentaire_by_id_photo('.$photo_id['Id_photo'].');');
+                $local_bdd->query('call orleans_bde.spd_likephoto_by_id_photo('.$photo_id['Id_photo'].');');
+                $local_bdd->query('call orleans_bde.spd_photo_by_id('.$photo_id['Id_photo'].');');
+            }
+            $local_bdd->query('call orleans_bde.spd_voteidea_by_evenement('.$_POST['id'].');');
+            $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
+        }
         $_POST['delete'] = NULL;
     } else if(isset($_POST['private'])){
         $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
@@ -55,14 +70,28 @@ if(isset($_POST['id'])){
         $_POST['private'] = NULL;
 
     }else if(isset($_POST['participate'])){
-        $local_bdd->query('call orleans_bde.spi_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
-        $local_bdd->query('call orleans_bde.spe_nbr_participants_increment('.$_POST['id'].');');
-        $_POST['participate'] = NULL;
+        if(isset($_SESSION['id'])){
+            $participate_event = $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+            $participate = $participate_event->fetch();
+            $participate_event->closeCursor();
+            if($participate['count']==0){
+                $local_bdd->query('call orleans_bde.spi_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+                $local_bdd->query('call orleans_bde.spe_nbr_participants_increment('.$_POST['id'].');');
+                $_POST['participate'] = NULL;
+            }
+        }
     }
     else if(isset($_POST['stop_participate'])){
-        $local_bdd->query('call orleans_bde.spd_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
-        $local_bdd->query('call orleans_bde.spe_nbr_participants_decrement('.$_POST['id'].');');
-        $_POST['stop_participate'] = NULL;
+        if(isset($_SESSION['id'])){
+            $participate_event = $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+            $participate = $participate_event->fetch();
+            $participate_event->closeCursor();
+            if($participate['count']==1){
+                $local_bdd->query('call orleans_bde.spd_participant_evenement('.$_SESSION['id'].','.$_POST['id'].');');
+                $local_bdd->query('call orleans_bde.spe_nbr_participants_decrement('.$_POST['id'].');');
+                $_POST['stop_participate'] = NULL;
+            }
+        }
     }
     $_POST['id'] = NULL;
 }
