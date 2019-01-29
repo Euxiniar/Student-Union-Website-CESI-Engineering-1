@@ -24,6 +24,7 @@ $statusUser->closeCursor();
         <div class="col-md-12">
             <?php
             echo '<p class="text-justify">'. $datasUser['Prenom'] . ' ' .$datasUser['Nom'] . '<span class="font-italic"> à ' . $datasCommentaire['Heure'] . ' le '.$datasCommentaire['Date'] . '.</span>  ';
+             if (isset($_SESSION['status'])){
                 if ($_SESSION['status'] == 'Membre BDE' || $_SESSION['status'] == "Personnel CESI"){
                     if ($datasStatus['Designation'] == 'Public')
                         echo '<span class="font-weight-bold common-green">' . $datasStatus['Designation'] . '</span>';
@@ -31,6 +32,7 @@ $statusUser->closeCursor();
                         echo '<span class="font-weight-bold common-red">' . $datasStatus['Designation'] . '</span>';
                     }
                 }
+             }
                     echo '<span class="common-left-text ml-5"> '.$datasStatusUser['Designation'] .'</span></p>';
                 ?>
             <hr class="common-separator2"/>

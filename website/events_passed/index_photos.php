@@ -53,10 +53,8 @@ if(isset($_POST['id'])){
             $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
             $participate_event = $query->fetch();
             $query->closeCursor();
-        
-            if($participate_event['count']==1){
-                include("../events_passed/BandeauAddPhoto.php");
-            }      
+
+            include("../events_passed/BandeauAddPhoto.php");
         }
         ?>
 
@@ -75,13 +73,13 @@ if(isset($_POST['id'])){
 
         $photos->closeCursor();
 
-/*        if (empty($id_photo)){
+        if (count($id_photos) < 1){
             include("../events_passed/noPhotos.php");
-        }*/
+        }
         
         foreach ($id_photos as $id_photo){
             include("../events_passed/photos.php");
-            echo '<hr>';
+            echo '<hr class="common-separator2">';
         }
 
         ?>

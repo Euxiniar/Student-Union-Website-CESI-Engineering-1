@@ -6,9 +6,7 @@
 <body class="body common-background-gray">
 <?php
 
-/*$_POST['id_photo'] = 2; /*To change !!!!*/
-
-$PAGE = 'Ajouter un commentaire'; ?>
+$PAGE = 'Commentaires'; ?>
 
 <?php include("../common/header.php");
 if(!isset($_SESSION)){
@@ -61,12 +59,7 @@ $allComments = $nbrcomments->fetch();
 $nbrcomments->closeCursor();
 
 
-$id_events = array();
-$comments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_SESSION['id_photo'].' );');
-while($datasComments = $comments->fetch()){
-    $id_commentaires[] = $datasComments['Id_commentaire'];
-}
-$comments->closeCursor();
+
 
 $photo = $local_bdd->query('call orleans_bde.sps_photo('.$_SESSION['id_photo'].');');
 $datasPhoto = $photo->fetch();
@@ -88,7 +81,14 @@ $user->closeCursor();
     </div>
 </div>
 
+
 <?php
+$id_events = array();
+$comments = $local_bdd->query('call orleans_bde.spl_commentaires_by_photo('. $_SESSION['id_photo'].' );');
+while($datasComments = $comments->fetch()){
+    $id_commentaires[] = $datasComments['Id_commentaire'];
+}
+$comments->closeCursor();
 echo '<hr class = "common-separator1">';
 
 include("../events_passed/writeComment.php");
