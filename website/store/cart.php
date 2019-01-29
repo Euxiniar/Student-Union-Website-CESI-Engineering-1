@@ -103,7 +103,11 @@ function processNewQty(params)
                     ArticleID: ArticleID
                 },
                 success: function(result) {
-                   console.log("Quantité modifiée. Nouvelle quantité : " + Quantity + " pour l'article ID " + ArticleID + ".");
+                    $(document).ready(function() {
+                        $.get('refreshItems.php', function(response) {
+                            $('#product-list').html(response);
+                        });
+                    });
                 }
             });
     }
