@@ -28,7 +28,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <div class="mr-auto text-white" style="font-size: 40px !important;">
+               <!-- <div class="mr-auto text-white" style="font-size: 40px !important;">
                     <?php
                         if(isset($PAGE)){
                             $url = 'http://localhost:3000/page?name='.urlencode($PAGE);
@@ -37,7 +37,7 @@
                             echo $api_array['name'];
                         }
                     ?>
-                </div>
+                </div> -->
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -75,7 +75,7 @@
                     }
                 ?>
                 <?php 
-                    if($PAGE=="store" || $PAGE=="cart") {
+                    if($PAGE=="Boutique" || $PAGE=="Panier") {
                         echo '
                         <li class="nav-item">
                             <a class="nav-link" href=" ../store/cart.php"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>
