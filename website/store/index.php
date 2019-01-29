@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <?php $PAGE = "store"; ?>
+    <?php $PAGE = "Boutique"; ?>
     <title>Boutique - BDE CESI Orléans</title>
 
 

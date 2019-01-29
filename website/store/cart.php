@@ -7,7 +7,7 @@
     <title>Panier - Boutique - BDE CESI Orléans</title>
     <link href="../assets/css/reset.css" rel="stylesheet">
     <link href="../assets/css/cart.css" rel="stylesheet">
-    <?php $PAGE="cart" ;?>
+    <?php $PAGE="Panier" ;?>
 
 </head>
 
@@ -103,7 +103,11 @@ function processNewQty(params)
                     ArticleID: ArticleID
                 },
                 success: function(result) {
-                   console.log("Quantité modifiée. Nouvelle quantité : " + Quantity + " pour l'article ID " + ArticleID + ".");
+                    $(document).ready(function() {
+                        $.get('refreshItems.php', function(response) {
+                            $('#product-list').html(response);
+                        });
+                    });
                 }
             });
     }

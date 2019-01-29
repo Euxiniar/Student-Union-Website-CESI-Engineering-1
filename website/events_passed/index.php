@@ -69,7 +69,7 @@ if(isset($_POST['id'])){
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>BDE CESI Exia</title>
         
-        <?php $PAGE = "Evénements passés" ?>
+        <?php $PAGE = "Événements passés" ?>
 	</head>
 
 	<body class="common-background-white">
