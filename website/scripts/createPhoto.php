@@ -26,7 +26,7 @@ if ( !in_array($extension_upload,$extensions_valides) )
 
 $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-'. $_FILES['filebutton']['name']);
 /*echo $nomNewFichier. '<br>';;*/
-$url = '../assets/img/event_photos/'.$nomNewFichier;
+$url = '../uploads/posts/'.$nomNewFichier;
 /*echo $url;*/
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
 if (!$resultat)
