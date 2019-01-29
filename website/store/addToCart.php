@@ -33,6 +33,7 @@ if(isset($_SESSION['id'], $_POST['Quantity'], $_POST['Id_Article']))
 
     // We check if the item is already in the cart
     $check3 = $local_bdd->query("call orleans_bde.sps_cart_check_if_already_in_cart($IdUser, $ArticleID)");
+    $count = $check3->rowCount();
     $check3->closeCursor();
     if ($count == 0) {
          // If the item isn't in the cart
