@@ -25,6 +25,35 @@
                 }
                 if (isset($_POST['button-valid'])){
                     $local_bdd->query('call orleans_bde.spe_evenement_idea_to_tocome(' . $_POST['id'] . ');');
+
+                    $event = $local_bdd->query('call orleans_bde.sps_evenement('. $_POST['id'] .')');
+                    $DatasEvent = $event->fetch();
+                    $event->closeCursor();
+
+                    $sujet = 'Sujet de l\'email';
+                    $message = '
+                    <strong>Votre idée \'' . $DatasEvent['Titre'] .' \' a été retenue.</strong><br />
+                    <p>Bonjour,<br /> Vous recevez ce mail car l\'idée que vous avez proposée sur le site du BDE du campus d\'orléans a été retenue. merci de participer à la vie de notre BDE ! :) <br /> Cordialement, <br /> Les membres du BDE CESI Orléans</p>
+                    ';
+/*                    $membresBDE = $local_bdd->query('call orleans_bde.spl_utilisateur_bde();');
+                    $destinataire = '';
+                    foreach($membresBDE->fetchAll() as $userBDE) {
+                        $destinataire .= ', ' . $userBDE['Email'];
+
+                    }*/
+
+                    $user = $local_bdd->query('call orleans_bde.sps_user('. $DatasEvent['Id_utilisateur'] .')');
+                    $DatasUser = $user->fetch();
+                    $user->closeCursor();
+
+                    $destinataire = $DatasUser['Email'];
+                    $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
+                    $headers .= "Reply-To: orleans@bde@cesi.fr\n";
+                    $headers .= "Content-Type: text/html; charset=\"utf8\"";
+                    mail($destinataire,$sujet,$message,$headers);
+
+
+
                     /*                echo '<meta http-equiv="refresh" content="0">';*/
                 }
                 if (isset($_POST['button-vote'])){
