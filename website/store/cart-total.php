@@ -10,9 +10,7 @@
                     
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Commander
-                        </button>
+                        <a href="./validateOrder.php" class="btn btn-success" role="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Commander</a>
                         <br/>
                         <span>En validant votre commande, vous acceptez nos <a href="../cgv/" target="_blank">conditions générales de vente.</a></span>
                     </td>
