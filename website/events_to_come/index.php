@@ -173,7 +173,11 @@ if(isset($_POST['id'])){
                 echo '<hr class="common-separator2">';
             }
         }
-
+            //if no idea, then we include the page no idea
+            if (empty($id_events)) {
+                include("../events_passed/noEvents.php");
+            }
+            
         ?>
 
 		<?php include("../common/footer.php") ?>
