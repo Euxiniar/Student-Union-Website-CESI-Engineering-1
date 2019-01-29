@@ -19,6 +19,7 @@
         if (isset($_SESSION['id'])){
             if (isset($_POST['id'])) {
                 if (isset($_POST['button-suppr'])) {
+                    $local_bdd->query('call orleans_bde.spd_voteidea_by_evenement(' . $_POST['id'] . ');');
                     $local_bdd->query('call orleans_bde.spd_evenement_by_id(' . $_POST['id'] . ');');
     /*                echo '<meta http-equiv="refresh" content="0">';*/
                 }

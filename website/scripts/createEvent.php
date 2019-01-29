@@ -23,7 +23,7 @@ if ( !in_array($extension_upload,$extensions_valides) )
 $hours = date("H-i-s");
 $nomNewFichier = htmlspecialchars($_SESSION['id'].'-'.$creationDate.'-' . $hours . '-' . $_FILES['filebutton']['name']);
 /*echo $nomNewFichier. '<br>';;*/
-$url = '../assets/img/couvertures/'.$nomNewFichier;
+$url = '../uploads/cover/'.$nomNewFichier;
 /*echo $url;*/
 $resultat = move_uploaded_file($_FILES['filebutton']['tmp_name'],$url);
 if (!$resultat)
