@@ -28,23 +28,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-               <!-- <div class="mr-auto text-white" style="font-size: 40px !important;">
+               <div class="mr-auto text-white" style="font-size: 40px !important;">
                     <?php
                         if(isset($PAGE)){
                             $url = 'http://localhost:3000/page?name='.urlencode($PAGE);
-                            $api_json = file_get_contents($url);
+                            $api_json = @file_get_contents($url);
                             $api_array= json_decode($api_json, true);
                             echo $api_array['name'];
                         }
                     ?>
-                </div> -->
+                </div>
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Évènements
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../events_passed/">Évènements passé</a>
+                        <a class="dropdown-item" href="../events_passed/">Évènements passés</a>
                         <a class="dropdown-item" href="../events_to_come/">Évènements à venir</a>
                     </div>
                 </li>
