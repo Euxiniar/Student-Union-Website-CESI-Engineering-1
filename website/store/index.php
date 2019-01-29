@@ -139,6 +139,25 @@ if (isset($_SESSION['id']))
 
     <?php include_once ("../common/footer.php") ?>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Produit ajouté au panier</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Le produit a été ajouté au panier.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <a href="./cart.php" class="btn btn-primary" role="button"><i class="fas fa-shopping-cart"></i> Voir le Panier</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
@@ -231,7 +250,7 @@ var quantity = document.getElementsByName(id)[0].value;
                     Quantity: quantity
                 },
                 success: function(result) {
-                   alert(result);
+                    $("#exampleModal").modal('show');
                    
                 }
             });

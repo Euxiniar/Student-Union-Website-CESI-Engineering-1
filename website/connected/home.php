@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../assets/css/home.css">
 <?php include("../common/header.php") ?>
 
-<div class="front_body">
+<div class="common-PaddingBody">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

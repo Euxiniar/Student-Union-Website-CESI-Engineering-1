@@ -74,46 +74,44 @@
                     }
                 }
                 if (isset($_POST['button-private'])){
-                    $local_bdd->query('call orleans_bde.spe_evenement_status(' . $_POST['id'] . ');');
+                    /*$local_bdd->query('call orleans_bde.spe_evenement_status(' . $_POST['id'] . ');');*/
 
-                    $event = $local_bdd->query('call orleans_bde.sps_evenement('. $_POST['id'] .')');
-                    $DatasEvent = $event->fetch();
-                    $event->closeCursor();
+                    if ($DatasEvent['Id_status_accessibilite'] == 4){
 
-                    $sujet = 'Sujet de l\'email';
-                    $message = '
-                    <strong>l\'évènement \''.$DatasEvent['Titre'].' \' que vous avez publié à été mis en privé</strong><br />
-                    <p>Bonjour,<br /> Vous recevez ce mail car un élément que vous avez proposée sur le site du BDE du campus d\'orléans a été retiré du site par un administrateur car il ne respecte pas la charte d\'utilisation du site. <br /> Cordialement, <br /> Les membres du BDE CESI Orléans</p>
-                    ';
+                        $sujet = 'Avertissement site du BDE Orléans';
+                        $message = '
+                        <strong>l\'évènement \''.$DatasEvent['Titre'].' \' que vous avez publié à été mis en privé</strong><br />
+                        <p>Bonjour,<br /> Vous recevez ce mail car un élément que vous avez proposée sur le site du BDE du campus d\'orléans a été retiré du site par un administrateur car il ne respecte pas la charte d\'utilisation du site. <br /> Cordialement, <br /> Les membres du BDE CESI Orléans</p>
+                        ';
 
-                    $user = $local_bdd->query('call orleans_bde.sps_user('. $DatasEvent['Id_utilisateur'] .')');
-                    $DatasUser = $user->fetch();
-                    $user->closeCursor();
+                        $user = $local_bdd->query('call orleans_bde.sps_user('. $DatasEvent['Id_utilisateur'] .')');
+                        $DatasUser = $user->fetch();
+                        $user->closeCursor();
 
-                    $destinataire = $DatasUser['Email'];
-                    $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
-                    $headers .= "Reply-To: orleans@bde@cesi.fr\n";
-                    $headers .= "Content-Type: text/html; charset=\"utf8\"";
-                    mail($destinataire,$sujet,$message,$headers);
+                        $destinataire = $DatasUser['Email'];
+                        $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
+                        $headers .= "Reply-To: orleans@bde@cesi.fr\n";
+                        $headers .= "Content-Type: text/html; charset=\"utf8\"";
+                        mail($destinataire,$sujet,$message,$headers);
 
-                    $message = '
-                    <strong>l\'évènement \''.$DatasEvent['Titre'].' \' publié par '.$DatasUser['Prenom'].' ' . $DatasUser['Nom'] . '  à été mis en privé par '.$_SESSION['f_name'].' '. $_SESSION['l_name'] . ' et l\'utilisateur a été averti</strong><br />';
+                        $message = '
+                        <strong>l\'évènement \''.$DatasEvent['Titre'].' \' publié par '.$DatasUser['Prenom'].' ' . $DatasUser['Nom'] . '  à été mis en privé par '.$_SESSION['f_name'].' '. $_SESSION['l_name'] . ' et l\'utilisateur a été averti</strong><br />';
 
-                    $membresBDE = $local_bdd->query('call orleans_bde.spl_utilisateur_bde();');
-                    $destinataire = '';
-                    while($userBDE = $membresBDE->fetch()) {
-                        $destinataire .= ', ' . $userBDE['Email'];
+                        $membresBDE = $local_bdd->query('call orleans_bde.spl_utilisateur_bde();');
+                        $destinataire = '';
+                        while($userBDE = $membresBDE->fetch()) {
+                            $destinataire .= ', ' . $userBDE['Email'];
+                        }
+                        $membresBDE->closeCursor();
+                        $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
+                        $headers .= "Reply-To: orleans@bde@cesi.fr\n";
+                        $headers .= "Content-Type: text/html; charset=\"utf8\"";
+                        mail($destinataire,$sujet,$message,$headers);
                     }
-                    $membresBDE->closeCursor();
-                    echo 'destinataire : ' . $destinataire;
-                    $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
-                    $headers .= "Reply-To: orleans@bde@cesi.fr\n";
-                    $headers .= "Content-Type: text/html; charset=\"utf8\"";
-                    mail($destinataire,$sujet,$message,$headers);
-
                 }
                 $_POST['id'] =null;
                 $_POST['button-suppr'] =null;
+                $_POST['button-private'] =null;
             }
         }
         /*---------------------------------------*/

@@ -4,7 +4,7 @@
 ?>
 
 <form method="post" autocomplete="on" enctype="multipart/form-data">
-    <div class="col-md-6"> <!--Choisir un fichier-->
+    <div class="col-md-12 common-PaddingBody"> <!--Choisir un fichier-->
         <h3 class ="pl-3 ">Image | max 50 Mo </h3><br/>
         <input type="hidden" name="" value="52428800" /> <!--Max 50Mo-->
         <input id="filebutton" name="filebutton" class="input-file pl-3" type="file" required="required" accept="image/png, image/jpeg, image/jpg, image/gif"/>

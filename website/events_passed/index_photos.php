@@ -47,43 +47,49 @@ if(isset($_POST['id'])){
 	</head>
 
 	<body>
-		<?php include("../common/header.php") ?>
-        <?php 
-        if(isset($_SESSION['id'])) {
-            $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
-            $participate_event = $query->fetch();
-            $query->closeCursor();
+        <?php include("../common/header.php") ?>
+        <div class="common-background-gray">
+            <?php 
+            if(isset($_SESSION['id'])) {
+                $query= $local_bdd->query('call orleans_bde.spt_participant_evenement('.$_SESSION['id'].','.$_SESSION['id_event'].');');
+                $participate_event = $query->fetch();
+                $query->closeCursor();
+                if($participate_event['count']==1){
+                    include("../events_passed/BandeauAddPhoto.php");
+                }
+            }
+            ?>
+            <a href="../events_passed/" class="btn btn-dark common-left-text m-2" name="back"><i class="fas fa-arrow-circle-left"></i></a>
 
-            include("../events_passed/BandeauAddPhoto.php");
-        }
-        ?>
 
-        <?php        
-        //$_SESSION['status']="Membre BDE";
+            <?php        
+            //$_SESSION['status']="Membre BDE";
 
-        if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE")) {
-            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_SESSION['id_event'].');');
-        } else {
-            $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public('.$_SESSION['id_event'].');');
-        }
-        $id_photos = array();
-        while($datasPhoto = $photos->fetch()){
-            $id_photos[] = $datasPhoto['Id_photo'];
-        }
+            if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE")) {
+                $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_SESSION['id_event'].');');
+            } else {
+                $photos = $local_bdd->query('call orleans_bde.spl_photo_by_evenement_public('.$_SESSION['id_event'].');');
+            }
+            $id_photos = array();
+            while($datasPhoto = $photos->fetch()){
+                $id_photos[] = $datasPhoto['Id_photo'];
+            }
 
-        $photos->closeCursor();
+            $photos->closeCursor();
 
-        if (count($id_photos) < 1){
-            include("../events_passed/noPhotos.php");
-        }
-        
-        foreach ($id_photos as $id_photo){
-            include("../events_passed/photos.php");
-            echo '<hr class="common-separator2">';
-        }
+            if (count($id_photos) < 1){
+                include("../events_passed/noPhotos.php");
+            }
+            
+            foreach ($id_photos as $id_photo){
+                include("../events_passed/photos.php");
+                echo '<hr class="common-separator2">';
+            }
 
-        ?>
+            ?>
+            <div class="common-PaddingBody">
+            </div>
+        </div>
 		<?php include("../common/footer.php") ?>
-		
 	</body>
 </html>
