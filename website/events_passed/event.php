@@ -2,14 +2,14 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     
+
 
       <title>BDE CESI Exia</title>
       <?php $PAGE = "Événement" ?>
     </head>
     <body class="common-background-gray">
-      <?php 
-          include("../scripts/setConnexionLocalBDD.php"); 
+      <?php
+          include("../scripts/setConnexionLocalBDD.php");
           $events = $local_bdd->query('call orleans_bde.sps_event('.$id_event.');');
           $datasEvent = $events->fetch();
           $events->closeCursor();
@@ -23,9 +23,9 @@
           }
       ?>
 
-      
 
-      <div class="container common-box mt-4">
+
+      <div class="container common-box">
         <div class="row mt-2">
           <div class="col-md-12">
             <div class="row">
@@ -54,25 +54,25 @@
                     '</p>';
                   }
                 ?>
-                  
+
                 </div>
               </div>
-              <div class="col-md-4 order-md-2 order-0">
-                
-                  <div class="col-md-6 col-12 order-0 order-md-1 text-center d-inline-block"> 
+              <div class="col-md-4 order-md-2 order-0 common-center-text">
+
+                  <div class="col-md-6 col-12 order-0 order-md-1 d-inline-block">
                     <?php
                       if(isset($_SESSION['status']) AND $_SESSION['status']=="Membre BDE"){
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                          <button class="btn btn-primary" type="submit" name="l_inscrits">Télécharger la liste des inscrits (CSV)</button>
-                          <button class="btn btn-danger" type="submit" name="delete"><i class="fas fa-times"></i></button>
+                          <button class="btn btn-info m-2" type="submit" name="l_inscrits"><i class="fas fa-download"></i> CSV</button>
+                          <button class="btn btn-danger m-2"  type="submit" name="delete"><i class="fas fa-times"></i></button>
                         </form>
                         <form method="post">
                             <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/>
-                            <button class="btn btn-primary" type="submit" name="l_inscrits_pdf">Télécharger la liste des inscrits (PDF)</button>
+                            <button class="btn btn-info m-2" type="submit" name="l_inscrits_pdf"><i class="fas fa-download"></i> PDF</button>
                         </form>';
-                          
+
                         if($datasEvent['Id_status_date']==1){
                           echo '
                           <form method="post" action="../common/editEvent.php"> <!--Bouton edit-->
@@ -99,7 +99,7 @@
                       }
                     ?>
                   </div>
-                
+
               </div>
             </div>
             <div class="row">
@@ -119,7 +119,7 @@
                     }else{
                       echo '<button class="btn btn-primary align-items-center d-flex mr-1" type="submit" name="stop_participate">Se désinscrire</button>';
                     }
-                    
+
                     echo '</form>
                       <div class="mb-3">
                         <h5 class="text-justify d-inline-flex m-0" font size="10">Coût de participation :</h5>

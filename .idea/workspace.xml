@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69ffbbee-7f46-4186-821e-e977675f86a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/assets/css/styleConnexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/website/assets/css/styleConnexion.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/events_to_come/addEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_to_come/addEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/idea_box/AddIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/AddIdea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/idea_box/BoxIdea.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/scripts/createEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/scripts/createEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/events_passed/event.php" beforeDir="false" afterPath="$PROJECT_DIR$/website/events_passed/event.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,11 +87,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="86" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="86" />
+            <state relative-caret-position="483">
+              <caret line="24" column="126" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#p#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/scripts/pdf_l_inscrit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -104,7 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>VoteButton</find>
       <find>BDECESIButtons</find>
       <find>IdeaBox</find>
       <find>OK</find>
@@ -134,6 +151,7 @@
       <find>wrapper</find>
       <find>input</find>
       <find>1 allé</find>
+      <find>date</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +198,6 @@
         <option value="$PROJECT_DIR$/website/events_passed/BandeauAddPhoto.php" />
         <option value="$PROJECT_DIR$/website/events_to_come/BandeauCreateEvent.php" />
         <option value="$PROJECT_DIR$/website/events_to_come/index.php" />
-        <option value="$PROJECT_DIR$/website/events_passed/event.php" />
         <option value="$PROJECT_DIR$/website/events_passed/noPhotos.php" />
         <option value="$PROJECT_DIR$/website/events_passed/photos.php" />
         <option value="$PROJECT_DIR$/website/events_passed/index_photos.php" />
@@ -193,6 +210,7 @@
         <option value="$PROJECT_DIR$/website/events_to_come/addEvent.php" />
         <option value="$PROJECT_DIR$/website/idea_box/AddIdea.php" />
         <option value="$PROJECT_DIR$/website/idea_box/BoxIdea.php" />
+        <option value="$PROJECT_DIR$/website/events_passed/event.php" />
       </list>
     </option>
   </component>
@@ -220,6 +238,12 @@
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
               <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Student-Union-Website-CESI-Engineering" type="462c0819:PsiDirectoryNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="events_passed" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Student-Union-Website-CESI-Engineering" type="b2602c69:ProjectViewProjectNode" />
@@ -284,12 +308,12 @@
       <workItem from="1548444344300" duration="15184000" />
       <workItem from="1548519365379" duration="646000" />
       <workItem from="1548618811130" duration="9593000" />
-      <workItem from="1548664178382" duration="26545000" />
+      <workItem from="1548664178382" duration="28131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201201000" />
+    <option name="totallyTimeSpent" value="202787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -447,13 +471,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/idea_box/testPdf.php" />
     <entry file="file://$PROJECT_DIR$/website/common/pdf_l_inscrit.php" />
-    <entry file="file://$PROJECT_DIR$/website/scripts/pdf_l_inscrit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/store/gallery.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -555,13 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/events_passed/comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -632,10 +642,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/scripts/pdf_l_inscrit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/idea_box/BoxIdea.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="86" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="86" />
+        <state relative-caret-position="483">
+          <caret line="24" column="126" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/events_passed/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#p#4;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
