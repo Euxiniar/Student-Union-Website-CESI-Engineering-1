@@ -16,6 +16,7 @@ if (isset($_POST['id_photo'])){
     $_SESSION['id_photo'] = $_POST['id_photo'];
 }
 ?>
+<a href="../events_passed/index_photos.php" class="btn btn-dark common-left-text m-2" name="back"><i class="fas fa-arrow-circle-left"></i></a>
 
 <?php
 include("../scripts/setConnexionLocalBDD.php");

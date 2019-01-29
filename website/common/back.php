@@ -1,6 +1,6 @@
 
 <form method="post">
-    <button type="submit" class="btn btn-dark common-left-text m-2" name="back"><i class="fas fa-arrow-circle-left"></i></button>
+    <!-- <a href="../events_passed/" class="btn btn-dark common-left-text m-2" name="back"><i class="fas fa-arrow-circle-left"></i></a> -->
 </form>
 
 <?php
