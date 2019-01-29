@@ -68,6 +68,13 @@ $category->closeCursor();
 
 <div class="left-item">
 <h2> Ordre Prix </h2>
+<form action="" method="post">
+      <select class="custom-select" id="ordre1" data-live-search="true" onchange="querySearch()">
+			<option class="input-placeholder-select" value="0">Trier part...</option>
+      <option class="input-placeholder-select" value="1">Ordre croissant</option>
+      <option class="input-placeholder-select" value="2">Ordre décroissant</option>
+      </select>
+      </form>
 
 
 </div>
@@ -152,6 +159,7 @@ else {
         function querySearch() {
           var search = document.getElementById('search').value;
           var category = document.getElementById("sel1").value;
+          var ordre = document.getElementById("ordre1").value;
 
 
           if(search || search === "") {
@@ -160,18 +168,20 @@ else {
           }
 
           if(category || category === "") {
-          } else {
             category = "0";
           }
           
+          if(ordre || ordre === "") {
+            ordre = "0";
+          }
+
           $.ajax({
             type: "GET",
             url: "inserter.php",
             data: {
               searchBarInput: search,
               category: category,
-              priceLow: priceLow,
-              priceHigh: priceHigh
+              ordre: ordre
             },
             success: function(result) {
               $('#main-gallery').html(result);
