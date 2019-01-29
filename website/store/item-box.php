@@ -1,6 +1,6 @@
     <div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9"
     
-    
+
     <?php switch ($counter) {
   case 1:
   echo 'style="box-shadow: 5px 5px 0 #fff, 10px 10px 0 rgb(253,228,153);"';

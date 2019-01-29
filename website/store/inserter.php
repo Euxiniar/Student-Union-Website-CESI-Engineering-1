@@ -13,7 +13,9 @@
         echo "<h2>Aucun résultat ne correspond à votre recherche.</h2>";
     } else {
         /* It's not empty, we display the formatted results */
+        $counter = 0;
         while($datasItemStore = $article->fetch()){
+            $counter++;
             include("./item-box.php");
         }
         $article->closeCursor();
