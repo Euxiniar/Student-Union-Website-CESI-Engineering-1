@@ -32,7 +32,7 @@
 <h2> Recherche </h2>
 	<div class="container-4">
               <form method="get" action="">
-                <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch()" />
+                <input type="search" id="search" placeholder="Rechercher..." onkeyup="querySearch1()" />
                 <button class="icon">
                   <i class="fa fa-search">
                   </i>
@@ -49,7 +49,7 @@
 	<h2> Catégorie </h2>
 
 			<form action="" method="post">
-      <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch()">
+      <select class="custom-select" id="sel1" data-live-search="true" onchange="querySearch1()">
 			<option class="input-placeholder-select" value="0">Catégorie...</option>
     <?php include ("../scripts/setConnexionLocalBDD.php");
 $category = $local_bdd->query('call orleans_bde.spl_list_category()');
@@ -69,7 +69,7 @@ $category->closeCursor();
 <div class="left-item">
 <h2> Ordre Prix </h2>
 <form action="" method="post">
-      <select class="custom-select" id="ordre1" data-live-search="true" onchange="querySearch()">
+      <select class="custom-select" id="ordre1" data-live-search="true" onchange="querySearch2()">
 			<option class="input-placeholder-select" value="0">Trier par...</option>
       <option class="input-placeholder-select" value="1">Ordre croissant</option>
       <option class="input-placeholder-select" value="2">Ordre décroissant</option>
@@ -114,14 +114,8 @@ if (isset($_SESSION['id']))
   <div class="right-side">
 	<div id="main-gallery">
   <?php
-if(isset($_GET['searchBarInput'], $_GET['category'], $_GET['ordre']))
-{
-    $search = $_GET['searchBarInput'];
-    $category = $_GET['category'];
-    $ordre = $_GET['ordre'];
-   
-    include("../scripts/setConnexionLocalBDD.php");
-    $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters('$search', '$category', '$ordre');");
+
+    $article = $local_bdd->query("call orleans_bde.sps_article();");
     /* Check if the response from database is empty */
     if ($article->rowCount() == 0) { 
         /* It's empty, so we tell the user to add a product to his cart */
@@ -131,22 +125,13 @@ if(isset($_GET['searchBarInput'], $_GET['category'], $_GET['ordre']))
             $counter = 0;
         while($datasItemStore = $article->fetch()){
             $counter++;
-            include("./item-box-search.php");
+            include("./item-box.php");
         }
         $article->closeCursor();
     }    
-}
-else {
-    include ("../scripts/setConnexionLocalBDD.php");
-    $article = $local_bdd->query('call orleans_bde.sps_article()');
-    $counter = 0;
-    while ($datasItemStore = $article->fetch())
-    {
-        $counter++;
-        include ("./item-box.php");
-    }
+
     $article->closeCursor();
-}?>
+?>
 				</div>
 	</div>
 </div>
@@ -155,32 +140,46 @@ else {
     <?php include_once ("../common/footer.php") ?>
 
 
-      <script>
-        function querySearch() {
+
+<script>
+        function querySearch1() {
           var search = document.getElementById('search').value;
           var category = document.getElementById("sel1").value;
-          var ordre = document.getElementById("ordre1").value;
 
-
-          if(search || search === "") {
-          } else {
-            search = "NULL";
-          }
-
-          if(category || category === "") {
-            category = "0";
-          }
           
-          if(ordre || ordre === "") {
-            ordre = "0";
-          }
+
+          if(category) {
+          } else {
+            category = "NULL";
+          } 
 
           $.ajax({
             type: "GET",
-            url: "inserter.php",
+            url: "inserter1.php",
             data: {
-              searchBarInput: search,
-              category: category,
+              search: search,
+              category: category
+            },
+            success: function(result) {
+              $('#main-gallery').html(result);
+            }
+          });
+        }
+
+      </script>
+
+<script>
+        function querySearch2() {
+          var ordre = document.getElementById("ordre1").value;
+    
+
+          
+         
+
+          $.ajax({
+            type: "GET",
+            url: "inserter2.php",
+            data: {
               ordre: ordre
             },
             success: function(result) {

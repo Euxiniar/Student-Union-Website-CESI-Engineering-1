@@ -1,3 +1,7 @@
+
+
+
+
 <div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9"
 <?php switch ($counter) {
   case 1:
@@ -67,7 +71,6 @@
     </div> 
    
   </div>
-
   <?php
                         if (isset($_SESSION['id'])) {
                             if ($_SESSION['status'] == "Membre BDE") {
