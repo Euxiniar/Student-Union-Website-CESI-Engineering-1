@@ -7,7 +7,7 @@
     <title>Panier - Boutique - BDE CESI Orléans</title>
     <link href="../assets/css/reset.css" rel="stylesheet">
     <link href="../assets/css/cart.css" rel="stylesheet">
-    <?php $PAGE="cart" ;?>
+    <?php $PAGE="Panier" ;?>
 
 </head>
 
