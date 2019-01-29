@@ -15,19 +15,16 @@
     
 ?>
 
-
-<div id="order-finalized">
-
-<h1 class="order-finalized-title">Merci ! Votre commande a bien été passée !<h1>
-
-<div class="yellow-alert" role="alert">
-  <strong>Attention!</strong> Merci de vous adresser à votre BDE afin de finaliser le paiement et récupérer votre commande.
+<div class="jumbotron text-xs-center">
+  <h1 class="display-3">Merci !</h1>
+  <p class="lead"><strong>Prenez contact avec votre BDE</strong> afin de finaliser le paiement et la remise de votre commande.</p>
+  <hr>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="../" role="button">Accueil</a>
+    <a class="btn btn-primary btn-sm" href="./store" role="button">Boutique</a>
+  </p>
 </div>
 
-
-<p> Voici un récapitulatif de votre commande : </p>
-
-</div>
 <?php 
 while($datasGet1 = $get1->fetch()){
     include("./order-final-items.php");
