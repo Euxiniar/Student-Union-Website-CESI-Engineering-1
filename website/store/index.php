@@ -27,10 +27,6 @@
 
 		<div class="grid-container">
   <div class="left-side">
-  <button id="bouton_sidebar" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<div class="main-toolbar">
 			<div class="left-item">
 <h2> Recherche </h2>
@@ -77,7 +73,7 @@ $category->closeCursor();
 </div>
 
 <div class="line"></div>
-</div>
+
 
 <?php
 if (isset($_SESSION['id']))
