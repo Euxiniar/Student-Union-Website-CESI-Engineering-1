@@ -3,10 +3,6 @@ if(!isset($_SESSION))
     session_start();
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
-
-    if(isset($_POST['l_inscrits'])){
-        echo 'coucou';
-    }
     if(isset($_POST['l_inscrits'])) {
         include('../events_to_come/registered_list.php');
         $id_users_event = array();
@@ -41,7 +37,22 @@ if(isset($_POST['id'])){
     } else if(isset($_POST['l_inscrits_pdf'])) {
         include("../scripts/pdf_l_inscrit.php");
     } else if(isset($_POST['delete'])){
-        $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
+        if(isset($_SESSION['id'])){
+            $query = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_POST['id'].');');
+            $photos_id = array();
+            while($photo=$query->fetch()){
+                $photos_id[] = $photo;
+            }
+            $query->closeCursor();
+
+            foreach($photos_id as $photo_id){
+                $local_bdd->query('call orleans_bde.spd_commentaire_by_id_photo('.$photo_id['Id_photo'].');');
+                $local_bdd->query('call orleans_bde.spd_likephoto_by_id_photo('.$photo_id['Id_photo'].');');
+                $local_bdd->query('call orleans_bde.spd_photo_by_id('.$photo_id['Id_photo'].');');
+            }
+            $local_bdd->query('call orleans_bde.spd_voteidea_by_evenement('.$_POST['id'].');');
+            $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
+        }
         $_POST['delete'] = NULL;
     } else if(isset($_POST['private'])){
         $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
