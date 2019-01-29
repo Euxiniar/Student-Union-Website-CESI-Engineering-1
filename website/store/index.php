@@ -68,6 +68,13 @@ $category->closeCursor();
 
 <div class="left-item">
 <h2> Ordre Prix </h2>
+<form action="" method="post">
+      <select class="custom-select" id="ordre1" data-live-search="true" onchange="querySearch()">
+			<option class="input-placeholder-select" value="0">Trier par...</option>
+      <option class="input-placeholder-select" value="1">Ordre croissant</option>
+      <option class="input-placeholder-select" value="2">Ordre décroissant</option>
+      </select>
+      </form>
 
 
 </div>
@@ -107,14 +114,14 @@ if (isset($_SESSION['id']))
   <div class="right-side">
 	<div id="main-gallery">
   <?php
-if(isset($_GET['searchBarInput'], $_GET['category'], $_GET['priceLow'], $_GET['priceHigh']))
+if(isset($_GET['searchBarInput'], $_GET['category'], $_GET['ordre']))
 {
     $search = $_GET['searchBarInput'];
     $category = $_GET['category'];
-    $priceLow = $_GET['priceLow'];
-    $priceLow = $_GET['priceHigh'];
+    $ordre = $_GET['ordre'];
+   
     include("../scripts/setConnexionLocalBDD.php");
-    $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters('$search', '$category', '$priceLow', '$priceHigh');");
+    $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters('$search', '$category', '$ordre');");
     /* Check if the response from database is empty */
     if ($article->rowCount() == 0) { 
         /* It's empty, so we tell the user to add a product to his cart */
@@ -124,7 +131,7 @@ if(isset($_GET['searchBarInput'], $_GET['category'], $_GET['priceLow'], $_GET['p
             $counter = 0;
         while($datasItemStore = $article->fetch()){
             $counter++;
-            include("./item-box.php");
+            include("./item-box-search.php");
         }
         $article->closeCursor();
     }    
@@ -152,6 +159,7 @@ else {
         function querySearch() {
           var search = document.getElementById('search').value;
           var category = document.getElementById("sel1").value;
+          var ordre = document.getElementById("ordre1").value;
 
 
           if(search || search === "") {
@@ -160,18 +168,20 @@ else {
           }
 
           if(category || category === "") {
-          } else {
             category = "0";
           }
           
+          if(ordre || ordre === "") {
+            ordre = "0";
+          }
+
           $.ajax({
             type: "GET",
             url: "inserter.php",
             data: {
               searchBarInput: search,
               category: category,
-              priceLow: priceLow,
-              priceHigh: priceHigh
+              ordre: ordre
             },
             success: function(result) {
               $('#main-gallery').html(result);

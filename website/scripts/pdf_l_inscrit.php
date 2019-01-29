@@ -27,7 +27,7 @@ foreach ($id_users_event as $id_user_event) {
     $pdf->Cell(90, 10, $utilisateur['Email'], 0, 1);
 
 }
-$pdf->Output('D', 'liste-des-inscrits', true);
+$pdf->Output('D', 'liste-des-inscrits.pdf', true);
 ?>
 
 

@@ -53,7 +53,7 @@ include("../common/header.php"); ?>
             <div class="col-md-4 m"> <!--adresse-->
                 <span class="common-t3">Adresse de l'évènement</span>
                 <br/>
-                <input type = "text" class="form-control" id="adr" name="address" value="1 allé du titane" maxlength="50">
+                <input type = "text" class="form-control" id="adr" name="address" value="1 allée du titane" maxlength="50">
             </div><!--adresse-->
         </div>
         <div class="row">
