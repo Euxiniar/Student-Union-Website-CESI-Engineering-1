@@ -28,11 +28,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <div class="mr-auto text-white" style="font-size: 40px !important;">
+               <div class="mr-auto text-white" style="font-size: 40px !important;">
                     <?php
                         if(isset($PAGE)){
                             $url = 'http://localhost:3000/page?name='.urlencode($PAGE);
-                            $api_json = file_get_contents($url);
+                            $api_json = @file_get_contents($url);
                             $api_array= json_decode($api_json, true);
                             echo $api_array['name'];
                         }
@@ -44,7 +44,7 @@
                         Évènements
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../events_passed/">Évènements passé</a>
+                        <a class="dropdown-item" href="../events_passed/">Évènements passés</a>
                         <a class="dropdown-item" href="../events_to_come/">Évènements à venir</a>
                     </div>
                 </li>
@@ -75,7 +75,7 @@
                     }
                 ?>
                 <?php 
-                    if($PAGE=="store" || $PAGE=="cart") {
+                    if($PAGE=="Boutique" || $PAGE=="Panier") {
                         echo '
                         <li class="nav-item">
                             <a class="nav-link" href=" ../store/cart.php"><i class="fas fa-shopping-cart" style="width: 22px;"></i>Panier</a>

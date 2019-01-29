@@ -5,24 +5,80 @@
 	grid-template-areas: "left-side right-side";
 	width: 100%;
 	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
   }
   
   .left-side { grid-area: left-side;
-height: 100%;
+width: 25%;
 background-color: rgb(34,34,34); }
   
   .right-side { grid-area: right-side;
+width: 75%;
 height: 100%;
  }
 
+ #bouton_sidebar{
+	 color: red !important;
+	 background-color: aqua;
+ }
+@media (max-width:1220px){
+
+
+	.right-side{
+		width:100%;
+	}
+	.left-side{
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		width:100%;
+	}
+	.main-toolbar{
+		display:flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: nowrap !important;
+		align-items: unset !important;
+	}
+	.line{
+		display:none;
+	}
+
+}
+@media (max-width:1000px){
+
+	.right-side{
+		width:100%;
+	}
+	.left-side{
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		width:100%;
+	}
+	.main-toolbar{
+		display:flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap !important;
+	}
+	.line{
+		display: initial;
+
+	}
+
+}
 
 .main-toolbar
 {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+    align-items: center;
+    justify-content: center;
 	align-content: center;
-	flex-direction: column;
+	flex-direction: row;
+	width: 100%;
+    flex-wrap: wrap;
 }
 
 .left-item

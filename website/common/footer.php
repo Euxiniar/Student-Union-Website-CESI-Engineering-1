@@ -37,7 +37,7 @@
 					<ul class="list-unstyled quick-links">
 						<li><a href="https://www.cesi.fr/"><i class="fa fa-angle-double-right"></i>Le CESI</a></li>
 						<li><a href="https://www.cesi.fr/travailler-chez-cesi/"><i class="fa fa-angle-double-right"></i>Recrutement</a></li>
-						<li><a href="https://www.cesi.fr/mentions-legales/"><i class="fa fa-angle-double-right"></i>Mentions légales</a></li>
+						<li><a href="../legal/"><i class="fa fa-angle-double-right"></i>Mentions légales</a></li>
 					</ul>
 				</div>
 			</div>

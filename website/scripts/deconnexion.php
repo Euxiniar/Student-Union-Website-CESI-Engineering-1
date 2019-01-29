@@ -20,10 +20,10 @@ else {
         </div>
     </div>
 </div>';
-    echo '<meta http-equiv="refresh" content="1; URL=../disconnected/home.php">';
+    echo '<meta http-equiv="refresh" content="1; URL=../connected/home.php">';
 }
 
-echo '<p><a href ="../disconnected/home.php">retour à l\'acceuil</a></p>';
+echo '<p><a href ="../connected/home.php">retour à l\'acceuil</a></p>';
 
 include("../common/footer.php");
 ?>
