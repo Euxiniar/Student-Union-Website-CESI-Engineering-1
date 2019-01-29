@@ -37,6 +37,7 @@ if ($erreur = 'pas derreur') {
     $date = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['date']));
     /*$creationDate*/ /*defini plus haut*/
     $endDate = null;
+    $hour = preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['time']));
     $description = preg_replace("#'|\"#", $replace, html_entity_decode(htmlspecialchars($_POST['description']),ENT_QUOTES));
 
 
@@ -84,6 +85,7 @@ if ($erreur = 'pas derreur') {
     \'' . $date . '\',  
     \'' . $creationDate . '\',  
     \'' . $date . '\',   
+    \'' . $hour . '\',
     \'' . $description . '\',  
     ' . $cout . ',
     ' . $nbrParticipants . ',
@@ -107,6 +109,7 @@ if ($erreur = 'pas derreur') {
     \'' . $date . '\',  
     \'' . $creationDate . '\',  
     \'' . $date . '\',   
+    \'' . $hour . '\',
     \'' . $description . '\',  
     ' . $cout . ',
     ' . $nbrParticipants . ',
