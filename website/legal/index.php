@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Mentions légales - BDE CESI Orléans</title>
-        <?php $PAGE="legal"; ?>
+        <?php $PAGE="Mentions légales"; ?>
     </head>
  
  <body>
