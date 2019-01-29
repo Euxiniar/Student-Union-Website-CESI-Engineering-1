@@ -74,15 +74,11 @@
                     }
                 }
                 if (isset($_POST['button-private'])){
-                    $local_bdd->query('call orleans_bde.spe_evenement_status(' . $_POST['id'] . ');');
+                    /*$local_bdd->query('call orleans_bde.spe_evenement_status(' . $_POST['id'] . ');');*/
 
-                    $event = $local_bdd->query('call orleans_bde.sps_evenement('. $_POST['id'] .')');
-                    $DatasEvent = $event->fetch();
-                    $event->closeCursor();
+                    if ($DatasEvent['Id_status_accessibilite'] == 4){
 
-                    if ($DatasEvent['Id_status_accessibilite']){
-
-                        $sujet = 'Sujet de l\'email';
+                        $sujet = 'Avertissement site du BDE Orléans';
                         $message = '
                         <strong>l\'évènement \''.$DatasEvent['Titre'].' \' que vous avez publié à été mis en privé</strong><br />
                         <p>Bonjour,<br /> Vous recevez ce mail car un élément que vous avez proposée sur le site du BDE du campus d\'orléans a été retiré du site par un administrateur car il ne respecte pas la charte d\'utilisation du site. <br /> Cordialement, <br /> Les membres du BDE CESI Orléans</p>
