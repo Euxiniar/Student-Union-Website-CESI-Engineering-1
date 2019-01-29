@@ -12,7 +12,9 @@ session_start();
         echo "<p>Rupture de stock !</p>";
     } else {
         /* It's not empty, we display the formatted results */
+        $counter = 0;
         while($datasItemStore = $article->fetch()){
+            $counter++;
             include("./item-box.php");
         }
     
