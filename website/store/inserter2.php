@@ -5,7 +5,6 @@
    
     $ordre = $_GET['ordre'];
     include("../scripts/setConnexionLocalBDD.php");
-    echo $ordre;
     $article = $local_bdd->query("call orleans_bde.sps_get_article_based_on_search_filters2('$ordre');");
     /* Check if the response from database is empty */
     if ($article->rowCount() == 0) { 
@@ -15,7 +14,6 @@
         /* It's not empty, we display the formatted results */
          
         while($datasItemStore = $article->fetch()){
-            echo $datasItemStore['Cout'];
             include("./item-box-search.php");
         }
         $article->closeCursor();
