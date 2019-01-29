@@ -32,7 +32,7 @@
                     <?php
                         if(isset($PAGE)){
                             $url = 'http://localhost:3000/page?name='.urlencode($PAGE);
-                            $api_json = file_get_contents($url);
+                            $api_json = @file_get_contents($url);
                             $api_array= json_decode($api_json, true);
                             echo $api_array['name'];
                         }
@@ -44,7 +44,7 @@
                         Évènements
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="../events_passed/">Évènements passé</a>
+                        <a class="dropdown-item" href="../events_passed/">Évènements passés</a>
                         <a class="dropdown-item" href="../events_to_come/">Évènements à venir</a>
                     </div>
                 </li>
