@@ -1,8 +1,10 @@
 <?php
 if(!isset($_SESSION))
     session_start();
+
 include("../scripts/setConnexionLocalBDD.php"); 
 if(isset($_POST['id'])){
+    //Download subscribers list
     if(isset($_POST['l_inscrits'])) {
         include('../events_to_come/registered_list.php');
         $id_users_event = array();
@@ -34,8 +36,10 @@ if(isset($_POST['id'])){
             "l_inscrits.csv"
         );
         exit();
+        //Download subscribers list in pdf
     } else if(isset($_POST['l_inscrits_pdf'])) {
         include("../scripts/pdf_l_inscrit.php");
+        //Delete an event
     } else if(isset($_POST['delete'])){
         if(isset($_SESSION['id'])){
             $query = $local_bdd->query('call orleans_bde.spl_photo_by_evenement('.$_POST['id'].');');
@@ -54,12 +58,13 @@ if(isset($_POST['id'])){
             $local_bdd->query('call orleans_bde.spd_evenement_by_id('.$_POST['id'].');');
         }
         $_POST['delete'] = NULL;
+        //Set event to private or public
     } else if(isset($_POST['private'])){
         $query= $local_bdd->query('call orleans_bde.spe_evenement_status('.$_POST['id'].');');
         $query = $local_bdd->query('call orleans_bde.sps_event('.$_POST['id'].');');
         $DatasEvent = $query->fetch();
         $query->closeCursor();
-
+        //Send mail if the event is set to private
         if($DatasEvent['Id_status_accessibilite']==4) {
 
             $sujet = 'Sujet de l\'email';
@@ -115,6 +120,7 @@ if(isset($_POST['id'])){
 
         <?php        
         //$_SESSION['status']="Eleve";
+        //Get all the needed events
         if(isset($_SESSION['status'])){
             if($_SESSION['status']=="Personnel CESI" || $_SESSION['status']=="Membre BDE") {
                 $events = $local_bdd->query('call orleans_bde.spl_evenement_passed();');
@@ -124,23 +130,24 @@ if(isset($_POST['id'])){
         } else {
             $events = $local_bdd->query('call orleans_bde.spl_evenement_passed_public();'); 
         }
+
         $id_events = array();
         while($datasEvent = $events->fetch()){
             $id_events[] = $datasEvent['Id_evenement'];
         }
 
         $events->closeCursor();
-        
-        $evenement_du_mois = 1;
+        //Draw events and month events
+        $month_event = 1;
         foreach ($id_events as $id_event){
-            if($evenement_du_mois <=3){
+            if($month_event <=3){
                 echo '<div class="text-center font-weight-bold"><i class="fas fa-medal"></i>Evénement du mois</div>';
-                $evenement_du_mois += 1;
+                $month_event += 1;
             }
             include("../events_passed/event.php");
             echo '<hr class="common-separator2">';
         }
-            //if no idea, then we include the page no idea
+            //if no events, then we include the page no events
         if (empty($id_events)) {
             include("../events_passed/noEvents.php");
         }
