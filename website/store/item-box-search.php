@@ -1,3 +1,6 @@
+
+
+
 <div id="item-<?php echo($datasItemStore["Id_article"]);?>" class="item-box-container x9">
 
   <div class="item-box-title">
@@ -38,7 +41,6 @@
     </div> 
    
   </div>
-
   <?php
                         if (isset($_SESSION['id'])) {
                             if ($_SESSION['status'] == "Membre BDE") {
