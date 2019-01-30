@@ -72,15 +72,17 @@ if (isset($_SESSION['id'])){
         $_POST['button-private'] =null;
     }
     if (isset($_POST['button-submit-comment']) && $_SESSION['id_photo'] ){
-
+        $replace = "\\\'";
         $query =
             'call orleans_bde.spi_commentaire(
-    \'' . htmlspecialchars($_POST['commentToInsert']) . '\',  
+            
+            
+    \'' . preg_replace("#'|\"#", $replace, htmlspecialchars($_POST['commentToInsert'])) . '\',  
     \'' . date("Y-m-d") . '\',  
     \'' . date("H:i:s") . '\',  
     ' . 1 . ',
-    ' . $_SESSION['id'] . ',  
-    ' . $_SESSION['id_photo'] . ');';
+    ' . htmlspecialchars($_SESSION['id']) . ',  
+    ' . htmlspecialchars($_SESSION['id_photo']) . ');';
 
 /*        echo $query;*/
 
