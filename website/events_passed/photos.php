@@ -54,7 +54,7 @@
                         echo '
                         <form method="post">
                           <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>
-                          <button class="btn btn-primary" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
+                          <button class="btn btn-dark" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
                         </form>';
                     }
                     if($_SESSION['status']=="Membre BDE"){
@@ -72,19 +72,19 @@
                     }
                 }
                 ?>
-                <p class="font-weight-bold mb-0 mt-4">
+                <div class="font-weight-bold mb-0 mt-4 mb-2 p-2 common-max-width-60 common-center-text common-VoteBox">
                     <?php 
                     if(isset($_SESSION['id'])) {
                         echo $datasPhoto['Nbr_like']; ?>
-                </p>
+                </div>
                 <?php
                     echo '<form method="post">
                     <input type="hidden" name="id" value="'.$datasPhoto['Id_photo'].'"/>';
                     
                         if($like['count']<1){
-                        echo '<button class="btn btn-primary" type="submit" name="like">Aimer</button>';
+                        echo '<button class="btn btn-primary" type="submit" name="like"><i class="fas fa-thumbs-up"></i></button>';
                         }else{
-                        echo '<button class="btn btn-primary" type="submit" name="stop_like">Ne plus aimer</button>';
+                        echo '<button class="btn btn-danger" type="submit" name="stop_like"><i class="fas fa-thumbs-down"></i></button>';
                         }
                     echo '</form>';
                 }

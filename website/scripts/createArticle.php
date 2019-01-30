@@ -71,10 +71,10 @@ if ($erreur = 'pas derreur') {
     /*date de debut mise temporairement en attente dune amelioration du formulaire de création*/
     $query =
         'call orleans_bde.spi_article(
-    \'' . $titre . '\',  
+    \'' . mysql_real_escape_string($titre) . '\',  
     \'' . $description . '\',  
-    ' . $cout . ',
-    \'' . $url . '\',
+    ' .   $cout . ',
+    \'' .$url . '\',
     ' . $stock . ',
     ' . $Nbr_achats . ' , 
     ' . $idCategory . ');';

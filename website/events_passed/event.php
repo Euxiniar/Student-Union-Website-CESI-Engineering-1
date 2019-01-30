@@ -85,17 +85,17 @@
                     <?php
                       if(isset($_SESSION['status']) AND ($_SESSION['status']=="Personnel CESI")){
                         echo '
-                        <form method="post">
-                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/> <!--Bouton privé-->
-                          <button class="btn btn-dark" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
+
+                        <form name="zip" method="post" action="../common/downloadImg.php"> 
+                          <input type="submit" id="download-button-request" hidden name="zip-button" value="Télécharger" >
+                          <button class="btn btn-primary" type="submit" name="download-img"><i class="fas fa-download"></i> Images</button>
                         </form>
                         
-                        
-                      
-                        <form name="zip" method="post" action="../common/downloadImg.php"> 
-                          <input type="submit" id="download-button-request" name="zip-button" value="Télécharger" >
-                          <button class="btn btn-primary" type="submit" name="download-img">Télécharger l"ensemble des images</button>
+                        <form method="post">
+                          <input type="hidden" name="id" value="'.$datasEvent['Id_evenement'].'"/> <!--Bouton privé-->
+                          <button class="btn btn-dark m-3" type="submit" name="private"><i class="fas fa-user-secret"></i></button>
                         </form>';
+
                       }
                     ?>
                   </div>
