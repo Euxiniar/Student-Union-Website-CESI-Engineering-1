@@ -49,7 +49,7 @@
     $sujet = 'Confirmation de commande';
     $message = '
         <strong>Votre commande est validée</strong><br />
-        <p>Bonjour ' . $DatasUser['Prenom'] . ',<br /> Le site du BDE CESI Orléans vous confirme que votre commande n° ' . $DatasCommande['Id_commande'] .', payée le ' . $DatasCommande['Date'] .' à ' . $DatasCommande['Heure'] .' est validée. Munissez vous de ce bon de reception et rendez-vous au CESI pour la réception de votre commande. 
+        <p>Bonjour ' . $DatasUser['Prenom'] . ',<br /> Le site du BDE CESI Orléans vous confirme que votre commande n° ' . $DatasCommande['Id_commande'] .', passée le ' . $DatasCommande['Date'] .' à ' . $DatasCommande['Heure'] .' est validée. Munissez vous de ce bon de reception et rendez-vous au CESI pour la finalisation de votre commande. 
          <br /> Merci d\'avoir acheté sur la boutique de notre site, à très bientôt !<br />
          Cordialement, <br />
          Les membres du site du BDE CESI Orléans.
@@ -59,12 +59,13 @@
     $destinataire = $DatasUser['Email'];
     $headers = "From: \"BDE CESI Orléans\"<orleans@bde.studisys.net>\n";
     $headers .= "Reply-To: orleans@bde@cesi.fr\n";
-    $headers .= "Content-Type: text/html; charset=\"utf8\"";
+    $headers .= "Content-Type: text/html; charset=\"utf-8\"";
     mail($destinataire,$sujet,$message,$headers);
 
+  
     $sujet = 'Commande passée';
     $message = '
-        <strong>L\'utilisateur '.$DatasUser['Prenom'].' ' . $DatasUser['Nom'] . ' à payé la commande n°'. $DatasCommande['Id_commande'] . ', payée le ' . $DatasCommande['Date'] .' à ' . $DatasCommande['Heure'] .' d\'un prix total de ' .$DatasCommande['Cout_total'] . ' </strong><br />';
+        <strong>L\'utilisateur '.$DatasUser['Prenom'].' ' . $DatasUser['Nom'] . ' a passé la commande n°'. $DatasCommande['Id_commande'] . ', le ' . $DatasCommande['Date'] . ' </strong><br />';
 
     $membresBDE = $local_bdd->query('call orleans_bde.spl_utilisateur_bde();');
     $destinataire = '';
@@ -76,6 +77,7 @@
     $headers .= "Reply-To: orleans@bde@cesi.fr\n";
     $headers .= "Content-Type: text/html; charset=\"utf-8\"";
     mail($destinataire,$sujet,$message,$headers);
+
 ?>
 
 
