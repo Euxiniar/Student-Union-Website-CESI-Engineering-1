@@ -33,6 +33,7 @@
         </div>
     </div>
 </div>
+<div class="common-PaddingBody"></div>
 
 <?php include("../common/footer.php") ?>
 
